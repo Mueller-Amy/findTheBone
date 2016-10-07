@@ -5,6 +5,7 @@
  */
 package findthebone;
 
+import byui.cit260.findTheBone.model.Game;
 import byui.cit260.findTheBone.model.Player;
 
 /**
@@ -18,12 +19,16 @@ public class FindTheBone {
      */
     public static void main(String[] args) {
         Player playerOne = new Player();
+        Game gameOne = new Game();
         
         playerOne.setName("Fred Flinstone");
         playerOne.setBestTime(7.00);
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        
+        
     }
     
 }
