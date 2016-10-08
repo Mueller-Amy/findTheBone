@@ -8,7 +8,7 @@ package findthebone;
 import byui.cit260.findTheBone.model.Game; // Keith Downing
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
 import byui.cit260.findTheBone.model.TownsPeople; // Keith Downing
-
+import byui.cit260.findTheBone.model.ItemsWithin; // Jean Oliveira
 
 /**
  *
@@ -23,6 +23,7 @@ public class FindTheBone {
         Player playerOne = new Player();
         Game gameOne = new Game();
         TownsPeople townsPeopleOne = new TownsPeople();
+        ItemsWithin itemsWithinOne = new ItemsWithin();
         
         playerOne.setName("Fred Flinstone");
         playerOne.setBestTime(7.00);
@@ -30,6 +31,7 @@ public class FindTheBone {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+             
         
         
     }
