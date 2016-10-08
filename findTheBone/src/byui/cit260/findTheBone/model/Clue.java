@@ -27,6 +27,10 @@ public class Clue implements Serializable{
         return attribute;
     }
     
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
+    
     //equals(), and hashCode() codes
 
     @Override
