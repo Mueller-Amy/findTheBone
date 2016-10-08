@@ -12,30 +12,27 @@ import java.util.Objects;
  *
  * @author Jean Oliveira
  */
-public class ItemsWithin implements Serializable {
-     
-    //class instance variable
-    private double noOfItems;
+public class Clue implements Serializable{
     
+    //class instance variable
+    private String attribute;
+        
     //default constructor
-    public ItemsWithin() {
+    public Clue() {
     }
         
-    //Getters and Setters
-    public double getNoOfItems() {
-        return noOfItems;
-    }
+    //Getter
 
-    public void setNoOfItems(double noOfItems) {
-        this.noOfItems = noOfItems;
+    public String getAttribute() {
+        return attribute;
     }
     
     //equals(), and hashCode() codes
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.noOfItems) ^ (Double.doubleToLongBits(this.noOfItems) >>> 32));
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.attribute);
         return hash;
     }
 
@@ -50,19 +47,17 @@ public class ItemsWithin implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ItemsWithin other = (ItemsWithin) obj;
-        if (Double.doubleToLongBits(this.noOfItems) != Double.doubleToLongBits(other.noOfItems)) {
+        final Clue other = (Clue) obj;
+        if (!Objects.equals(this.attribute, other.attribute)) {
             return false;
         }
         return true;
     }
-    
     //toString() code
 
     @Override
     public String toString() {
-        return "ItemsWithin{" + "noOfItems=" + noOfItems + '}';
+        return "Clue{" + "attribute=" + attribute + '}';
     }
-    
     
 }
