@@ -35,9 +35,14 @@ public class FindTheBone {
         Map mapOne = new Map();
         Location locationOne = new Location();
         
+        
+        //Class Player set test
         playerOne.setName("Fred Flinstone");
         playerOne.setBestTime(7.00);
         
+               
+        
+        //Class Player print out test
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
