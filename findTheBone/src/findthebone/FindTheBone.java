@@ -35,7 +35,7 @@ public class FindTheBone {
         Map mapOne = new Map();
         Location locationOne = new Location();
         
-        // ==============Class Assign Values ==========
+        // ==============Class Assign Values tests ==========
          
         //Class Player Assign value test
         playerOne.setName("Fred Flinstone");
@@ -50,6 +50,7 @@ public class FindTheBone {
         
         //Class ItemsWithin Assign value test - by Jean Oliveira
         itemsWithinOne.setNoOfItems(40);          
+        
         
         //=============== Class print out Tests ============
         
