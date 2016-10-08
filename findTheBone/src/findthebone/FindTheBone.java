@@ -33,7 +33,7 @@ public class FindTheBone {
         Clue clueOne = new Clue();
         Item itemOne = new Item();
         Map mapOne = new Map();
-        Location locationOne = new Location ();
+        Location locationOne = new Location();
         
         playerOne.setName("Fred Flinstone");
         playerOne.setBestTime(7.00);
