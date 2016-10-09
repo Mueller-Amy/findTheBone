@@ -56,7 +56,7 @@ public class FindTheBone {
         gameOne.setTotalTime("8:59");
         
         //Class TownsPeople value test - Keith Downing
-        townsPersonNameOne.setTownsPersonName("Darth Keith");
+        
         
         //Class Scene value test - Keith Downing
         descriptionOne.setDescription("Frozen Planet of Hoff");
