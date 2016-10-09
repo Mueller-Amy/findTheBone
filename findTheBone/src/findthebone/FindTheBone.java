@@ -1,4 +1,4 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -6,11 +6,11 @@
 package findthebone;
 
 import byui.cit260.findTheBone.model.Clue; // Jean Oliveira
-
 import byui.cit260.findTheBone.model.Item; // Jean Oliveira
 import byui.cit260.findTheBone.model.ItemsWithin; // Jean Oliveira
 import byui.cit260.findTheBone.model.Location; // 
 import byui.cit260.findTheBone.model.Map; // 
+import byui.cit260.findTheBone.model.TownsPeople; // Keith Downing
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
 
 
@@ -32,6 +32,7 @@ public class FindTheBone {
         Item itemOne = new Item();
         Map mapOne = new Map();
         Location locationOne = new Location();
+        TownsPeople townspeopleOne = new TownsPeople();
         
         // ==============Class Assign Values tests ==========
          
