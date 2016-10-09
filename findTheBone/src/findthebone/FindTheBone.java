@@ -6,7 +6,7 @@
 package findthebone;
 
 import byui.cit260.findTheBone.model.Clue; // Jean Oliveira
-
+import byui.cit260.findTheBone.model.Game; // Keith Downing
 import byui.cit260.findTheBone.model.Item; // Jean Oliveira
 import byui.cit260.findTheBone.model.ItemsWithin; // Jean Oliveira
 import byui.cit260.findTheBone.model.Location; // 
@@ -32,6 +32,7 @@ public class FindTheBone {
         Item itemOne = new Item();
         Map mapOne = new Map();
         Location locationOne = new Location();
+        Game gameOne = new Game();
         
         // ==============Class Assign Values tests ==========
          
