@@ -6,13 +6,13 @@
 package findthebone;
 
 import byui.cit260.findTheBone.model.Clue; // Jean Oliveira
-import byui.cit260.findTheBone.model.Game; // Keith Downing
+
 import byui.cit260.findTheBone.model.Item; // Jean Oliveira
 import byui.cit260.findTheBone.model.ItemsWithin; // Jean Oliveira
 import byui.cit260.findTheBone.model.Location; // 
 import byui.cit260.findTheBone.model.Map; // 
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
-import byui.cit260.findTheBone.model.TownsPeople; // Keith Downing
+
 
 
 
@@ -27,8 +27,6 @@ public class FindTheBone {
      */
     public static void main(String[] args) {
         Player playerOne = new Player();
-        Game gameOne = new Game();
-        TownsPeople townsPeopleOne = new TownsPeople();
         ItemsWithin itemsWithinOne = new ItemsWithin();
         Clue clueOne = new Clue();
         Item itemOne = new Item();
