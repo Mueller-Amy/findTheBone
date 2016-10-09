@@ -14,6 +14,7 @@ import byui.cit260.findTheBone.model.Map; //
 
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
 import byui.cit260.findTheBone.model.Scene; // Keith Downing
+import byui.cit260.findTheBone.model.TownsPeople;
 
 
 /**
@@ -33,8 +34,9 @@ public class FindTheBone {
         Map mapOne = new Map();
         Location locationOne = new Location();
         Game gameOne = new Game();
-       
+        
         Scene descriptionOne = new Scene();
+        TownsPeople townsPeopleOne = new TownsPeople();
         
         // ==============Class Assign Values tests ==========
          
@@ -56,11 +58,13 @@ public class FindTheBone {
         gameOne.setTotalTime("8:59");
         
         //Class TownsPeople value test - Keith Downing
+        townsPeopleOne.setTownsPersonName(" Darth Keith ");
         
         
         //Class Scene value test - Keith Downing
         descriptionOne.setDescription("Frozen Planet of Hoff");
         
+        //Class TownsPeople value test - Keith Downing
         
         
         //=============== Class print out Tests ============
@@ -86,7 +90,9 @@ public class FindTheBone {
         System.out.println(gameOne);
         
         //Class TownsPerson print out test - Keith Downing
-        
+        String townsPeopleInfo = townsPeopleOne.toString();
+        System.out.println(townsPeopleOne);
+                
         
         //Class Scene print out test - Keith Downing
         String descriptionInfo = descriptionOne.toString();
