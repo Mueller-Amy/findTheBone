@@ -12,8 +12,8 @@ import byui.cit260.findTheBone.model.ItemsWithin; // Jean Oliveira
 import byui.cit260.findTheBone.model.Location; // 
 import byui.cit260.findTheBone.model.Map; // 
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
-
-
+import byui.cit260.findTheBone.model.TownsPeople;// Keith Downing
+import byui.cit260.findTheBone.model.Scene; // Keith Downing
 
 
 /**
@@ -33,6 +33,8 @@ public class FindTheBone {
         Map mapOne = new Map();
         Location locationOne = new Location();
         Game gameOne = new Game();
+        TownsPeople townsPersonNameOne = new TownsPeople();
+        Scene descriptionOne = new Scene();
         
         // ==============Class Assign Values tests ==========
          
@@ -49,6 +51,16 @@ public class FindTheBone {
         
         //Class ItemsWithin Assign value test - by Jean Oliveira
         itemsWithinOne.setNoOfItems(40);          
+        
+        // Class Game value test - Keith Downing
+        gameOne.setTotalTime("8:59");
+        
+        //Class TownsPeople value test - Keith Downing
+        townsPersonNameOne.setTownsPersonName("Darth Keith");
+        
+        //Class Scene value test - Keith Downing
+        descriptionOne.setDescription("Frozen Planet of Hoff");
+        
         
         
         //=============== Class print out Tests ============
@@ -69,9 +81,17 @@ public class FindTheBone {
         String itemsWithinInfo = itemsWithinOne.toString();
         System.out.println(itemsWithinInfo);
         
+        //Class gameOne print out test - Keith Downing
+        String gameOneInfo = gameOne.toString();
+        System.out.println(gameOne);
         
+        //Class TownsPerson print out test - Keith Downing
+        String townsPersonNameOneInfo = townsPersonNameOne.toString();
+        System.out.println(townsPersonNameOne);
         
-        
+        //Class Scene print out test - Keith Downing
+        String descriptionInfo = descriptionOne.toString();
+        System.out.println(descriptionOne);
         
              
         

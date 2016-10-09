@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Keith College
+ * @author Keith Downing
  */
 public class Game implements Serializable{
     
@@ -56,6 +56,10 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setTotalTime(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
