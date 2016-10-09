@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Keith College
  */
-public class TownsPeople {
+public class TownsPeople implements Serializable{
     
     //class instance variables.
     private String townsPersonName;
