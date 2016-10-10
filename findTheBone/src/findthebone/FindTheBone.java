@@ -5,17 +5,18 @@
  */
 package findthebone;
 
+import byui.cit260.findTheBone.model.Backpack;
 import byui.cit260.findTheBone.model.Clue; // Jean Oliveira
 import byui.cit260.findTheBone.model.Game; // Keith Downing
 import byui.cit260.findTheBone.model.Item; // Jean Oliveira
 import byui.cit260.findTheBone.model.ItemsWithin; // Jean Oliveira
-import byui.cit260.findTheBone.model.Location; // 
-import byui.cit260.findTheBone.model.Map; // 
+import byui.cit260.findTheBone.model.Location; // Amy Mueller
+import byui.cit260.findTheBone.model.Map; // Amy Mueller
 
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
 import byui.cit260.findTheBone.model.Scene; // Keith Downing
 import byui.cit260.findTheBone.model.TownsPeople;
-
+import byui.cit260.findTheBone.model.Character; 
 
 /**
  *
@@ -31,12 +32,16 @@ public class FindTheBone {
         ItemsWithin itemsWithinOne = new ItemsWithin();
         Clue clueOne = new Clue();
         Item itemOne = new Item();
-        Map mapOne = new Map();
-        Location locationOne = new Location();
+       
+      
         Game gameOne = new Game();
         
         Scene descriptionOne = new Scene();
         TownsPeople townsPeopleOne = new TownsPeople();
+        Map mapOne = new Map();
+        Location locationOne = new Location();
+        Backpack backpackOne = new Backpack();
+        Character characterOne = new Character();
         
         // ==============Class Assign Values tests ==========
          
@@ -65,6 +70,28 @@ public class FindTheBone {
         descriptionOne.setDescription("Frozen Planet of Hoff");
         
         //Class TownsPeople value test - Keith Downing
+        
+        //Class Map Assign value test-Amy Mueller
+       
+       mapOne.setRowCount(12);
+       mapOne.setColumnCount(6);
+       mapOne.setCurrentRow(10);
+       mapOne.setCurrentColumn(5);
+       
+      
+       //Class Location Assign value test- Amy Mueller
+        locationOne.setRow (7);
+        locationOne.setColumn(6);
+        locationOne.setVisited(true);
+        locationOne.setAmountRemaining(5);
+        
+       //Class Backpack Assign value test- Amy Mueller
+        backpackOne.setMaxVolume (20);
+        backpackOne.setAmountContained(10);
+        
+       //Class Character Assign value test-Amy Mueller
+       characterOne.setName("Freddy Flinstone");
+       characterOne.setDescription("Big head");
         
         
         //=============== Class print out Tests ============
@@ -97,6 +124,23 @@ public class FindTheBone {
         //Class Scene print out test - Keith Downing
         String descriptionInfo = descriptionOne.toString();
         System.out.println(descriptionOne);
+        
+        //Class Map print out test-Amy Mueller
+       String mapInfo = mapOne.toString();
+       System.out.println(mapInfo);
+       
+       //Class Location print out test- Amy Mueller
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+        
+        //Class Backpack print out test- Amy Mueller
+        String backpackInfo = backpackOne.toString();
+        System.out.println(backpackInfo);
+        
+        //Class Character print out test- Amy Mueller
+        String characterInfo = characterOne.toString();
+        System.out.println(characterInfo);
+           
         
              
         
