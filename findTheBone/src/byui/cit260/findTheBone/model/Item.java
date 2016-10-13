@@ -16,8 +16,8 @@ public class Item implements Serializable{
     
     //class instance variable
     private String inventory;
-    private String itemsRemaining;
-        
+    private int itemsRemaining;
+    
     //default constructor
     public Item() {
     }
@@ -31,22 +31,24 @@ public class Item implements Serializable{
         this.inventory = inventory;
     }
 
-    public String getItemsRemaining() {
+    public int getItemsRemaining() {
         return itemsRemaining;
     }
 
-    public void setItemsRemaining(String itemsRemaining) {
+    public void setItemsRemaining(int itemsRemaining) {
         this.itemsRemaining = itemsRemaining;
     }
+            
+    //equals(), hashCode() and toString() code
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.inventory);
-        hash = 41 * hash + Objects.hashCode(this.itemsRemaining);
+        hash = 23 * hash + Objects.hashCode(this.inventory);
+        hash = 23 * hash + this.itemsRemaining;
         return hash;
     }
 
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -59,19 +61,20 @@ public class Item implements Serializable{
             return false;
         }
         final Item other = (Item) obj;
-        if (!Objects.equals(this.inventory, other.inventory)) {
+        if (this.itemsRemaining != other.itemsRemaining) {
             return false;
         }
-        if (!Objects.equals(this.itemsRemaining, other.itemsRemaining)) {
+        if (!Objects.equals(this.inventory, other.inventory)) {
             return false;
         }
         return true;
     }
 
-    //toString() code
     @Override
     public String toString() {
         return "Item{" + "inventory=" + inventory + ", itemsRemaining=" + itemsRemaining + '}';
     }
+    
+    
     
 }

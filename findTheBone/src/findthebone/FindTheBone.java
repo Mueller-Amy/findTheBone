@@ -12,7 +12,6 @@ import byui.cit260.findTheBone.model.Item; // Jean Oliveira
 import byui.cit260.findTheBone.model.ItemsWithin; // Jean Oliveira
 import byui.cit260.findTheBone.model.Location; // Amy Mueller
 import byui.cit260.findTheBone.model.Map; // Amy Mueller
-
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
 import byui.cit260.findTheBone.model.Scene; // Keith Downing
 import byui.cit260.findTheBone.model.TownsPeople;
@@ -53,8 +52,8 @@ public class FindTheBone {
         clueOne.setAttribute("Giraffes suggest the tigers. Cats stick together.");
          
         //Class Item Assign value test - by Jean Oliveira
-        itemOne.setInventory("Fish");
-        itemOne.setItemsRemaining("10");
+        itemOne.setInventory("Business card ");
+        itemOne.setItemsRemaining(20);
         
         //Class ItemsWithin Assign value test - by Jean Oliveira
         itemsWithinOne.setNoOfItems(40);          

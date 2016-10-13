@@ -15,27 +15,29 @@ import java.util.Objects;
 public class ItemsWithin implements Serializable {
      
     //class instance variable
-    private double noOfItems;
+    private int noOfItems;
     
     //default constructor
     public ItemsWithin() {
     }
         
     //Getters and Setters
-    public double getNoOfItems() {
+    
+    public int getNoOfItems() {
         return noOfItems;
     }
 
-    public void setNoOfItems(double noOfItems) {
+    public void setNoOfItems(int noOfItems) {
         this.noOfItems = noOfItems;
     }
+
     
-    //equals(), and hashCode() codes
+    //equals(),hashCode() and toString() codes
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.noOfItems) ^ (Double.doubleToLongBits(this.noOfItems) >>> 32));
+        int hash = 3;
+        hash = 89 * hash + this.noOfItems;
         return hash;
     }
 
@@ -51,18 +53,18 @@ public class ItemsWithin implements Serializable {
             return false;
         }
         final ItemsWithin other = (ItemsWithin) obj;
-        if (Double.doubleToLongBits(this.noOfItems) != Double.doubleToLongBits(other.noOfItems)) {
+        if (this.noOfItems != other.noOfItems) {
             return false;
         }
         return true;
     }
-    
-    //toString() code
 
     @Override
     public String toString() {
         return "ItemsWithin{" + "noOfItems=" + noOfItems + '}';
     }
+    
+    
     
     
 }
