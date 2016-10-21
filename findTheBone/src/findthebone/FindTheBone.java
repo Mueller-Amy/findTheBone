@@ -59,7 +59,7 @@ public class FindTheBone {
         itemsWithinOne.setNoOfItems(40);          
         
         // Class Game value test - Keith Downing
-        gameOne.setTotalTime("8:59");
+        gameOne.setTotalTime(8.0);
         
         //Class TownsPeople value test - Keith Downing
         townsPeopleOne.setTownsPersonName(" Darth Keith ");
