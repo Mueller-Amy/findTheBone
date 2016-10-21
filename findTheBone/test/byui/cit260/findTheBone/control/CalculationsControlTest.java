@@ -142,4 +142,94 @@ public class CalculationsControlTest {
         
     }
     
+    /*
+     * Keith Downing - Individual Assignment - Calculate Volume of a Cylinder
+     * Test of calcVolumeOfCylinder.
+     */
+    @Test
+    public void testCalcVolumeOfCylinder() {
+        System.out.println("calcVolumeOfCylinder");
+        /***********************
+         *   Test Case # 1
+         **********************/
+        System.out.println("\tTest Case #1");
+        double diameter = 3.0;
+        double height = 8.0;
+        CalculationsControl instance = new CalculationsControl();
+        double expResult = 56.54867;
+        double result = instance.calcVolumeOfCylinder(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 2
+         **********************/
+        System.out.println("\tTest Case #2");
+        diameter = 1.0;
+        height = 2.0;
+        expResult = 1.5707;
+        result = instance.calcVolumeOfCylinder(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 3
+         **********************/
+        System.out.println("\tTest Case #3");
+        diameter = -3.0;
+        height = 8.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCylinder(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 4
+         **********************/
+        System.out.println("\tTest Case #4");
+        diameter = 3.0;
+        height = -8.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCylinder(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+                
+        /***********************
+         *   Test Case # 5
+         **********************/
+        System.out.println("\tTest Case #5");
+        diameter = 3.0;
+        height = 9.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCylinder(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 6
+         **********************/
+        System.out.println("\tTest Case #6");
+        diameter = 3.0;
+        height = 36.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCylinder(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 7
+         **********************/
+        System.out.println("\tTest Case #7");
+        diameter = 3.0;
+        height = 0;
+        expResult = 0;
+        result = instance.calcVolumeOfCylinder(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 8
+         **********************/
+        System.out.println("\tTest Case #8");
+        diameter = 0;
+        height = 8.0;
+        expResult = -1;
+        result = instance.calcVolumeOfCylinder(diameter, height);
+        assertEquals(expResult, result, 0.0001);
+        
+}
+
 }
