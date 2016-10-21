@@ -68,7 +68,16 @@ public class CalculationsControl {
             double diagonal =Math.sqrt(Math.pow(length,2)+ Math.pow(width,2));					
             return diagonal;	
     }
-    
+            // Keith Downing - Volume of a Cylinder Calculation.
+        public double calcVolumeOfCylinder(double diameter, double height){
+            if (diameter < 0 || diameter > 3)
+                return -1;
+            if (height < 0 || height > 8)
+                return -1;
+            
+            double volume =(diameter * Math.PI * height);
+            return volume;
+        }
           				
 
     }
