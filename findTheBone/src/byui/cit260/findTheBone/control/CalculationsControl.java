@@ -22,8 +22,9 @@ public class CalculationsControl {
            volume = legth*width*height
            RETURN area; */
            
-           //group work for volume of a box
-           
+            
+            //Group work for volume of a box
+            
            if (length < 0 || length > 6 ){//length out of range??
                return -1;
            }
@@ -39,7 +40,7 @@ public class CalculationsControl {
            }
            
            //Amy Mueller Calculate Area of Box
-    public double calcAreaOfBox(double length, double width){
+        public double calcAreaOfBox(double length, double width){
         if (length < 0 || length > 6 ){//length out of range??
                return -1;
            }
@@ -51,5 +52,25 @@ public class CalculationsControl {
            return area;
            }
     
+           // Jean Oliveira - Rectangle Diagonal Calculation
+    public double calcDiagonalRectangle(double length,double width) {
+        if (length < 0 || width <0) { // if length or width is negative					
+           return -1;
+            }					
+        if (length == width) {	//if lenght=width it's not a rectangle				
+           return -1;
+            }
+        if (width < 3 || width >7) { // width out of range??					
+           return -1;
+            }
+        if (length <5 || length >12) { // length out of range??
+           return -1;	
+            }					
+            double diagonal =Math.sqrt(Math.pow(length,2)+ Math.pow(width,2));					
+            return diagonal;	
+    }
+    
+          				
+
     }
 
