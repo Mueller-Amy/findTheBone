@@ -31,7 +31,105 @@ public class CalculationsControlTest {
         double expResult = 108.0;
         double result = instance.calcVolumeOfBox(length, width, height);
         assertEquals(expResult, result, 0.0001);
+    
+        /***********************
+         *   Test Case # 2
+         **********************/
+        System.out.println("\tTest Case #2");
+        length = -2.0;
+        width = 3.0;
+        height = 6.0;
+        expResult = -1;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
         
+        /***********************
+         *   Test Case # 3
+         **********************/
+        System.out.println("\tTest Case #3");
+        length = 6.0;
+        width = 3.0;
+        height = -2.0;
+        expResult = -1;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 4
+         **********************/
+        System.out.println("\tTest Case #4");
+        length = 6.0;
+        width = -3.0;
+        height = 6.0;
+        expResult = -1;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 5
+         **********************/
+        System.out.println("\tTest Case #5");
+        length = 0;
+        width = 3.0;
+        height = 6.0;
+        expResult = 0;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 6
+         **********************/
+        System.out.println("\tTest Case #6");
+        length = 6.0;
+        width = 3.0;
+        height = 0;
+        expResult = 0;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 7
+         **********************/
+        System.out.println("\tTest Case #7");
+        length = 6.0;
+        width = 0;
+        height = 6.0;
+        expResult = 0;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 8
+         **********************/
+        System.out.println("\tTest Case #8");
+        length = 5.0;
+        width = 3.0;
+        height = 7.0;
+        expResult = 105;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 9
+         **********************/
+        System.out.println("\tTest Case #9");
+        length = 5.0;
+        width = 7.0;
+        height = 2.0;
+        expResult = 70.0;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
+        
+        /***********************
+         *   Test Case # 10
+         **********************/
+        System.out.println("\tTest Case #10");
+        length = 7.0;
+        width = 2.0;
+        height = 5.0;
+        expResult = 70.0;
+        result = instance.calcVolumeOfBox(length, width, height);
+        assertEquals(expResult, result, 0.0001);
     }
 
     /*
