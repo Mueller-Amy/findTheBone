@@ -22,6 +22,8 @@ public class CalculationsControl {
            volume = legth*width*height
            RETURN area; */
            
+           //group work for volume of a box
+           
            if (length < 0 || length > 6 ){//length out of range??
                return -1;
            }
@@ -36,7 +38,18 @@ public class CalculationsControl {
            return volume; 
            }
            
-    
+           //Amy Mueller Calculate Area of Box
+    public double calcAreaOfBox(double length, double width){
+        if (length < 0 || length > 6 ){//length out of range??
+               return -1;
+           }
+           if (width < 0 || width > 6 ) {//width out of range??
+               return -1;
+            }
+           double area = (length * width);
+           
+           return area;
+           }
     
     }
 

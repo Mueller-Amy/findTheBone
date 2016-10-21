@@ -33,15 +33,14 @@ public class ClueControlTest {
     @Test
     public void testCalcVolumeOfBox() {
         System.out.println("calcVolumeOfBox");
-        double length = 0.0;
-        double width = 0.0;
-        double height = 0.0;
+        double length = 3.0;
+        double width = 2.0;
+        double height = 2.0;
         ClueControl instance = new ClueControl();
-        double expResult = 0.0;
+        double expResult = 12.0;
         double result = instance.calcVolumeOfBox(length, width, height);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }
