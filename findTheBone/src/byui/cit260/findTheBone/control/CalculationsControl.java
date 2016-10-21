@@ -10,8 +10,10 @@ package byui.cit260.findTheBone.control;
  * @author Home
  */
 public class CalculationsControl {
+    
+        //Group work for volume of a box
 
-    public double calcVolumeOfBox(double length, double width, double height){
+        public double calcVolumeOfBox(double length, double width, double height){
     
            /*if (length<0 OR length>6) THEN
                RETURN -1
@@ -21,10 +23,7 @@ public class CalculationsControl {
                    RETURN -1
            volume = legth*width*height
            RETURN area; */
-           
-            
-            //Group work for volume of a box
-            
+                
            if (length < 0 || length > 6 ){//length out of range??
                return -1;
            }
@@ -53,7 +52,7 @@ public class CalculationsControl {
            }
     
            // Jean Oliveira - Rectangle Diagonal Calculation
-    public double calcDiagonalRectangle(double length,double width) {
+        public double calcDiagonalRectangle(double length,double width) {
         if (length < 0 || width <0) { // if length or width is negative					
            return -1;
             }					
