@@ -6,7 +6,7 @@
 package byui.cit260.findTheBone.model;
 
 import java.io.Serializable;
-import java.util.Objects;
+
 
 /**
  *
@@ -14,23 +14,25 @@ import java.util.Objects;
  */
 public class Game implements Serializable{
     
-    private String totalTime;
+    private double totalTime;
 
     public Game() {
     }
 
-    public String getTotalTime() {
+   
+    
+    public double getTotalTime() {
         return totalTime;
     }
 
-    public void setTotalTime(String totalTime) {
+    public void setTotalTime(double totalTime) {
         this.totalTime = totalTime;
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 37 * hash + Objects.hashCode(this.totalTime);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
         return hash;
     }
 
@@ -38,6 +40,8 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + '}';
     }
+    
+    
     
     
     @Override
@@ -52,14 +56,10 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.totalTime, other.totalTime)) {
+        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
         return true;
-    }
-
-    public void setTotalTime(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
