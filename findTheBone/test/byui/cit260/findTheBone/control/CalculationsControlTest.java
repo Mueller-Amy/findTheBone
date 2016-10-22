@@ -72,7 +72,7 @@ public class CalculationsControlTest {
         length = 0;
         width = 3.0;
         height = 6.0;
-        expResult = 0;
+        expResult = -1;
         result = instance.calcVolumeOfBox(length, width, height);
         assertEquals(expResult, result, 0.0001);
         
@@ -83,7 +83,7 @@ public class CalculationsControlTest {
         length = 6.0;
         width = 3.0;
         height = 0;
-        expResult = 0;
+        expResult = -1;
         result = instance.calcVolumeOfBox(length, width, height);
         assertEquals(expResult, result, 0.0001);
         
@@ -94,7 +94,7 @@ public class CalculationsControlTest {
         length = 6.0;
         width = 0;
         height = 6.0;
-        expResult = 0;
+        expResult = -1;
         result = instance.calcVolumeOfBox(length, width, height);
         assertEquals(expResult, result, 0.0001);
         
@@ -105,7 +105,7 @@ public class CalculationsControlTest {
         length = 5.0;
         width = 3.0;
         height = 7.0;
-        expResult = 105;
+        expResult = -1;
         result = instance.calcVolumeOfBox(length, width, height);
         assertEquals(expResult, result, 0.0001);
         
@@ -116,7 +116,7 @@ public class CalculationsControlTest {
         length = 5.0;
         width = 7.0;
         height = 2.0;
-        expResult = 70.0;
+        expResult = -1;
         result = instance.calcVolumeOfBox(length, width, height);
         assertEquals(expResult, result, 0.0001);
         
@@ -127,7 +127,7 @@ public class CalculationsControlTest {
         length = 7.0;
         width = 2.0;
         height = 5.0;
-        expResult = 70.0;
+        expResult = -1;
         result = instance.calcVolumeOfBox(length, width, height);
         assertEquals(expResult, result, 0.0001);
     }

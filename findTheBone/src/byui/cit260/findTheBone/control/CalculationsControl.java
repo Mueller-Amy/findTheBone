@@ -24,15 +24,16 @@ public class CalculationsControl {
            volume = legth*width*height
            RETURN area; */
                 
-           if (length < 0 || length > 6 ){//length out of range??
+           if (length <= 0 || length > 6 ){//length out of range??
                return -1;
            }
-           if (width < 0 || width > 6 ) {//width out of range??
+           if (width <= 0 || width > 6 ) {//width out of range??
                return -1;
            }
-           if (height < 0 || height >6){//height out of range??
+           if (height <= 0 || height >6){//height out of range??
                return -1;
            }
+           
            double volume = (length * width * height);
            
            return volume; 
