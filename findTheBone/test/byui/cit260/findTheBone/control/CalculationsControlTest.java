@@ -254,7 +254,7 @@ public class CalculationsControlTest {
         double diameter = 3.0;
         double height = 8.0;
         CalculationsControl instance = new CalculationsControl();
-        double expResult = 56.54867;
+        double expResult = 75.3982;
         double result = instance.calcVolumeOfCylinder(diameter, height);
         assertEquals(expResult, result, 0.0001);
         
@@ -264,7 +264,7 @@ public class CalculationsControlTest {
         System.out.println("\tTest Case #2");
         diameter = 1.0;
         height = 2.0;
-        expResult = 1.5707;
+        expResult = 6.2832;
         result = instance.calcVolumeOfCylinder(diameter, height);
         assertEquals(expResult, result, 0.0001);
         
@@ -324,7 +324,7 @@ public class CalculationsControlTest {
         System.out.println("\tTest Case #8");
         diameter = 0;
         height = 8.0;
-        expResult = -1;
+        expResult = 0.0;
         result = instance.calcVolumeOfCylinder(diameter, height);
         assertEquals(expResult, result, 0.0001);
         
