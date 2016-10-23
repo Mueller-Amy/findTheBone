@@ -146,6 +146,65 @@ public class CalculationsControlTest {
         double result = instance.calcAreaOfBox(length, width);
         assertEquals(expResult, result, 0.0);
         
+        /***********************
+         *   Test case # 2
+         **********************/
+         System.out.println("Test Case 2");
+        length = -2.0;
+        width = 4.0;
+        expResult = -1.0;
+        result = instance.calcAreaOfBox(length, width);
+        assertEquals(expResult, result, 0.0);
+        
+         /***********************
+         *   Test case # 3
+         **********************/
+         System.out.println("Test Case 3");
+        length = 6.0;
+        width = -2.0;
+        expResult = -1.0;
+        result = instance.calcAreaOfBox(length, width);
+        assertEquals(expResult, result, 0.0);
+        
+         /***********************
+         *   Test case # 4
+         **********************/
+         System.out.println("Test Case 4");
+        length = 0.0;
+        width = 6.0;
+        expResult = 0.0;
+        result = instance.calcAreaOfBox(length, width);
+        assertEquals(expResult, result, 0.0);
+        
+         /***********************
+         *   Test case # 5
+         **********************/
+         System.out.println("Test Case 5");
+        length = 6.0;
+        width = 0.0;
+        expResult = 0.0;
+        result = instance.calcAreaOfBox(length, width);
+        assertEquals(expResult, result, 0.0);
+        
+         /***********************
+         *   Test case # 6
+         **********************/
+         System.out.println("Test Case 6");
+        length = 5.0;
+        width = 7.0;
+        expResult = -1.0;
+        result = instance.calcAreaOfBox(length, width);
+        assertEquals(expResult, result, 0.0);
+        
+        /***********************
+         *   Test case # 7
+         **********************/
+         System.out.println("Test Case 7");
+        length = 8.0;
+        width = 2.0;
+        expResult = -1.0;
+        result = instance.calcAreaOfBox(length, width);
+        assertEquals(expResult, result, 0.0);
     }
 
     /*
