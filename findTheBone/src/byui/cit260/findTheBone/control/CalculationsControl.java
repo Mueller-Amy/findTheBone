@@ -15,11 +15,11 @@ public class CalculationsControl {
 
         public double calcVolumeOfBox(double length, double width, double height){
     
-           /*if (length<0 OR length>6) THEN
+           /*if (length<=0 OR length>6) THEN
                RETURN -1
-           if (width<0 OR width>6) THEN
+           if (width<=0 OR width>6) THEN
                    RETURN -1
-           if (height<0 OR height>6) THEN
+           if (height<=0 OR height>6) THEN
                    RETURN -1
            volume = legth*width*height
            RETURN area; */
