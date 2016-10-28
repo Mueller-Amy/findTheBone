@@ -16,6 +16,7 @@ import byui.cit260.findTheBone.model.Player; // Amy Mueller
 import byui.cit260.findTheBone.model.Scene; // Keith Downing
 import byui.cit260.findTheBone.model.TownsPeople;
 import byui.cit260.findTheBone.model.Character; 
+import citbyui.cit260.findTheBone.view.StartProgramView;
 
 /**
  *
@@ -27,7 +28,10 @@ public class FindTheBone {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Player playerOne = new Player();
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+        /*Player playerOne = new Player();
         ItemsWithin itemsWithinOne = new ItemsWithin();
         Clue clueOne = new Clue();
         Item itemOne = new Item();
@@ -138,7 +142,7 @@ public class FindTheBone {
         
         //Class Character print out test- Amy Mueller
         String characterInfo = characterOne.toString();
-        System.out.println(characterInfo);
+        System.out.println(characterInfo);*/
            
         
              
