@@ -32,7 +32,17 @@ public class StartProgramView {
     }
 
     public void displayStartProgramView() {
-        System.out.println("\n*** displayStartProgram() function called ***");
+        /*
+        do
+            prompt for and get playersName
+            if playersName == 'Q' then
+                return
+            
+            do requested action and display next view
+
+        while the view is not done
+        */
+            
     }
     
 }
