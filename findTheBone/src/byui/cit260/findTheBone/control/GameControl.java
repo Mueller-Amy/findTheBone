@@ -10,18 +10,24 @@ import findthebone.FindTheBone;
 
 /**
  *
- * @author Home
+ * @author Keith Downing
  */
 public class GameControl {
 
     public static Player createPlayer(String name) {
-        if (name == null) {
+        
+        if (name == null){
             return null;
         }
+    
         Player player = new Player();
         player.setName(name);
+        
         FindTheBone.setPlayer(player); // save the player
+        
         return player;
     }
     
 }
+    
+
