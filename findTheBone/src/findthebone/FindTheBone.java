@@ -24,6 +24,25 @@ import citbyui.cit260.findTheBone.view.StartProgramView;
  */
 public class FindTheBone {
 
+    public static Game getCurrentgame() {
+        return currentgame;
+    }
+
+    public static void setCurrentgame(Game currentgame) {
+        FindTheBone.currentgame = currentgame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        FindTheBone.player = player;
+    }
+    
+    private static Game currentgame = null;
+    private static Player player = null;
+
     /**
      * @param args the command line arguments
      */

@@ -5,6 +5,10 @@
  */
 package citbyui.cit260.findTheBone.view;
 
+import byui.cit260.findTheBone.control.GameControl;
+import byui.cit260.findTheBone.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author 
@@ -68,13 +72,107 @@ public class StartProgramView {
     }
 
     private String getPlayersName() {
-        System.out.println("\n*** getPlayersName() called ***");
-        return"Joe";
+        /*Here is a generic template for an algorithm to prompt for
+          and get input from and end user.
+        *
+    WHILE valid value is not be entered
+        DISPLAY promptMessage 
+        GET the value entered from keyboard
+        Trim front and trailing blanks off of the name]
+
+        IF the length of the value is blank THEN
+                DISPLAY :"Invalid value: the value can not be blank"
+                CONTINUE
+        ENDIF
+
+        BREAK
+
+    ENDWHILE
+    RETURN name
+         
+    */      
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        
+        while (!valid) { // loop while an invalid value is enter
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = value.trim(); // trim off leading adn trailing blanks
+            
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+        }
+        break; // end the loop
+        
+        }
+        return value; // return the value entered
+               
     }
 
     private boolean doAction(String playersName) {
-        System.out.println("\n*** doAction() called ***");
-        return true;
+        /*Here is the algorithm for the doAction() function
+        *
+            doAction(playersName): boolean
+            BEGIN
+                if the length of the playersName < 2 then
+                display “Invalid name: The name must be > 1 character”
+                    return false
+                    create Player with specified name
+                    if unsuccessful then
+                    display “Invalid name: The name is too short”
+                    return false
+                    display customized welcome message
+                    display mainMenuView
+                return true
+                END
+        */
+        
+        if (playersName.length()<2 ) {
+            System.out.println("\ninvalid players name: "
+                       + "The name must be greater than one character in length");
+            return false;
+                    }
+        // call createPlayer() control function
+        Player player = GameControl.createPlayer(playersName);
+        
+        if (player == null) { // if unsuccessful
+            System.out.println("\nError creating he player.");
+            return false;
+        }
+        // display next view
+        this.displayNextView(player);
+                return true; // success !
+        
     }
 
+    private void displayNextView(Player player) {
+        /*Here is the algorithm for the displayNextView() function
+        *
+        displayNextView(player): Player
+        BEGIN
+            Print a customized welcome message
+            Create the MainMenuView
+            display the MainMenuVIew
+        END
+        */
+        
+        // display a custom welcome message
+        
+         System.out.println("\n=========================================="
+                          + "\n Welcome to the game " + player.getName()
+                          + "\n We hope you have a lot of fun !"
+                          + "\n=========================================="
+                         );
+        // Create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+                
+        //Display the main menu view
+        mainMenuView.displayMainMenuView();
+    
+    }
+
+   
 }    
