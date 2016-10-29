@@ -133,7 +133,7 @@ public class CalculationsControlTest {
     }
 
     /*
-     * Amy Muller - Individual Assignment - Calculate Àrea of the Box
+     * Amy Mueller - Individual Assignment - Calculate Àrea of the Box
      * Test of calcAreaOfBox method, of class CalculationsControl.
      */
     @Test
