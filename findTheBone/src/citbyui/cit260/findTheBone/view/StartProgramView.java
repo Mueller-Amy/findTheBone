@@ -175,6 +175,7 @@ public class StartProgramView {
     }
     public class MainMenuView {
         private String menu;
+        private String promptMessage;
 
         public MainMenuView() {
             this.menu = "\n"
@@ -193,7 +194,7 @@ public class StartProgramView {
             do {
                 // prompt for and get players name
                 String menuOption = this.getMenuOption();
-                if (menuOption.toUpperCase().equals("Q")) //user wants to quit
+                if (menuOption.toUpperCase().equals("X")) //user wants to quit
                     return; // Exit game
                 
                 // Do the requested action and display the next view
@@ -204,20 +205,64 @@ public class StartProgramView {
             }
 
         private String getMenuOption() {
-            System.out.println("\n*** getMenuOption() function called ***");
-            return "N";
+             Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        
+        while (!valid) { // loop while an invalid value is enter
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = value.trim(); // trim off leading and trailing blanks
+            
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
         }
-
-        private boolean doAction(String menuOption) {
-            System.out.println("\n*** doAction() function called ***");
-            return true;
+        break; // end the loop
+        
+        }
+        return value; // return the value entered
         }
         
+        private boolean doAction(String choice) {
+            choice = choice.toUpperCase(); // convert choice to uppercase
+            
+            switch (choice) {
+                case "N": //Creates a new game
+                    this.startNewGame();
+                    break;
+                case "L": //Loads existing game
+                    this.startExistingGame();
+                    break;
+                case "S": // Saves game
+                    this.saveGame();
+                    break;
+                case"H": //Displays Help Menu
+                    this.displayHelpMenu();
+                    break;
+                default:
+                    System.out.println("\n*** Invalid selection *** Try Again");
+                    break;
+                
+            }
+            return false;
+        }
+        private void startNewGame(){
+            System.out.println("*** startNewGame function called ***");
+        }
+        private void startExistingGame() {
+            System.out.println("*** startExistingGame function called ***");
+        }
+        private void saveGame() {
+            System.out.println("*** saveGame function called ***");     
         
         }
-        
+        private void displayHelpMenu() {
+            System.out.println("*** displayHelpMenu function called ***");
+        }  
             
                 
     }
    
-
+}
