@@ -147,8 +147,7 @@ public class StartProgramView {
                 return true; // success !
         
     }
-
-    private void displayNextView(Player player) {
+       private void displayNextView(Player player) {
         /*Here is the algorithm for the displayNextView() function
         *
         displayNextView(player): Player
@@ -173,6 +172,7 @@ public class StartProgramView {
         mainMenuView.displayMainMenuView();
     
     }
+    
 
    
 }    
