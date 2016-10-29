@@ -165,14 +165,15 @@ public class StartProgramView {
                           + "\n We hope you have a lot of fun !"
                           + "\n=========================================="
                          );
-        // Create MainMenuView object
-        MainMenuView mainMenuView = new MainMenuView();
+        
+    // Create MainMenuView object
+    MainMenuView mainMenuView = new MainMenuView();
                 
-        //Display the main menu view
-        mainMenuView.displayMainMenuView();
-    
+    //Display the main menu view
+    mainMenuView.displayMainMenuView();
     }
+}       
     
 
    
-}    
+

@@ -10,18 +10,28 @@ import findthebone.FindTheBone;
 
 /**
  *
- * @author Home
+ * @author Keith Downing
  */
 public class GameControl {
 
     public static Player createPlayer(String name) {
-        if (name == null) {
+        
+        if (name == null){
             return null;
         }
+    
         Player player = new Player();
         player.setName(name);
+        
         FindTheBone.setPlayer(player); // save the player
+        
         return player;
+    }
+
+    public static void createNewGame(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
+    
+
