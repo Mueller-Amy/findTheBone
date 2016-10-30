@@ -147,9 +147,20 @@ public class StartProgramView {
                 return true; // success !
         
     }
-
-    private void displayNextView(Player player) {
-        System.out.println("\n=========================================="
+       private void displayNextView(Player player) {
+        /*Here is the algorithm for the displayNextView() function
+        *
+        displayNextView(player): Player
+        BEGIN
+            Print a customized welcome message
+            Create the MainMenuView
+            display the MainMenuVIew
+        END
+        */
+        
+        // display a custom welcome message
+        
+         System.out.println("\n=========================================="
                           + "\n Welcome to the game " + player.getName()
                           + "\n We hope you have a lot of fun !"
                           + "\n=========================================="
@@ -161,8 +172,8 @@ public class StartProgramView {
     //Display the main menu view
     mainMenuView.displayMainMenuView();
     }
-            
-                
-    }
+}       
+    
+
    
 
