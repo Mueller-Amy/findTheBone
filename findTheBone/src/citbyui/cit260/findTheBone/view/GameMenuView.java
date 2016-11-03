@@ -8,9 +8,9 @@ package citbyui.cit260.findTheBone.view;
 
 /**
  *
- * @author Keith Downing
+ * @author Keith Downing 
  */
-class GameMenuView {
+ class GameMenuView {
 
     void displayMenu() {
         //Comment
