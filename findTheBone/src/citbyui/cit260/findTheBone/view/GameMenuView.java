@@ -12,6 +12,7 @@ package citbyui.cit260.findTheBone.view;
 class GameMenuView {
 
     void displayMenu() {
+        //Comment
         System.out.println("*** New Game Function Displayed. ***");
     }
     
