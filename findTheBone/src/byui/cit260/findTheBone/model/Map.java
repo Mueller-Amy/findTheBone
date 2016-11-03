@@ -12,6 +12,10 @@ import java.io.Serializable;
  * @author Amy Mueller
  */
 public class Map implements Serializable{
+
+    public static void setName(String name) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     //class instance variables
     private int rowCount;

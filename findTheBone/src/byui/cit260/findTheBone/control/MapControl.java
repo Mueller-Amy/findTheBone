@@ -5,10 +5,31 @@
  */
 package byui.cit260.findTheBone.control;
 
+import byui.cit260.findTheBone.model.Map;
+import byui.cit260.findTheBone.model.Player;
+import findthebone.FindTheBone;
+
 /**
  *
  * @author Home
  */
 public class MapControl {
+    public static Map createMap(String name) {
+        
+        if (name == null){
+            return null;
+        }
+    
+        Map map = new Map();
+        map.setName(name);
+        
+        FindTheBone.setMap(map); // save the map
+        
+        return map;
+    }
+
+    public static void createNewGame(Player player) {
+        System.out.println("*** New Game Function displayed. ***");
+    }
     
 }
