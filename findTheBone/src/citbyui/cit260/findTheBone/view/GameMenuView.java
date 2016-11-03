@@ -43,7 +43,7 @@ public class GameMenuView {
                     + "\nI - List of Items"
                     + "\nT - Time Used"
                     + "\nL - What is in Backpack"
-                    + "\nC - Area of a cylinder"
+                    + "\nC - Volume of a cylinder"
                     + "\nB - Area of a box"
                     + "\nH - Help"
                     + "\nX - Exit"
@@ -112,14 +112,14 @@ public class GameMenuView {
                 case "L": // What is in Backpack
                     this.inBackpack();
                     break;
-                case "C": // area of cylinder
-                    this.areaOfCylinder();
+                case "C": // volume of cylinder
+                    this.volumeOfCylinder();
                     break;
                 case "B": // Area of Box
                     this.areaOfBox();
                     break;
                 case "H": // Help
-                    this.help();
+                    this.displayHelpMenu();
                     break;
                 case "X": // Exit
                     this.exit();
@@ -151,21 +151,26 @@ public class GameMenuView {
     
     }
 
-    private void areaOfCylinder() {
-        System.out.println("*** areaOf Cylinder function called ***"); 
+    private void volumeOfCylinder() {
+        System.out.println("*** volumeOf Cylinder function called ***"); 
     }
 
     private void areaOfBox() {
         System.out.println("*** areaOfBox function called ***");    
     }
 
-    private void help() {
-        System.out.println("*** help function called ***");     
-    }
+    
 
     private void exit() {
         System.out.println("*** exit function called ***");    
     }
+
+    
+    private void displayHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenuView();
+    }
+
 }
 
 
