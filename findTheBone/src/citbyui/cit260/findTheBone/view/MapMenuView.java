@@ -7,8 +7,7 @@ package citbyui.cit260.findTheBone.view;
 
 
 
-import byui.cit260.findTheBone.control.MapControl;
-import findthebone.FindTheBone;
+
 import java.util.Scanner;
 
 /**
