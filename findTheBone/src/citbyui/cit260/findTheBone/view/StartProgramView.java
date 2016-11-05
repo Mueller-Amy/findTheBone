@@ -90,7 +90,9 @@ public class StartProgramView {
     ENDWHILE
     RETURN name
          
-    */      
+    */   
+        
+        
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
