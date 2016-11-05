@@ -54,7 +54,7 @@ public class MainMenuView{
             
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading adn trailing blanks
-            
+
             if (value.length() < 1) { // value is blank
                 System.out.println("\nInvalid value: value can not be blank");
                 continue;
