@@ -1,17 +1,19 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package citbyui.cit260.findTheBone.view;
-
-/**
+import java.util.Scanner;
+ /**
  *
  * @author Amy Mueller
  */
+/*
 public class VolumeOfBoxView {
    
-    
+ 
     public String getInput() {
     
         Scanner keyboard = new Scanner(System.in);
@@ -61,3 +63,4 @@ public class VolumeOfBoxView {
 
 
 
+*/
