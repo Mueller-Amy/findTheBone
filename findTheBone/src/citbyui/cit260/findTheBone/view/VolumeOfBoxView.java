@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,10 +7,12 @@
 package citbyui.cit260.findTheBone.view;
 import java.util.Scanner;
 /**
+ /**
  *
  * @author Amy Mueller
  */
-public class VolumeOfBoxView {
+
+/**public class VolumeOfBoxView {
    String promptMessages = "\n"
            "+\n=================="
            "+\n| Enter the width of the box:"
@@ -59,3 +62,4 @@ public class VolumeOfBoxView {
 
 
 
+*/
