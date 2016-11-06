@@ -11,6 +11,8 @@ package citbyui.cit260.findTheBone.view;
 
 import java.util.Scanner;
 import byui.cit260.findTheBone.control.CalculationsControl;
+import byui.cit260.findTheBone.control.GameControl;
+import findthebone.FindTheBone;
 
 public class VolumeOfCylinderView {
 
@@ -97,9 +99,7 @@ public class VolumeOfCylinderView {
         }
         return height;
     }
-            
-    
-
+           
 
 private void doAction() {
            double diameter = getDiameter();
@@ -109,18 +109,23 @@ private void doAction() {
            double volume = calcControl.calcVolumeOfCylinder(diameter, height);
     
         }
+
+    
+
+
+
+
+
+
+
+
+
+
+
 }
  
+   
     
     
     
-    
-   /* public double calcVolumeOfCylinder(double diameter, double height){
-            if (diameter < 0 || diameter > 3)
-                return -1;
-            if (height < 0 || height > 8)
-                return -1;
-            
-            double volume =(diameter * Math.PI * height);
-            return volume;
-    */
+  
