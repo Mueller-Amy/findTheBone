@@ -44,21 +44,31 @@ public final class ComplexCalculationDiagonal {
      
     /**
      * display the banner
-     * display to get input values 3 times
+     * 
      */
     
     /** 
-     * initialize the counter - 3 times
-     *    DO   --  begin getting input values
+     * start the logical variable
+     * start the counter - 3 times
+     *    DO - WHILE ( done = false)-- start of a condition block 
+     *      begin getting input values
      *         prompt to get the length
      *         prompt to get the width
-     *      if RETURN == -1 {
-     *             message Invalid Values - try again
-     *             add 1 to counter
-     *           else
-     *                 call doAction to do the calculate and congrats
+     *      
+     *   call doAction to do the calculate,check 
+     *         valid or invalids values , checking errors , return done value
+     *   add 1 to counter
+     *   if counter == 4(--- the user had doing the 3 chances, 
+     *              if YES the user lost the game 
+     *          pause the screen to until user press a key          
+     *          
      * }
-     * while 
+     * end of WHILE --- (if done FALSE AND not used the three attempts repeat DO-WHILE)
+     *                   if done TRUE get out from DO-WHILE 
+     *                   or if attempts is >= 4 get out from DO-WHILE>
+     *                   
+     * return to start a game
+     *          
      */
         
     public void displayRectangleDiagonal() {
@@ -83,20 +93,33 @@ public final class ComplexCalculationDiagonal {
                            + "\n                   GAME OVER                 *"
                            + "\n**********************************************");
                    
-                   promptEnterKey();
+                   promptEnterKey();// a pause to exit when user press the keyboard
                }
     }       
-            while (!done && counter < 4);
-            
-            //create a StartProgramViewOrig and display the start program view
+            while (!done && counter < 4); // while done =false AND counter <4 repeat
+            // return to the start programm menu
+            //create a StartProgramView and display the start program view
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
     }
-
+    
+    /* call a function within CalculationsControl class to calculate the diagonal
+     * if RETURN == -1 {
+     *             message Invalid Values - try again
+     *             return false to done variable
+     *  else
+     *          THE CALCULATON IS CORRECT AND THE USER WIN THE GAME. The congratulations message
+     *     will display to the user. And return TRUE value to DONE variable to get out
+     *     from the previous DO-WHILE.
+     *        
+    */
     private boolean doAction(double length, double width) {
-            
+         // create a new instance of CalculationsControl classe.
+         // call calcDiagonalRectangle function within CalculatonsControl class
+         // to calculate the diagonal of a rectangle and set the result to diagonal variable
         CalculationsControl newDiagonal = new CalculationsControl();
         double diagonal = newDiagonal.calcDiagonalRectangle(length,width);
+        
              
                          
                if (diagonal == -1.0) {
@@ -111,12 +134,12 @@ public final class ComplexCalculationDiagonal {
                            + "\n*      Congratulations !!! You found the bone.    *"  
                            + "\n                    GAME OVER                     *"
                            + "\n***************************************************");
-       promptEnterKey();
+       promptEnterKey();// a pause to exit when user press the keyboard
                    return true;
                                }
                    }
               
-     
+     // to get input values from the user
     private double getLength() {
         
 		//create an input file for the console
