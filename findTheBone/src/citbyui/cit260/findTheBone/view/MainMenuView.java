@@ -27,7 +27,7 @@ public class MainMenuView{
                     + "\nS - Save Game"
                     + "\nH - Help"
                     + "\nA - Action Menu - (it's a temporary place)"
-                    + "\nX - Exit"
+                    + "\nQ - Quit the Game"
                     + "\n==========================================";
     }
     
@@ -36,8 +36,8 @@ public class MainMenuView{
         do {
             // prompt for and get players name
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("X")) //user wants to quit
-                return; // Exit game
+            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
+                return; // Quit the game
                 
             // Do the requested action and display the next view
             done = this.doAction(menuOption);
