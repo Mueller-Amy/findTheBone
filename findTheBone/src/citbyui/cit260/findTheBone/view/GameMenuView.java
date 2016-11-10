@@ -115,8 +115,8 @@ public class GameMenuView {
                 case "C": // volume of cylinder
                     this.volumeOfCylinder();
                     break;
-                case "B": // Area of Box
-                    this.areaOfBox();
+                case "B": // Volume of Box
+                    this.volumeOfBox();
                     break;
                 case "H": // Help
                     this.displayHelpMenu();
@@ -155,8 +155,9 @@ public class GameMenuView {
         System.out.println("*** volumeOf Cylinder function called ***"); 
     }
 
-    private void areaOfBox() {
-        System.out.println("*** areaOfBox function called ***");    
+    private void volumeOfBox() {
+        VolumeOfBoxView volumeView = new VolumeOfBoxView();
+        volumeView.getVolume();
     }
 
     
