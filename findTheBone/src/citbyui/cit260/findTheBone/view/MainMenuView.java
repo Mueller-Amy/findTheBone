@@ -13,13 +13,14 @@ import java.util.Scanner;
  *
  * @author Keith Downing
  */
-public class MainMenuView{
+public class MainMenuView extends View{
     //private String menu;
-    private String promptMessage;
+  //  private String promptMessage;
 
-    public MainMenuView() {
-        this.promptMessage = "\n"
-                    + "\n=========================================="
+  //  public MainMenuView() {
+  //      this.promptMessage = "\n"
+    public MainMenuView(){
+             super("\n=========================================="
                     + "\n| Main Menu                              |"
                     + "\n=========================================="
                     + "\nN - Start New Game"
@@ -28,10 +29,10 @@ public class MainMenuView{
                     + "\nH - Help"
                     + "\nA - Action Menu - (it's a temporary place)"
                     + "\nQ - Quit the Game"
-                    + "\n==========================================";
+                    + "\n==========================================");
     }
     
-    public void displayMainMenuView(){
+ /*   public void displayMainMenuView(){
         boolean done = false; // set flag to not done
         do {
             // prompt for and get players name
@@ -43,9 +44,10 @@ public class MainMenuView{
             done = this.doAction(menuOption);
                 
         }while (!done);
-    }
+   }
+ */
 
-    private String getMenuOption() {
+ /*  private String getMenuOption() {
        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
@@ -67,7 +69,7 @@ public class MainMenuView{
                
     }
     
-
+*/
     private boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to uppercase
             
