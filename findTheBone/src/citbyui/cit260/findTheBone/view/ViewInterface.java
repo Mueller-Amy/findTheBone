@@ -13,6 +13,12 @@ public interface ViewInterface {
     
     public void display();
     public String getInput();
-    public boolean doAtion(String value);
+
+    /**
+     *
+     * @param value
+     * @return
+     */
+    public boolean doAction(String value);
     
 }

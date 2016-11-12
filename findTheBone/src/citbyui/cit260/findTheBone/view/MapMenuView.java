@@ -14,12 +14,12 @@ import java.util.Scanner;
  *
  * @author Keith Downing
  */
-public class MapMenuView {
+public class MapMenuView extends View{
     //private String menu;
-    private String promptMessage;
+   // private String promptMessage;
 
     public MapMenuView() {
-        this.promptMessage = "\n"
+        super( "\n"
                     + "\n=========================================="
                     + "\n| Map Menu                              |"
                     + "\n=========================================="
@@ -28,10 +28,10 @@ public class MapMenuView {
                     + "\nC - Column"
                     + "\nS - Save Game"
                     + "\nX - Exit Map Menu"
-                    + "\n==========================================";
+                    + "\n==========================================");
     }
     
-    public void displayMapMenuView(){
+    /*public void displayMapMenuView(){
         boolean done = false; // set flag to not done
         do {
             // prompt for and get players name
@@ -44,7 +44,8 @@ public class MapMenuView {
                 
         }while (!done);
     }
-
+*/
+    /*
     private String getMenuOption() {
        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
@@ -66,9 +67,10 @@ public class MapMenuView {
         return value; // return the value entered
                
     }
-    
+   */ 
 
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to uppercase
             
             switch (choice) {

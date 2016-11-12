@@ -7,16 +7,16 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.GameControl;
 import byui.cit260.findTheBone.model.Player;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
  * @author 
  */
-public class StartProgramView {
-    private String promptMessage;
+public class StartProgramView extends View{
+    //private String promptMessage;
         public StartProgramView() {
-            this.promptMessage = "\nPlease, enter your name:" ; //promptMessage ="Please, enter your name"
+            super( "\nPlease, enter your name:" ); //promptMessage ="Please, enter your name"
             this.displayBanner(); //display the banner when view is created
     }
 
@@ -50,7 +50,7 @@ public class StartProgramView {
     /**
      * display the start menu view
      */
-    public void displayStartProgramView() {
+    /*public void displayStartProgramView() {
         boolean done = false;
             //         do
             do {  
@@ -63,28 +63,9 @@ public class StartProgramView {
     }       
             while (!done);
     }
-
-    private String getPlayersName() {
-        /*Here is a generic template for an algorithm to prompt for
-          and get input from and end user.
-        *
-    WHILE valid value is not be entered
-        DISPLAY promptMessage 
-        GET the value entered from keyboard
-        Trim front and trailing blanks off of the name]
-
-        IF the length of the value is blank THEN
-                DISPLAY :"Invalid value: the value can not be blank"
-                CONTINUE
-        ENDIF
-
-        BREAK
-
-    ENDWHILE
-    RETURN name
-         
-    */   
-        
+*/
+ /*   private String getPlayersName() {
+       
         
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
@@ -106,25 +87,10 @@ public class StartProgramView {
         return value; // return the value entered
                
     }
+    */
     @Override
-    private boolean doAction(String playersName) {
-        /*Here is the algorithm for the doAction() function
-        *
-            doAction(playersName): boolean
-            BEGIN
-                if the length of the playersName < 2 then
-                display “Invalid name: The name must be > 1 character”
-                    return false
-                    create Player with specified name
-                    if unsuccessful then
-                    display “Invalid name: The name is too short”
-                    return false
-                    display customized welcome message
-                    display mainMenuView
-                return true
-                END
-        */
-        
+    public boolean doAction(String playersName) {
+                
         if (playersName.length()<2 ) {
             System.out.println("\ninvalid players name: "
                        + "The name must be greater than one character in length");
@@ -165,7 +131,7 @@ public class StartProgramView {
     MainMenuView mainMenuView = new MainMenuView();
                 
     //Display the main menu view
-    mainMenuView.displayMainMenuView();
+    mainMenuView.display();
     }
 }       
     

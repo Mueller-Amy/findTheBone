@@ -5,20 +5,20 @@
  */
 package citbyui.cit260.findTheBone.view;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
  * @author Keith Downing
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     
     //private String menu;
-    private String promptMessage;
+   // private String promptMessage;
     //private Object helpMenu;
 
     public HelpMenuView() {
-        this.promptMessage = "\n"
+        super( "\n"
                     + "\n=========================================="
                     + "\n| Help Menu                              |"
                     + "\n=========================================="
@@ -34,9 +34,9 @@ public class HelpMenuView {
                     + "\nG - Give an item from your backpack to the character in the area."
                     + "\nM - Map"
                     + "\nX - Exit"
-                    + "\n==========================================";
+                    + "\n==========================================");
     }
-    public void displayHelpMenuView(){
+    /*public void displayHelpMenuView(){
         boolean done = false; // set flag to not done
         do {
             // prompt for and get players name
@@ -49,8 +49,10 @@ public class HelpMenuView {
                 
         }while (!done);
     }
+*/
+    
 
-    private String getMenuOption() {
+    /*private String getMenuOption() {
        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
@@ -71,9 +73,10 @@ public class HelpMenuView {
         return value; // return the value entered
                
     }
-    
+    */
 
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to uppercase
             
             switch (choice) {

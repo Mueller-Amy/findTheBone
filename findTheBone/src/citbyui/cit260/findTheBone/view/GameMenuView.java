@@ -23,19 +23,19 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.GameControl;
 import byui.cit260.findTheBone.model.Player;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
  * @author Amy Mueller
  */
-public class GameMenuView {
+public class GameMenuView extends View{
     //private String menu;
-    private String promptMessage;
+    //private String promptMessage;
       public GameMenuView() {
 
    // public GameMenuView() {
-        this.promptMessage = "\n"
+        super( "\n"
                     + "\n=========================================="
                     + "\n| Game Menu                             |"
                     + "\n=========================================="
@@ -47,10 +47,10 @@ public class GameMenuView {
                     + "\nB - Area of a box"
                     + "\nH - Help"
                     + "\nX - Exit"
-                    + "\n==========================================";
+                    + "\n==========================================");
     }
     
-    public void displayGameMenuView(){
+   /* public void displayGameMenuView(){
         boolean done = false; // set flag to not done
         do {
             // prompt for and get players name
@@ -64,8 +64,9 @@ public class GameMenuView {
                 
         }while (!done);
     }
+*/
 
-    private String getMenuOption() {
+   /* private String getMenuOption() {
        Scanner keyboard = new Scanner(System.in); 
        String value = "";
        boolean valid = false; 
@@ -91,7 +92,8 @@ public class GameMenuView {
                
     }
     
-
+*/
+      @Override
     public boolean doAction(String choice) {
 
         choice = choice.toUpperCase();
@@ -169,7 +171,7 @@ public class GameMenuView {
     
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     void displayMenu() {

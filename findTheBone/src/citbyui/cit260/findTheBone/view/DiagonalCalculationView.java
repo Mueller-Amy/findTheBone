@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Jean
  */
-public final class ComplexCalculationDiagonal {
+public final class DiagonalCalculationView {
 
     
     
@@ -21,7 +21,7 @@ public final class ComplexCalculationDiagonal {
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
 }
-        public ComplexCalculationDiagonal() {
+        public DiagonalCalculationView() {
                         this.displayBanner(); //display the banner when view is created
     }
 
@@ -100,7 +100,7 @@ public final class ComplexCalculationDiagonal {
             // return to the start programm menu
             //create a StartProgramView and display the start program view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
     }
     
     /* call a function within CalculationsControl class to calculate the diagonal
@@ -148,11 +148,11 @@ public final class ComplexCalculationDiagonal {
 			
 		System.out.println("\nPlease, enter the Triangle Length value:"); // prompt user to enter length
 		
-		double length = inFile.nextDouble(); // get weight entered from console
-		return length;
-		
+        double length = inFile.nextDouble(); // get weight entered from console
+	return length;	
+     
+    
     }
-
     private double getWidth() {
         //create an input file for the console
 		Scanner inFile;
@@ -162,8 +162,16 @@ public final class ComplexCalculationDiagonal {
 		
 		double width = inFile.nextDouble(); // get weight entered from console
 		return width;
+                
+
+
+
+    }
+
+
+
     }
 
    
 
-}
+ 

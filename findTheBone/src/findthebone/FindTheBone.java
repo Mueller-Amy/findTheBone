@@ -51,7 +51,7 @@ public class FindTheBone {
     public static void main(String[] args) {
         //create a StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
         
            
         

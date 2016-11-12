@@ -5,12 +5,16 @@
  */
 package citbyui.cit260.findTheBone.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Amy Mueller
  */
 public abstract class View implements ViewInterface{
     protected String displayMessage;
+    private String value;
+  
     
     public View() {
     }
@@ -35,11 +39,11 @@ public abstract class View implements ViewInterface{
     }
     
     @Override 
-    private String getInput() {
+    public String getInput() {
       
         Scanner keyboard = new Scanner(System.in); // get infile for keyboar
         boolean valid = false; // initialize to not valid
-        String value = null; // value to be returned
+        //String value = null; // value to be returned
         
         while (!valid) { // loop while an invalid value is enter
             System.out.println("\n" + this.displayMessage);
@@ -57,4 +61,5 @@ public abstract class View implements ViewInterface{
         return value; // return the value entered
                
     }
+}
     

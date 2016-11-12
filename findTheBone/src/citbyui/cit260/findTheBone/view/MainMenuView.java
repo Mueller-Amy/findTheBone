@@ -7,7 +7,7 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.GameControl;
 import findthebone.FindTheBone;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
@@ -70,7 +70,9 @@ public class MainMenuView extends View{
     }
     
 */
-    private boolean doAction(String choice) {
+    
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to uppercase
             
             switch (choice) {
@@ -103,7 +105,7 @@ public class MainMenuView extends View{
     
         // Display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
        
     }
 
@@ -117,11 +119,11 @@ public class MainMenuView extends View{
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
     private void displayActionMenu() {
         ActionMenuView actionMenu = new ActionMenuView();
-        actionMenu.displayActionMenuView();
+        actionMenu.display();
     }
 
     

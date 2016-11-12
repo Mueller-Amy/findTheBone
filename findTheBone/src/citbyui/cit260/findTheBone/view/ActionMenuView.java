@@ -5,18 +5,18 @@
  */
 package citbyui.cit260.findTheBone.view;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
  * @author Jean
  */
-public class ActionMenuView {
-    private String menu;
-    private String promptMessage = this.promptMessage = "\nPlease, enter your option:" ; //promptMessage ="Please, enter your name"
+public class ActionMenuView extends View{
+    //private String menu;
+    //private String promptMessage = this.promptMessage = "\nPlease, enter your option:" ; //promptMessage ="Please, enter your name"
     
     public ActionMenuView() {
-           this.menu = "\n"
+           super("\n"
                      + "\n-------------------------------------"
                      + "\n|            Action Menu              |"
                      + "\n-------------------------------------"
@@ -29,22 +29,11 @@ public class ActionMenuView {
                      + "\nM - Display the Map"
                      + "\nC - Complex Calculation - Diagonal Rectangle."
                      + "\nE - Exit to Main Menu"
-                     + "\n-------------------------------------";
+                     + "\n-------------------------------------");
        }
     
-    public void displayActionMenuView() {
-        /*Basic template for displaying a view:
+    /*public void displayActionMenuView() {
         
-        displayView(): void
-            BEGIN
-                do
-                Prompt for and get the input value/s
-                if (value == “Q”) then
-                exit
-                do the action and display the next view
-                while the view is not done
-            END 
-        */
         System.out.println("\n" + this.menu);
         
         boolean done = false; // set flag to not done
@@ -60,24 +49,10 @@ public class ActionMenuView {
              System.out.println("\n" + this.menu);
         } while (!done);
         }
-    private String getMenuOption() {
-        /*
-        A template for getting user input:
-        getInput(): value
-            BEGIN
-                WHILE a valid value has not been entered
-                    DISPLAY a message prompting the user to enter a value
-                    GET the value entered from keyboard
-                    Trim front and trailing blanks off of the value
-                    IF the length of the value is blank THEN
-                        DISPLAY “Invalid value: The value cannot be blank”
-                        CONTINUE
-                    ENDIF
-                    BREAK
-                ENDWHILE
-                RETURN value
-            END
-        */
+    */
+    
+   /* private String getMenuOption() {
+        
         
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         String value = ""; // value to be returned
@@ -102,25 +77,11 @@ public class ActionMenuView {
         return value; // return the value entered
                
     }
-    private boolean doAction(String choice) {
+    */
+    @Override
+    public boolean doAction(String choice) {
         
-        /*    doAction(choice): void
-            BEGIN
-                convert choice to upper case
-                    SWITCH choice
-                    L =	Look. Provides details about the surrounding area.
-                    S =	Search. Prompts the user to search around the area.
-                    D = Dig. Dig around. Search is above ground items.
-                    A =	Asking - Allows the users to ask question a person in the area. 
-                    I = Inventory - Display Inventory of Items\Clues
-                    G - Give an item from your backpack to the character in the area
-                    C - Complex Calculation - Diagonal Rectangle 
-                    M =	Map - Display the map.
-                    DEFAULT: DISPLAY “Invalid selection”
-                    ENDSWITCH
-                RETURN false
-            END
-        */
+       
         
         choice = choice.toUpperCase(); // convert choice to upper case
         switch (choice) {
@@ -187,7 +148,7 @@ public class ActionMenuView {
 
     private void actionComplexCalculationDiagonal() {
                
-       ComplexCalculationDiagonal rectangleDiagonal = new ComplexCalculationDiagonal();
+       DiagonalCalculationView rectangleDiagonal = new DiagonalCalculationView();
                 rectangleDiagonal.displayRectangleDiagonal();
     
     }
