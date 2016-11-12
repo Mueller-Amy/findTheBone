@@ -49,6 +49,8 @@ public class StartProgramView extends View{
     }
     /**
      * display the start menu view
+     * @param playersName
+     * @return 
      */
     /*public void displayStartProgramView() {
         boolean done = false;
