@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Amy Mueller
  */
-public abstract class View implements ViewInterface{
+public  abstract class View implements ViewInterface{
     protected String displayMessage;
     private String value;
   
@@ -30,7 +30,7 @@ public abstract class View implements ViewInterface{
             do {  
             //  prompt for and get playersName
                String playersName = this.getInput();
-               if (value.toUpperCase().equals("Q")) // user wants to Quit
+               if (value.toUpperCase().equals("X")) // user wants to Exit
                return;  //exit the game
                //do the requested action and display next view 
                done = this.doAction(value);

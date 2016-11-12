@@ -28,7 +28,7 @@ public class MainMenuView extends View{
                     + "\nS - Save Game"
                     + "\nH - Help"
                     + "\nA - Action Menu - (it's a temporary place)"
-                    + "\nQ - Quit the Game"
+                    + "\nX - Exit the Game"
                     + "\n==========================================");
     }
     
