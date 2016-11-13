@@ -28,7 +28,7 @@ public class ActionMenuView extends View{
                      + "\nG - Give an item from your backpack to the character in the area"
                      + "\nM - Display the Map"
                      + "\nC - Complex Calculation - Diagonal Rectangle."
-                     + "\nE - Exit to Main Menu"
+                     + "\nX - Exit"
                      + "\n-------------------------------------");
        }
     
