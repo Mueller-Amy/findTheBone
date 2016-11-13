@@ -108,7 +108,7 @@ public class MainMenuView extends View{
         gameMenu.display();
        
     }
-
+        
     private void startExistingGame() {
         System.out.println("*** startExistingGame function called ***");
     }

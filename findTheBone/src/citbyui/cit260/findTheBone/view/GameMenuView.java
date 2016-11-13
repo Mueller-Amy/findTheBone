@@ -40,7 +40,7 @@ public class GameMenuView extends View{
                     + "\n| Game Menu                             |"
                     + "\n=========================================="
                     + "\nV - View Map"
-                    + "\nI - List of Items"
+                    + "\nI - Inventory"
                     + "\nT - Time Used"
                     + "\nL - What is in Backpack"
                     + "\nC - Volume of a cylinder"
@@ -104,7 +104,7 @@ public class GameMenuView extends View{
                     break;
 
                 case "I": //List of items
-                    this.listOfItems();
+                    this.inventory();
                     break;
 
                 case "T": //Time Used
@@ -140,8 +140,9 @@ public class GameMenuView extends View{
     
     }
 
-    private void listOfItems() {
-        System.out.println("*** listOfItems function called ***"); 
+    private void inventory() {
+          InventoryView inventory = new InventoryView();
+        inventory.display();
     }
 
     private void timeUsed() {
