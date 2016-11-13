@@ -13,18 +13,13 @@ public class GamePlayView extends View{
      //private String menu;
      //  private String promptMessage;
      //private String currentLocation = "Zoo - Tiger Lodge"; //starting variable to test
-     // starting locationDetails variable to test
-     // private String locationDetails = ("\n You look around.There are a lot of wild cats in this part of town... " );
-     //private String actualTime = "10:30"; // starting variable to test
-
-  //  public MainMenuView() {
-  //      this.promptMessage = "\n"
-    public GamePlayView(){
+    
+    public GamePlayView(){          // ahead we replace Time, Currentt location and Details with variable value 
              super(   "\n==============================================================="
                     + "\n|                     Game Play Screen                        |"
                     + "\n==============================================================="
                     + "\n                      Time = 10:30 PM                          " 
-                    + "\n         Current location -->Zoo - Tiger Lodge                 "
+                    + "\n         Current location -->Zoo - Tiger Lodge                 " 
                     + "\n         Location Details -->  You look around.                "
                     + "\n          There are a lot of wild cats in this part of town... "
                     + "\n---------------------------------------------------------------"
