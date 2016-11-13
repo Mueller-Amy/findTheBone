@@ -7,8 +7,8 @@ package citbyui.cit260.findTheBone.view;
 
 import java.util.Scanner;
 
-/**
- *
+/**********
+ ******
  * @author Amy Mueller
  */
 public  abstract class View implements ViewInterface{

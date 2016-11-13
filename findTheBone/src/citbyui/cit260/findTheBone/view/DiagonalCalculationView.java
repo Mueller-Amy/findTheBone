@@ -93,14 +93,14 @@ public final class DiagonalCalculationView {
                            + "\n                   GAME OVER                 *"
                            + "\n**********************************************");
                    
-                   promptEnterKey();// a pause to exit when user press the keyboard
+                  // promptEnterKey();// a pause to exit when user press the keyboard
                }
     }       
             while (!done && counter < 4); // while done =false AND counter <4 repeat
             // return to the start programm menu
             //create a StartProgramView and display the start program view
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
+        //StartProgramView startProgramView = new StartProgramView();
+        //startProgramView.display();
     }
     
     /* call a function within CalculationsControl class to calculate the diagonal
@@ -134,7 +134,7 @@ public final class DiagonalCalculationView {
                            + "\n*      Congratulations !!! You found the bone.    *"  
                            + "\n                    GAME OVER                     *"
                            + "\n***************************************************");
-       promptEnterKey();// a pause to exit when user press the keyboard
+       //promptEnterKey();// a pause to exit when user press the keyboard
                    return true;
                                }
                    }
