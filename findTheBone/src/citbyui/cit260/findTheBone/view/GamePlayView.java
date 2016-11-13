@@ -1,0 +1,107 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package citbyui.cit260.findTheBone.view;
+
+/**
+ *
+ * @author Jean Oliveira
+ */
+public class GamePlayView extends View{
+     //private String menu;
+     //  private String promptMessage;
+     //private String currentLocation = "Zoo - Tiger Lodge"; //starting variable to test
+     // starting locationDetails variable to test
+     // private String locationDetails = ("\n You look around.There are a lot of wild cats in this part of town... " );
+     //private String actualTime = "10:30"; // starting variable to test
+
+  //  public MainMenuView() {
+  //      this.promptMessage = "\n"
+    public GamePlayView(){
+             super(   "\n==============================================================="
+                    + "\n|                     Game Play Screen                        |"
+                    + "\n==============================================================="
+                    + "\n                      Time = 10:30 PM                          " 
+                    + "\n         Current location -->Zoo - Tiger Lodge                 "
+                    + "\n         Location Details -->  You look around.                "
+                    + "\n          There are a lot of wild cats in this part of town... "
+                    + "\n---------------------------------------------------------------"
+                    + "\n                    What do you want to do?                    "
+                    + "\n==============================================================="
+                    + "\n                 (A)Actions - (M)Map - (X)Exit                 "
+                    + "\n===============================================================");
+    }
+    
+ /*   public void displayGamePlayMenuView(){
+        boolean done = false; // set flag to not done
+        do {
+            // prompt for and get user choice
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("X")) //user wants to quit
+                return; // Quit the GamePlayMenu
+                
+            // Do the requested action and display the next view
+            done = this.doAction(menuOption);
+                
+        }while (!done);
+   }
+ */
+
+ /*  private String getMenuOption() {
+       Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        
+        while (!valid) { // loop while an invalid value is enter
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = value.trim(); // trim off leading adn trailing blanks
+
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+        }
+        break; // end the loop
+        
+        }
+        return value; // return the value entered
+               
+    }
+    
+*/
+    
+    @Override
+    public boolean doAction(String choice) {
+        choice = choice.toUpperCase(); // convert choice to uppercase
+            
+            switch (choice) {
+                 case"A": //Displays Action Menu
+                    this.displayActionMenu();
+                    break;
+                case "M": //display Map Menu
+                    this.displayMapMenu();
+                    break;
+                default:
+                    System.out.println("\n*** Invalid selection *** Try Again");
+                    break;
+                
+            }
+            return false;
+    }
+
+   
+    private void displayActionMenu() {
+        ActionMenuView actionMenu = new ActionMenuView();
+        actionMenu.display();
+    }
+
+    private void displayMapMenu() {
+        MapMenuView mapMenu = new MapMenuView();
+        mapMenu.display();
+    }
+
+    
+}

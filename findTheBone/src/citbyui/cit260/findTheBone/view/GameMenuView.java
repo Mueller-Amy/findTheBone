@@ -37,8 +37,9 @@ public class GameMenuView extends View{
    // public GameMenuView() {
         super( "\n"
                     + "\n=========================================="
-                    + "\n| Game Menu                             |"
+                    + "\n|           Game Menu                    |"
                     + "\n=========================================="
+                    + "\nG - Game Play Menu"
                     + "\nV - View Map"
                     + "\nI - List of Items"
                     + "\nT - Time Used"
@@ -98,7 +99,11 @@ public class GameMenuView extends View{
 
         choice = choice.toUpperCase();
             
-            switch (choice) {
+            
+        switch (choice) {
+                case "G": //view map
+                    this.viewGamePlayMenu();
+                    break;
                 case "V": //view map
                     this.viewMap();
                     break;
@@ -176,6 +181,11 @@ public class GameMenuView extends View{
 
     void displayMenu() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void viewGamePlayMenu() {
+        GamePlayView gamePlay = new GamePlayView();
+        gamePlay.display();
     }
 
 }

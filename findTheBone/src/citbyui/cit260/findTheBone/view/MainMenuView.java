@@ -14,14 +14,15 @@ import findthebone.FindTheBone;
  * @author Keith Downing
  */
 public class MainMenuView extends View{
-    //private String menu;
+    
+  //private String menu;
   //  private String promptMessage;
 
   //  public MainMenuView() {
   //      this.promptMessage = "\n"
     public MainMenuView(){
-             super("\n=========================================="
-                    + "\n| Main Menu                              |"
+             super(   "\n=========================================="
+                    + "\n|                 Main Menu              |"
                     + "\n=========================================="
                     + "\nN - Start New Game"
                     + "\nL - Load Saved Game"
