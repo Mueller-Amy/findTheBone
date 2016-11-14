@@ -27,7 +27,7 @@ public class HelpMenuView extends View {
                     + "\nS - Save Game"
                     + "\nW - How to move"
                     + "\nL - Look"
-                    + "\nS - Search"
+                    + "\nC - Search"
                     + "\nD - Dig"
                     + "\nQ - Question" 
                     + "\nI - Inventory"
@@ -95,7 +95,7 @@ public class HelpMenuView extends View {
                 case "E": //Look at surroundings
                     this.howToLook();
                     break;
-                case "R": //Look at surroundings
+                case "C": //Look at surroundings
                     this.howToSearch();
                     break;
                 case "D": //How to dig in surroundings
