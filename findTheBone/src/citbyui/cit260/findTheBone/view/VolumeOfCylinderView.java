@@ -15,18 +15,31 @@ import byui.cit260.findTheBone.control.CalculationsControl;
 
 public class VolumeOfCylinderView {
 
-    String promptMessages = "\n"
+    private String promptMessagesOne;
+    private String promptMessagesTwo;
+    private String winningBanner;
+
+    public VolumeOfCylinderView() {
+        this.promptMessagesOne = "\n"
             + "\n=========================================="
             + "\n| Let's Continue our Search                              |"
             + "\n=========================================="
             + "\n| Please Enter a Diameter"
             + "\n==========================================";
-    String promptMessagesTwo = "\n"
-            + "\n=========================================="
-            + "\n| Let's Continue our Search                              |"
-            + "\n=========================================="
-            + "\n| Please Enter a Height"
-            + "\n==========================================";
+        this.promptMessagesTwo = "\n"
+                + "\n=========================================="
+                + "\n| Let's Continue our Search                              |"
+                + "\n=========================================="
+                + "\n| Please Enter a Height"
+                + "\n==========================================";
+        this.winningBanner = "\n"
+                + "\n======================================="
+                + "\n Congratulations!!!!!!!!!!!!!         |"
+                + "\n======================================="
+                + "\n You have solved the complex calculation"
+                + "\n to find your bone.                   |"
+                + "\n=======================================";
+    }
 
     private double getDiameter() {
         Scanner keyboard = new Scanner(System.in); // get infile for keyboard
@@ -35,7 +48,7 @@ public class VolumeOfCylinderView {
         double diameter = 0;
         String response;
         while (!valid) { // loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessages);
+            System.out.println("\n" + this.promptMessagesOne);
 
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks
@@ -60,6 +73,7 @@ public class VolumeOfCylinderView {
                 response = "Just Right";
                 valid = true;
             }
+            System.out.println(response);
         }
         return diameter;
     }
@@ -95,18 +109,21 @@ public class VolumeOfCylinderView {
                 response = "Just Right";
                 valid = true;
             }
+            System.out.println(response);
         }
         return height;
     }
            
-
-private void doAction() {
+    /**
+     *
+     */
+    public void doAction() {
            double diameter = getDiameter();
            double height = getHeight();
            CalculationsControl calcControl = new CalculationsControl();
 
            double volume = calcControl.calcVolumeOfCylinder(diameter, height);
-    
+           System.out.println(winningBanner + "\n\nThe Volume of the cylinder: " + volume);
         }
 
     

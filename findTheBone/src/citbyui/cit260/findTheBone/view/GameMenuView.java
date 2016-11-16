@@ -160,7 +160,8 @@ public class GameMenuView extends View{
     }
 
     private void volumeOfCylinder() {
-        System.out.println("*** volumeOf Cylinder function called ***"); 
+        VolumeOfCylinderView cylinderView = new VolumeOfCylinderView();
+        cylinderView.doAction();
     }
 
     private void volumeOfBox() {
