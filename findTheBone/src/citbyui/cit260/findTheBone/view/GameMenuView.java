@@ -41,6 +41,7 @@ public class GameMenuView extends View{
                     + "\n=========================================="
                     + "\nG - Game Play Menu"
                     + "\nV - View Map"
+                    + "\nE - Clues List - Temporary Location"
                     + "\nI - Inventory"
                     + "\nT - Time Used"
                     + "\nL - What is in Backpack"
@@ -107,6 +108,9 @@ public class GameMenuView extends View{
                 case "V": //view map
                     this.viewMap();
                     break;
+                case "E": //clues view temporary
+                    this.viewClue();
+                    break;
 
                 case "I": //List of items
                     this.inventory();
@@ -143,6 +147,10 @@ public class GameMenuView extends View{
     private void viewMap() {
         System.out.println("*** viewMap function called ***"); 
     
+    }
+    private void viewClue() {
+        CluesView clue = new CluesView();
+        clue.display();
     }
 
     private void inventory() {
