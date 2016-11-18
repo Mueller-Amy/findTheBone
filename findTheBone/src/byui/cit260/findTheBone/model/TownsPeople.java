@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Objects;
 /**
  *
- * @author Keith College
+ * @author Keith Downing
  */
 public enum TownsPeople implements Serializable{
     Tommy("He is at the park."),
