@@ -5,6 +5,9 @@
  */
 package byui.cit260.findTheBone.control;
 
+import byui.cit260.findTheBone.model.Game;
+import byui.cit260.findTheBone.model.Item;
+import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import findthebone.FindTheBone;
 
@@ -13,6 +16,7 @@ import findthebone.FindTheBone;
  * @author Keith Downing
  */
 public class GameControl {
+    
 
     public static Player createPlayer(String name) {
         
@@ -29,10 +33,38 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game game = new Game(); // create new game
+        FindTheBone.setCurrentgame(game); // save in FindTheBone
+        
+        game.setPlayer(player); // save player in game
+        
+        
+        /*
+        //create the inventory list and save in the game
+        Item[] item = GameControl.createItemList();
+        game.setInventory(itemList);
+        */
+
+
+        Map map = MapControl.createMap(); //create and initialize new map
+        game.setMap(map); // Save map in game
+        
+        // Move character to starting position in the map
+        MapControl.moveCharacterToStartingLocation(map);
+        
+        
+        
+        
+        
+        
+        
     }
 
-    
+    public static Item[] createItemList() {
+        System.out.println("*** called createItemList() in GameControl ***");
+        return null;
+    }
     
 }
     

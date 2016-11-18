@@ -14,7 +14,14 @@ import findthebone.FindTheBone;
  * @author Home
  */
 public class MapControl {
-    public static Map createMap(String name) {
+    public static Map createMap() {
+        Map map = null;
+        
+        System.out.println("*** called createMap() called ***");
+        
+        return map;
+        
+        /*
         
         if (name == null){
             return null;
@@ -26,10 +33,20 @@ public class MapControl {
         FindTheBone.setMap(map); // save the map
         
         return map;
+
+        */
     }
 
     public static void createNewGame(Player player) {
         System.out.println("*** New Game Function displayed. ***");
+    }
+
+    static void moveCharacterToStartingLocation(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    static Map createMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
