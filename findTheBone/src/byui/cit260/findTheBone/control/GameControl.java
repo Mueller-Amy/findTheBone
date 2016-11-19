@@ -7,9 +7,11 @@ package byui.cit260.findTheBone.control;
 
 import byui.cit260.findTheBone.model.Game;
 import byui.cit260.findTheBone.model.Item;
+import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
+import byui.cit260.findTheBone.model.Scene.SceneType;
 import findthebone.FindTheBone;
 
 /**
@@ -67,7 +69,16 @@ public class GameControl {
         return null;
     }
 
-    static void assignScenesToLocations(Map map, Scene[] scenes) {
+    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations=map.getLocations();
+        
+        //start point
+        location[0][0].setScene(scenes[SceneType.starting.ordinal()]);
+        location[0][1].setScene(scenes[SceneType.finish.ordinal()]);
+        location[0][2].setScene(scenes[SceneType.zoo.ordinal()]);
+        location[0][3].setScene(scenes[SceneType.house.ordinal()]);
+        //.....
+        
         
     }
     
