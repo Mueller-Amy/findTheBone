@@ -18,6 +18,10 @@ public class Map implements Serializable{
     }
     
     //class instance variables
+    private int noOfRows;
+    private int noOfColumns;
+    private Location[][] locations;
+    
     private int rowCount;
     private int columnCount;
     private int currentRow;
@@ -26,6 +30,10 @@ public class Map implements Serializable{
     //constructor function
 
     public Map() {
+    }
+
+    public Map(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

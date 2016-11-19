@@ -7,6 +7,7 @@ package byui.cit260.findTheBone.control;
 
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
+import byui.cit260.findTheBone.model.Scene;
 import findthebone.FindTheBone;
 
 /**
@@ -15,7 +16,14 @@ import findthebone.FindTheBone;
  */
 public class MapControl {
     public static Map createMap() {
-        Map map = null;
+        //create the map
+        Map map = new Map (5,5);
+        
+        //create the scenes for the game
+        Scene[] scenes= createScenes();
+        
+        //assign scenes to locations
+        GameControl.assignScenesToLocations(map,scenes);
         
         System.out.println("*** called createMap() called ***");
         
