@@ -106,7 +106,7 @@ public class GameMenuView extends View{
                     this.viewGamePlayMenu();
                     break;
                 case "V": //view map
-                    this.viewMap();
+                    this.displayMap();
                     break;
                 case "E": //clues view temporary
                     this.viewClue();
@@ -144,10 +144,7 @@ public class GameMenuView extends View{
        
 }
 
-    private void viewMap() {
-        System.out.println("*** viewMap function called ***"); 
     
-    }
     private void viewClue() {
         CluesView clue = new CluesView();
         clue.display();
@@ -196,6 +193,10 @@ public class GameMenuView extends View{
     private void viewGamePlayMenu() {
         GamePlayView gamePlay = new GamePlayView();
         gamePlay.display();
+    }
+
+    private void displayMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
