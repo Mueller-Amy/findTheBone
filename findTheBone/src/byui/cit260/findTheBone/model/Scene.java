@@ -19,7 +19,33 @@ public class Scene implements Serializable{
     private double displaySymbol;
     private double blockedLocation;
 
-    public Scene() {
+    public  Scene() {
+        
+    }
+
+    public void setMapSymbol(String _st_) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBlocked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     *
+     */
+    public enum SceneType {
+        start,
+        house,
+        yard,
+        zoo,
+        school,
+        others_scenes,
+        instructions,
+        finish;
+
+        
+        
     }
     
     

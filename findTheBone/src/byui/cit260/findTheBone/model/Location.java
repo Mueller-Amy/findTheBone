@@ -6,6 +6,7 @@
 package byui.cit260.findTheBone.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,6 +18,8 @@ public class Location implements Serializable{
     private int row;
     private int column;
     private boolean visited;
+    private Scene scene;
+    private ArrayList<Character> Characters;
     private int amountRemaining;
     
     //constructor function
@@ -96,6 +99,10 @@ public class Location implements Serializable{
     @Override
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
+    }
+
+    public void setScene(Scene scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
