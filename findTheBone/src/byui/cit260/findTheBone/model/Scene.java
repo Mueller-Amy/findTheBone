@@ -19,7 +19,25 @@ public class Scene implements Serializable{
     private double displaySymbol;
     private double blockedLocation;
 
-    public Scene() {
+    public  Scene() {
+        
+    }
+
+    /**
+     *
+     */
+    public enum SceneType {
+        start,
+        house,
+        yard,
+        zoo,
+        school,
+        others_scenes,
+        instructions,
+        finish;
+
+        
+        
     }
     
     

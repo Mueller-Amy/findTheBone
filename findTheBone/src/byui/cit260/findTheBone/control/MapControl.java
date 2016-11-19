@@ -8,6 +8,7 @@ package byui.cit260.findTheBone.control;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
+import byui.cit260.findTheBone.model.Scene.SceneType;
 
 /**
  *
@@ -57,7 +58,46 @@ public class MapControl {
     }
 
     private static Scene[] createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Scene[] scenes=new Scene[SceneType.values().length];
+        
+        Scene startingScene = new Scene();
+        startingScene.setDescription(
+                      "You are at Ben and Nancy house. This is your house too."
+                     +"Here is where your investigation start"
+                     +"What do you want to do now?"
+        );
+        startingScene.setMapSymbol(" ST ");
+        startingScene.setBlocked(false);
+        startingScene.setTravelTime(240);
+        scenes[SceneType.start.ordinal()]=startingScene;
+        
+        Scene finishScene = new Scene();
+        finishScene.setDescription("\n***************************************************"
+                           + "\n*      Congratulations !!! You found the bone.    *"  
+                           + "\n                    GAME OVER                     *"
+                           + "\n***************************************************"
+        );
+        finishScene.setMapSymbol(" FN ");
+        finishScene.setBlocked(false);
+        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
+        scenes[SceneType.start.ordinal()]=finishScene;
+        
+        Scene zooScene = new Scene();
+        zooScene.setDescription(
+                "The zoo is a good place to ask about the bone.");
+       
+        zooScene.setMapSymbol(" ZS ");
+        zooScene.setBlocked(false);
+        zooScene.setTravelTime(Double.POSITIVE_INFINITY);
+        scenes[SceneType.start.ordinal()]=zooScene;
+        
+        
+       
+        
+        
+        return scenes;
+        
+        
     }
     
 }
