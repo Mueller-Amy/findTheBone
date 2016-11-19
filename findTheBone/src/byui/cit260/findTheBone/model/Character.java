@@ -23,13 +23,15 @@ public enum Character implements Serializable{
     Trish("Trish is a beautiful Cavalier King Charles Spaniel and is incredibly graceful."),
     Charlie("This Beagle is happy, excited, and sure can hunt!");
     //class instance variables
-   // private String name; //delete for wk 10 step 2
+   
     private final String description;
+    private final Point coordinates;
    
     
 
     Character(String description) {
         this.description = description;
+        coordinates = new Point(1,1);
        
     }
 
@@ -40,17 +42,32 @@ public enum Character implements Serializable{
     public void setName(String name) {
         this.name = name;
   */
-
-  }
-
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
     
+    private Point getCoordinates() {
+        return coordinates;
+    }
+
+   
+    /*public void setDescription(String description) {
+        this.description = description;
+    }*/
+    
+    private static class Point {
+        
+        public Point(){
+        }
+
+        private Point(int i, int i0) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+    }
+
+  }
+
+  
   
   
 
@@ -84,12 +101,12 @@ public enum Character implements Serializable{
         return true;
     }
     */
-    @Override
+    /*@Override
     public String toString() {
         return "Character{" + "name=" + name + ", description=" + description + '}';
-    }
+    }*/
     
     
 
     
-}
+
