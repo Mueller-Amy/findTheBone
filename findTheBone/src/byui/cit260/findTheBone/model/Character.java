@@ -13,23 +13,35 @@ import java.util.Objects;
  *
  * @author Amy Mueller
  */
-public class Character implements Serializable{
+
+/* WE DON'T HAVE PRIVATE POINT COORDINATES WK 10 STEP 2*/
+public enum Character implements Serializable{
     
+    Joe("As a Doberman Pinscher, Joes is alert, fearless, and loyal."),
+    Sally("Sally, the Basset Hound, is easygoing, laid-back and loves her family."),
+    Bernie("As a Newfoundland, Bernie is patient and devoted."),
+    Trish("Trish is a beautiful Cavalier King Charles Spaniel and is incredibly graceful."),
+    Charlie("This Beagle is happy, excited, and sure can hunt!");
     //class instance variables
-    private String name;
-    private String description;
+   // private String name; //delete for wk 10 step 2
+    private final String description;
+   
     
 
-    public Character() {
+    Character(String description) {
+        this.description = description;
+       
     }
 
-    public String getName() {
+   /* public String getName() {//delete for wk 10 step 2
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
+  */
+
+  }
 
     public String getDescription() {
         return description;
@@ -38,8 +50,12 @@ public class Character implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
+    
+  
+  
 
-    @Override
+  /*  DELETE FROM WEEK 10 PAGE6 
+        @Override
     public int hashCode() {
         int hash = 7;
         hash = 89 * hash + Objects.hashCode(this.name);
@@ -67,7 +83,7 @@ public class Character implements Serializable{
         }
         return true;
     }
-
+    */
     @Override
     public String toString() {
         return "Character{" + "name=" + name + ", description=" + description + '}';
