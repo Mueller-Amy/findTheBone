@@ -9,6 +9,7 @@ import byui.cit260.findTheBone.model.Game;
 import byui.cit260.findTheBone.model.Item;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
+import byui.cit260.findTheBone.model.Scene;
 import findthebone.FindTheBone;
 
 /**
@@ -64,6 +65,10 @@ public class GameControl {
     public static Item[] createItemList() {
         System.out.println("*** called createItemList() in GameControl ***");
         return null;
+    }
+
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

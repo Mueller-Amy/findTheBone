@@ -8,7 +8,6 @@ package byui.cit260.findTheBone.control;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
-import findthebone.FindTheBone;
 
 /**
  *
@@ -54,6 +53,10 @@ public class MapControl {
     }
 
     static Map createMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static Scene[] createScenes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
