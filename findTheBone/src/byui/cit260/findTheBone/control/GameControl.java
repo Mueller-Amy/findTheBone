@@ -69,11 +69,11 @@ public class GameControl {
         return null;
     }
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations=map.getLocations();
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] location=map.getLocations();
         
         //start point
-        location[0][0].setScene(scenes[SceneType.starting.ordinal()]);
+        location[0][0].setScene(scenes[SceneType.start.ordinal()]);
         location[0][1].setScene(scenes[SceneType.finish.ordinal()]);
         location[0][2].setScene(scenes[SceneType.zoo.ordinal()]);
         location[0][3].setScene(scenes[SceneType.house.ordinal()]);

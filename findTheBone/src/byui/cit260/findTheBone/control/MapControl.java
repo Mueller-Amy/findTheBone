@@ -60,16 +60,16 @@ public class MapControl {
     private static Scene[] createScenes() {
         Scene[] scenes=new Scene[SceneType.values().length];
         
-        Scene startingScene = new Scene();
-        startingScene.setDescription(
+        Scene startScene = new Scene();
+        startScene.setDescription(
                       "You are at Ben and Nancy house. This is your house too."
                      +"Here is where your investigation start"
                      +"What do you want to do now?"
         );
-        startingScene.setMapSymbol(" ST ");
-        startingScene.setBlocked(false);
-        startingScene.setTravelTime(240);
-        scenes[SceneType.start.ordinal()]=startingScene;
+        startScene.setMapSymbol(" ST ");
+        startScene.setBlocked(false);
+        startScene.setTravelTime(240);
+        scenes[SceneType.start.ordinal()]=startScene;
         
         Scene finishScene = new Scene();
         finishScene.setDescription("\n***************************************************"
