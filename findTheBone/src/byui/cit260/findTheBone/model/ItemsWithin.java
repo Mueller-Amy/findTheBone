@@ -6,6 +6,7 @@
 package byui.cit260.findTheBone.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -13,7 +14,13 @@ import java.util.Objects;
  * @author Jean Oliveira
  */
 public class ItemsWithin implements Serializable {
-     
+
+    
+/*
+    public static void sort(List<String> item) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+  */  
     //class instance variable
     private int noOfItems;
     
