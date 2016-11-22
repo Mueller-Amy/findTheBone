@@ -30,7 +30,25 @@ public class ItemsWithin implements Serializable {
     public void setNoOfItems(int noOfItems) {
         this.noOfItems = noOfItems;
     }
-
+    
+    public enum Item {
+        twig,
+        pebble,
+        box,
+        cylinder,
+        paper,
+        ball,
+        fish,
+        cathair,
+        catbell,
+        catcollar,
+        nametag,
+        businesscard,
+        treat,
+        duckfeather,
+        peanuts;
+        
+    }
     
     //equals(),hashCode() and toString() codes
 
