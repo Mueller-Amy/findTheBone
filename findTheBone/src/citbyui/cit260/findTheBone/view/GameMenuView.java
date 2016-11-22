@@ -158,7 +158,7 @@ public class GameMenuView extends View{
         
         InventoryView inventory = new InventoryView();
         inventory.display();
-        /*
+        
         StringBuilder line;
         
         Game game = FindTheBone.getCurrentGame();
@@ -170,11 +170,11 @@ public class GameMenuView extends View{
         line.insert(20, "REQUIRED");
         line.insert(30, "IN STOCK");
         System.out.println(line.toString());
-        
-        for (InventoryItem item: inventory) {
+        /*
+        for (InventoryView item: inventory) {
             line = new StringBuilder("                                ");
-            line.insert(0, "Twig");
-            line.insert(23, "1");
+            line.insert(0, item;
+            line.insert(23, item.getDescription());
             line.insert(33, "0.0");
             
         for (InventoryItem item: inventory){
