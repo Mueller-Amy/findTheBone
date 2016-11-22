@@ -22,7 +22,11 @@
 package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.GameControl;
+import byui.cit260.findTheBone.model.Game;
+import byui.cit260.findTheBone.model.Item;
+import byui.cit260.findTheBone.model.ItemsWithin;
 import byui.cit260.findTheBone.model.Player;
+import findthebone.FindTheBone;
 //import java.util.Scanner;
 
 /**
@@ -112,7 +116,7 @@ public class GameMenuView extends View{
                     this.viewClue();
                     break;
 
-                case "I": //List of items
+                case "I": //view List of items
                     this.inventory();
                     break;
 
@@ -151,8 +155,124 @@ public class GameMenuView extends View{
     }
 
     private void inventory() {
+        
         InventoryView inventory = new InventoryView();
         inventory.display();
+        /*
+        StringBuilder line;
+        
+        Game game = FindTheBone.getCurrentGame();
+        Item[] item = game.getInventory();
+        
+        System.out.println("\n           LIST OF INVENTORY ITEMS");
+        line = new StringBuilder("                                   ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        System.out.println(line.toString());
+        
+        for (InventoryItem item: inventory) {
+            line = new StringBuilder("                                ");
+            line.insert(0, "Twig");
+            line.insert(23, "1");
+            line.insert(33, "0.0");
+            
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Pebble");
+            line.insert(23, "1");
+            line.insert(33, "0.0");
+        }
+            
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Box");
+            line.insert(23, "1");
+            line.insert(33, "0.0");
+        }
+        
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Cylinder");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Paper");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Ball");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Fish");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Cat Hair");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Lost Cat Bell");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Cat Collar");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Cat Name Tag");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Business Card");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Treat");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Duck Feather");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        for (InventoryItem item: inventory){
+            line = new StringBuilder("                                 ");
+            line.insert(1, "Peanuts");
+            line.insert(22, "1");
+            line.insert(33, "0.0");
+        }
+        
+        //Display the line
+        System.out.println(line.toString());
+        }
+        */
     }
 
     private void timeUsed() {
@@ -198,6 +318,8 @@ public class GameMenuView extends View{
     private void displayMap() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
 
 }
 

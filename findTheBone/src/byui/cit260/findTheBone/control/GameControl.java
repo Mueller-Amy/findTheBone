@@ -56,17 +56,109 @@ public class GameControl {
         // Move character to starting position in the map
         MapControl.moveCharacterToStartingLocation(map);
         
-        
-        
-        
-        
-        
-        
     }
 
     public static Item[] createItemList() {
-        System.out.println("*** called createItemList() in GameControl ***");
-        return null;
+        Item[] inventory = 
+            new Item[17];
+        Item twig = new Item();
+        twig.setDescription("Twig");
+        twig.setQuantityInStock(0);
+        twig.setRequiredAmount(0);
+        inventory[twig.ordinal()] = twig;
+        
+        Item pebble = new Item();
+        pebble.setDescription("Pebble");
+        pebble.setQuantityInStock(0);
+        pebble.setRequiredAmount(0);
+        inventory[pebble.ordinal()] = pebble;
+        
+        Item box = new Item();
+        box.setDescription("Box");
+        box.setQuantityInStock(0);
+        box.setRequiredAmount(0);
+        inventory[box.ordinal()] = box;
+        
+        Item cylinder = new Item();
+        cylinder.setDescription("Cylinder");
+        cylinder.setQuantityInStock(0);
+        cylinder.setRequiredAmount(0);
+        inventory[cylinder.ordinal()] = cylinder;
+        
+        Item paper = new Item();
+        paper.setDescription("Paper");
+        paper.setQuantityInStock(0);
+        paper.setRequiredAmount(0);
+        inventory[paper.ordinal()] = paper;
+        
+        Item ball = new Item();
+        ball.setDescription("Ball");
+        ball.setQuantityInStock(0);
+        ball.setRequiredAmount(0);
+        inventory[ball.ordinal()] = ball;
+        
+        Item fish = new Item();
+        fish.setDescription("Fish");
+        fish.setQuantityInStock(0);
+        fish.setRequiredAmount(0);
+        inventory[fish.ordinal()] = fish;
+        
+        Item cathair = new Item();
+        cathair.setDescription("Cat Hair");
+        cathair.setQuantityInStock(0);
+        cathair.setRequiredAmount(0);
+        inventory[cathair.ordinal()] = cathair;
+        
+        Item catbell = new Item();
+        catbell.setDescription("Cat Bell");
+        catbell.setQuantityInStock(0);
+        catbell.setRequiredAmount(0);
+        inventory[catbell.ordinal()] = catbell;
+        
+        Item lostcatbell = new Item();
+        lostcatbell.setDescription("Lost Cat Bell");
+        lostcatbell.setQuantityInStock(0);
+        lostcatbell.setRequiredAmount(0);
+        inventory[lostcatbell.ordinal()] = lostcatbell;
+        
+        Item catcollar = new Item();
+        catcollar.setDescription("Cat Collar");
+        catcollar.setQuantityInStock(0);
+        catcollar.setRequiredAmount(0);
+        inventory[catcollar.ordinal()] = catcollar;
+        
+        Item nametag = new Item();
+        nametag.setDescription("Cat Name Tag");
+        nametag.setQuantityInStock(0);
+        nametag.setRequiredAmount(0);
+        inventory[nametag.ordinal()] = nametag;
+        
+        Item businesscard = new Item();
+        businesscard.setDescription("Business Card");
+        businesscard.setQuantityInStock(0);
+        businesscard.setRequiredAmount(0);
+        inventory[businesscard.ordinal()] = businesscard;
+        
+        Item treat = new Item();
+        treat.setDescription("Twig");
+        treat.setQuantityInStock(0);
+        treat.setRequiredAmount(0);
+        inventory[treat.ordinal()] = treat;
+        
+        Item duckfeather = new Item();
+        duckfeather.setDescription("Duck Feather");
+        duckfeather.setQuantityInStock(0);
+        duckfeather.setRequiredAmount(0);
+        inventory[duckfeather.ordinal()] = duckfeather;
+        
+        Item peanuts = new Item();
+        peanuts.setDescription("Peanuts");
+        peanuts.setQuantityInStock(0);
+        peanuts.setRequiredAmount(0);
+        inventory[peanuts.ordinal()] = peanuts;
+        
+        
+        return inventory;
     }
 
     static void assignScenesToLocations(Map map, Scene[] scenes) {

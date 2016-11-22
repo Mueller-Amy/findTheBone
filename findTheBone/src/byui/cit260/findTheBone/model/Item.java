@@ -13,6 +13,8 @@ import java.util.Objects;
  * @author Jean Oliveira
  */
 public class Item implements Serializable{
+
+    public static Object twig;
     
     //class instance variable
     private String inventory;
@@ -73,6 +75,22 @@ public class Item implements Serializable{
     @Override
     public String toString() {
         return "Item{" + "inventory=" + inventory + ", itemsRemaining=" + itemsRemaining + '}';
+    }
+
+    public void setDescription(String twig) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setQuantityInStock(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setRequiredAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int ordinal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
