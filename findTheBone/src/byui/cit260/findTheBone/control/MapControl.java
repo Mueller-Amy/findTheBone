@@ -9,6 +9,7 @@ import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
 import byui.cit260.findTheBone.model.Scene.SceneType;
+import java.awt.Point;
 
 /**
  *
@@ -99,5 +100,7 @@ public class MapControl {
         
         
     }
+
+    
     
 }

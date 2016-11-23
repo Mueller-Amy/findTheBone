@@ -38,7 +38,7 @@ public class GameControl {
     public static void createNewGame(Player player) {
         
         Game game = new Game(); // create new game
-        FindTheBone.setCurrentgame(game); // save in FindTheBone
+        FindTheBone.setCurrentGame(game); // save in FindTheBone
         
         game.setPlayer(player); // save player in game
         

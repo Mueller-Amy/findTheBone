@@ -101,15 +101,22 @@ public class MainMenuView extends View{
     }
 
     private void startNewGame() {
-        // Create a new game
-    GameControl.createNewGame(FindTheBone.getPlayer());
+        
     
         // Display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
-       
+        // create a new game
+    GameControl.createNewGame(FindTheBone.getPlayer());
+        
     }
+    
+       
+    
 
+    /**
+     *
+     */
     private void startExistingGame() {
         System.out.println("*** startExistingGame function called ***");
     }

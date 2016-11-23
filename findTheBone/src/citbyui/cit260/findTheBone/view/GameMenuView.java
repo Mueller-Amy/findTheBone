@@ -19,21 +19,20 @@
     
 }
 */
+
 package citbyui.cit260.findTheBone.view;
 
-import byui.cit260.findTheBone.control.GameControl;
-import byui.cit260.findTheBone.model.Game;
-import byui.cit260.findTheBone.model.Item;
-import byui.cit260.findTheBone.model.ItemsWithin;
-import byui.cit260.findTheBone.model.Player;
-import findthebone.FindTheBone;
-//import java.util.Scanner;
+import byui.cit260.findTheBone.control.LocationControl;
+import byui.cit260.findTheBone.model.Location;
 
 /**
  *
  * @author Amy Mueller
  */
 public class GameMenuView extends View{
+
+    private Object game;
+    private Object findTheBone;
     //private String menu;
     //private String promptMessage;
       public GameMenuView() {
@@ -161,8 +160,8 @@ public class GameMenuView extends View{
         
         StringBuilder line;
         
-        Game game = FindTheBone.getCurrentGame();
-        Item[] item = game.getInventory();
+        //Game game = FindTheBone.getCurrentGame();
+        //Item[] item = item.getInventory();
         
         System.out.println("\n           LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                   ");
@@ -315,12 +314,46 @@ public class GameMenuView extends View{
         gamePlay.display();
     }
 
-    private void displayMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void displayMap() {
+  //get locations from the current game
+        Location[][] locations = LocationControl.currentLocation();
+        
+        //Display title
+        System.out.println(
+                 "\n--------------------"
+                +"\n FIND THE BONE MAP  "
+                +"\n--------------------");
+        //Display row of column numbers
+        System.out.println(" 0  1  2 ");
+        //Display row divider
+        System.out.println(" -------");
+        
+        //Display row numbers
+        for (int i = 0; i < locations.length; i++) {
+            //Display column divider
+            System.out.println(i + 1 + "|");
+            
+            for (Location location : locations[i]) {
+                
+                //If location has been visited, display map symbol
+                if (location.getVisited()) {
+                    System.out.println(location.getScene());
+                } else {
+                    System.out.println("??");
+                }
+                //Display ending column divider 
+                System.out.println("|");
+            }
+            //Display ending row divider
+            System.out.println("\n -------");
+        }
+    }
+
+    
     }
 
    
 
-}
+
 
 

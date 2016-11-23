@@ -5,6 +5,7 @@
  */
 package findthebone;
 
+import byui.cit260.findTheBone.control.LocationControl.Locations;
 import byui.cit260.findTheBone.model.Backpack;
 import byui.cit260.findTheBone.model.Clue; // Jean Oliveira
 import byui.cit260.findTheBone.model.Game; // Keith Downing
@@ -24,15 +25,31 @@ import citbyui.cit260.findTheBone.view.StartProgramView;
  */
 public class FindTheBone {
     
-    private static Game currentgame = null;
+    private static Game currentGame = null;
     private static Player player = null;
+    private static Map currentMap= null;
+    private static Locations currentLocations = null;
 
-    public static Game getCurrentgame() {
-        return currentgame;
+    public static Game getCurrentGame() {
+        return currentGame;
     }
 
-    public static void setCurrentgame(Game currentgame) {
-        FindTheBone.currentgame = currentgame;
+    public static void setCurrentGame(Game currentGame) {
+        FindTheBone.currentGame = currentGame;
+    }
+    public static Map getCurrentMap(Map currentMap) {
+        return currentMap;
+    }
+
+    public static void setCurrentMap(Map currentMap) {
+        FindTheBone.currentMap = currentMap;
+    }
+    public static Game getCurrentLocations() {
+        return currentGame;
+    }
+
+    public static void setCurrentLocations(Locations currentLocations) {
+        FindTheBone.currentLocations = currentLocations;
     }
 
     public static Player getPlayer() {
@@ -60,16 +77,13 @@ public class FindTheBone {
         
     }
 
-    public static void setPlayer(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
+        
+    
+    
 
-    public static void setMap(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
-    public static Game getCurrentGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 }
