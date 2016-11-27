@@ -63,9 +63,9 @@ public class ItemControl {
     }
      
     public static void main(String a[]){
-         System.out.print("Numbers Order : ");
+        System.out.print("Numbers Order : ");
         ItemControl sorter = new ItemControl();
-        int[] input = {24,2,45,20,56,75,2,56,99,53,12};
+        int[] input = {32,7,56,20,12,98,2,36,64,22,77};
         sorter.sort(input);
         for(int i:input){
             System.out.print(i);
