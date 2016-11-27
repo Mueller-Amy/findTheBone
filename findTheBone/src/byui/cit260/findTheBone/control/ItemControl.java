@@ -61,7 +61,7 @@ public class ItemControl {
         array[i] = array[j];
         array[j] = temp;
     }
-     
+   /*  
     public static void main(String a[]){
         System.out.print("Numbers Order : ");
         ItemControl sorter = new ItemControl();
@@ -71,7 +71,9 @@ public class ItemControl {
             System.out.print(i);
             System.out.print(" ");
         }
+
     }
+*/
 }
 
 

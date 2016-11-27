@@ -120,10 +120,7 @@ public class MapMenuView extends View{
         System.out.println("*** saveGame function called ***");
     }
 
-    private void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     
 }
 

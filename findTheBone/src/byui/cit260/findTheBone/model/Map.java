@@ -5,6 +5,7 @@
  */
 package byui.cit260.findTheBone.model;
 
+import byui.cit260.findTheBone.control.LocationControl.Locations;
 import java.io.Serializable;
 
 /**
@@ -12,10 +13,11 @@ import java.io.Serializable;
  * @author Amy Mueller
  */
 public class Map implements Serializable{
-
+/*
     public static void setName(String name) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    */
     
     //class instance variables
     private int noOfRows;
@@ -28,9 +30,6 @@ public class Map implements Serializable{
     private int currentColumn;
     
     //constructor function
-
-    public Map() {
-    }
 
     /**
      *
@@ -136,27 +135,36 @@ public class Map implements Serializable{
         }
         return true;
     }
-
+/*
     @Override
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + '}';
     }
+    
+    public  Location[][] getLocations() {
+        
+        
+        
+    } 
+    
+
+    public Location getCurrentLocation() {
+        
+        
+    
+                }
+    public Map getMap() {
+        
+        
+                }
+ 
+
+}   
+*/
 
     public Location[][] getLocations() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public Location getCurrentLocation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Map getMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-    
-
  
     
 }

@@ -10,20 +10,10 @@
  *
  * @author Keith Downing 
  
- class GameMenuView {
-
-    void displayMenu() {
-        //Comment
-        System.out.println("*** New Game Function Displayed. ***");
-    }
-    
-}
+ 
 */
 
 package citbyui.cit260.findTheBone.view;
-
-import byui.cit260.findTheBone.control.LocationControl;
-import byui.cit260.findTheBone.model.Location;
 
 /**
  *
@@ -44,6 +34,7 @@ public class GameMenuView extends View{
                     + "\n=========================================="
                     + "\nG - Game Play Menu"
                     + "\nV - View Map"
+                    + "\nA - Item - Jean Oliveira L10 Assignment"
                     + "\nE - Clues List - Temporary Location"
                     + "\nI - Inventory"
                     + "\nT - Time Used"
@@ -111,10 +102,12 @@ public class GameMenuView extends View{
                 case "V": //view map
                     this.displayMap();
                     break;
+                case "A": // call to Jean individual L10 Assignment
+                    this.displayItem();
+                    break;
                 case "E": //clues view temporary
                     this.viewClue();
                     break;
-
                 case "I": //view List of items
                     this.inventory();
                     break;
@@ -135,9 +128,7 @@ public class GameMenuView extends View{
                 case "H": // Help
                     this.displayHelpMenu();
                     break;
-                case "X": // Exit
-                    this.exit();
-                    break;
+                              
                 default:
                     System.out.println("\n*** Invalid selection *** Try Again");
                     break;
@@ -294,29 +285,21 @@ public class GameMenuView extends View{
     }
 
     
-
-    private void exit() {
-        System.out.println("*** exit function called ***");    
-    }
-
-    
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
 
-    void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     private void viewGamePlayMenu() {
         GamePlayView gamePlay = new GamePlayView();
         gamePlay.display();
     }
 
-    public void displayMap() {
+    private void displayMap() {
   //get locations from the current game
-        Location[][] locations = LocationControl.currentLocation();
+        /*Location[][] locations = LocationControl.currentLocation();
         
         //Display title
         System.out.println(
@@ -347,8 +330,15 @@ public class GameMenuView extends View{
             //Display ending row divider
             System.out.println("\n -------");
         }
+*/
     }
 
+   
+    private void displayItem() {
+        ItemScreenView itemView = new ItemScreenView();
+        //itemView.display();
+    }
+      
     
     }
 
