@@ -5,6 +5,8 @@
  */
 package byui.cit260.findTheBone.control;
 
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+
 /**
  *
  * @author Home
@@ -13,7 +15,8 @@ public class CalculationsControl {
     
         //Group work for volume of a box
 
-        public double calcVolumeOfBox(double length, double width, double height){
+        public double calcVolumeOfBox(double length, double width, double height)
+                        {
     
            /*if (length<=0 OR length>6) THEN
                RETURN -1
@@ -40,12 +43,17 @@ public class CalculationsControl {
            }
            
            //Amy Mueller Calculate Area of Box
-        public double calcAreaOfBox(double length, double width){
+        public double calcAreaOfBox(double length, double width)
+                    throws CalculationsControlException {
         if (length < 0 || length > 6 ){//length out of range??
-               return -1;
+               //return -1; deleted week 11 team assign.
+               throw new CalculationsControlException("Length must be between 0-6 "
+               + "please reenter the length");
            }
            if (width < 0 || width > 6 ) {//width out of range??
-               return -1;
+               //return -1;
+               throw new CalculationsControlException("Width must be between 0-6 "
+               + "please reenter the width");
             }
            double area = (length * width);
            
