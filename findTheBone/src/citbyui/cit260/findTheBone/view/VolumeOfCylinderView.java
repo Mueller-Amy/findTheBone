@@ -11,6 +11,7 @@ package citbyui.cit260.findTheBone.view;
 
 import java.util.Scanner;
 import byui.cit260.findTheBone.control.CalculationsControl;
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
 
 
 public class VolumeOfCylinderView {
@@ -116,8 +117,9 @@ public class VolumeOfCylinderView {
            
     /**
      *
+     * @throws citbyui.cit260.findTheBone.exceptions.CalculationsControlException
      */
-    public void doAction() {
+    public void doAction() throws CalculationsControlException {
            double diameter = getDiameter();
            double height = getHeight();
            CalculationsControl calcControl = new CalculationsControl();

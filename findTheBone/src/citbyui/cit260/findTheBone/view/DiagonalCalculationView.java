@@ -6,6 +6,7 @@
 package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.CalculationsControl;
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
 import java.util.Scanner;
 
 /**
@@ -69,9 +70,10 @@ public final class DiagonalCalculationView {
      *                   
      * return to start a game
      *          
+     * @throws citbyui.cit260.findTheBone.exceptions.CalculationsControlException
      */
         
-    public void displayRectangleDiagonal() {
+    public void displayRectangleDiagonal() throws CalculationsControlException {
         boolean done = false;
         double counter = 1;
             //         do
@@ -113,7 +115,7 @@ public final class DiagonalCalculationView {
      *     from the previous DO-WHILE.
      *        
     */
-    private boolean doAction(double length, double width) {
+    private boolean doAction(double length, double width) throws CalculationsControlException {
          // create a new instance of CalculationsControl classe.
          // call calcDiagonalRectangle function within CalculatonsControl class
          // to calculate the diagonal of a rectangle and set the result to diagonal variable

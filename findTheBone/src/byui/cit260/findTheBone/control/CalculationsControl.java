@@ -87,7 +87,7 @@ public class CalculationsControl {
             return diagonal;	
     }
             // Keith Downing - Volume of a Cylinder Calculation.
-        public double void calcVolumeOfCylinder (double diameter, double height)
+        public double calcVolumeOfCylinder (double diameter, double height)
                     throws CalculationsControlException {
             if (diameter < 0 || diameter > 3){
                   throw new CalculationsControlException("Diameter is out of range."
