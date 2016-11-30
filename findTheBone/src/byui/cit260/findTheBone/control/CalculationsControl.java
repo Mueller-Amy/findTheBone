@@ -16,6 +16,7 @@ public class CalculationsControl {
         //Group work for volume of a box
 
         public double calcVolumeOfBox(double length, double width, double height)
+                throws CalculationsControlException 
                         {
     
            /*if (length<=0 OR length>6) THEN
@@ -28,13 +29,19 @@ public class CalculationsControl {
            RETURN area; */
                 
            if (length <= 0 || length > 6 ){//length out of range??
-               return -1;
+               //return -1;
+               throw new CalculationsControlException ("Length out of range"
+                       + "Please enter a number between 0 and 6.");
            }
            if (width <= 0 || width > 6 ) {//width out of range??
-               return -1;
+              // return -1;
+               throw new CalculationsControlException ("Width out of range"
+                       + "Please enter a number between 0 and 6.");
            }
            if (height <= 0 || height >6){//height out of range??
-               return -1;
+               //return -1;
+                throw new CalculationsControlException ("Height out of range"
+                       + "Please enter a number between 0 and 6.");
            }
            
            double volume = (length * width * height);
