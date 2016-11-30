@@ -5,6 +5,7 @@
  */
 package byui.cit260.findTheBone.control;
 
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -137,7 +138,7 @@ public class CalculationsControlTest {
      * Test of calcAreaOfBox method, of class CalculationsControl.
      */
     @Test
-    public void testCalcAreaOfBox() {
+    public void testCalcAreaOfBox() throws CalculationsControlException {
         System.out.println("calcAreaOfBox");
         double length = 3.0;
         double width = 2.0;
@@ -212,7 +213,7 @@ public class CalculationsControlTest {
      * Test of calcDiagonalRectangle method, of class CalculationsControl.
      */
     @Test
-    public void testCalcDiagonalRectangle() {
+    public void testCalcDiagonalRectangle() throws CalculationsControlException {
         System.out.println("calcDiagonalRectangle");
         /***********************
          *   Test case # 1
@@ -304,7 +305,7 @@ public class CalculationsControlTest {
      * Test of calcVolumeOfCylinder.
      */
     @Test
-    public void testCalcVolumeOfCylinder() {
+    public void testCalcVolumeOfCylinder() throws CalculationsControlException {
         System.out.println("calcVolumeOfCylinder");
         /***********************
          *   Test Case # 1
