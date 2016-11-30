@@ -100,8 +100,15 @@ public class VolumeOfCylinderView {
                 System.out.println("\nInvalid value: value can not be blank");
                 continue;
             }
-
+            //Amy individual assignment
+            try {
             height = Double.parseDouble(value);
+            } catch (NumberFormatException nf) {
+                
+                System.out.println("\nYou must enter a valid number."
+                        + "Try again or enter Q to quit.");
+            }
+            }
 
             if (height <= 0) {
                 response = "Invalid Entry";
@@ -122,7 +129,7 @@ public class VolumeOfCylinderView {
     }
            
     
-    public void doAction() throws CalculationsControlException {
+   /** public void doAction() throws CalculationsControlException {
            double diameter = getDiameter();
            double height = getHeight();
            CalculationsControl calcControl = new CalculationsControl();
@@ -132,7 +139,7 @@ public class VolumeOfCylinderView {
         }
 
     
-
+**/
 
 
 
