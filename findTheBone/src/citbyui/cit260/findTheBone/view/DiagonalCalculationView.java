@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Jean
  */
-public final class DiagonalCalculationView {
+public class DiagonalCalculationView   {
 
     
     
@@ -26,7 +26,7 @@ public final class DiagonalCalculationView {
                         this.displayBanner(); //display the banner when view is created
     }
 
-    public void displayBanner() {
+    private void displayBanner() {
         System.out.println(
               "\n*********************************************************************"
             + "\n*                Diagonal Rectangle Calculation                     *"

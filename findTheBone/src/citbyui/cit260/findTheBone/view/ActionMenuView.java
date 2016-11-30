@@ -115,8 +115,8 @@ public class ActionMenuView extends View {
             try {
                 // Complex Calculation - Diagonal Rectangle
                 this.actionComplexCalculationDiagonal();
-            } catch (CalculationsControlException ex) {
-                Logger.getLogger(ActionMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (CalculationsControlException me) {
+                System.out.println(me.getMessage());
             }
         }
                 break;          

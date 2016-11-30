@@ -13,7 +13,7 @@ import findthebone.FindTheBone;
  *
  * @author Keith Downing
  */
-public class MainMenuView extends View{
+public class MainMenuView extends View {
     
   //private String menu;
   //  private String promptMessage;
@@ -73,7 +73,7 @@ public class MainMenuView extends View{
 */
     
     @Override
-    public boolean doAction(String choice) {
+    public boolean doAction(String choice)  {
         choice = choice.toUpperCase(); // convert choice to uppercase
             
             switch (choice) {
@@ -100,7 +100,7 @@ public class MainMenuView extends View{
             return false;
     }
 
-    private void startNewGame() {
+    private void startNewGame(){
         
     
         // Display the game menu

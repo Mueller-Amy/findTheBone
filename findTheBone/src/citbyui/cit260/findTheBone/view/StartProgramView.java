@@ -7,13 +7,16 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.GameControl;
 import byui.cit260.findTheBone.model.Player;
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import java.util.Scanner;
 
 /**
  *
  * @author 
  */
-public class StartProgramView extends View{
+public class StartProgramView extends View {
     //private String promptMessage;
         public StartProgramView() {
             super( "\nPlease, enter your name:" ); //promptMessage ="Please, enter your name"
@@ -105,12 +108,17 @@ public class StartProgramView extends View{
             System.out.println("\nError creating he player.");
             return false;
         }
-        // display next view
-        this.displayNextView(player);
+            try {
+                // display next view
+                this.displayNextView(player);
+            } catch (CalculationsControlException me) {
+                System.out.println(me.getMessage());
+//Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 return true; // success !
         
     }
-       private void displayNextView(Player player) {
+       private void displayNextView(Player player) throws CalculationsControlException{
         /*Here is the algorithm for the displayNextView() function
         *
         displayNextView(player): Player

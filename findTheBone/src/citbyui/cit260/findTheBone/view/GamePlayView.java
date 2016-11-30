@@ -5,11 +5,15 @@
  */
 package citbyui.cit260.findTheBone.view;
 
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Jean Oliveira
  */
-public class GamePlayView extends View{
+public class GamePlayView extends View {
      //private String menu;
      //  private String promptMessage;
      //private String currentLocation = "Zoo - Tiger Lodge"; //starting variable to test
@@ -70,10 +74,11 @@ public class GamePlayView extends View{
     
     @Override
     public boolean doAction(String choice) {
-        choice = choice.toUpperCase(); // convert choice to uppercase
+        try {
+            choice = choice.toUpperCase(); // convert choice to uppercase
             
             switch (choice) {
-                 case"A": //Displays Action Menu
+                case"A": //Displays Action Menu
                     this.displayActionMenu();
                     break;
                 case "M": //display Map Menu
@@ -84,11 +89,15 @@ public class GamePlayView extends View{
                     break;
                 
             }
-            return false;
+           
+        } catch (CalculationsControlException ex) {
+            Logger.getLogger(GamePlayView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         return false;
     }
 
    
-    private void displayActionMenu() {
+    private void displayActionMenu() throws CalculationsControlException{
         ActionMenuView actionMenu = new ActionMenuView();
         actionMenu.display();
     }

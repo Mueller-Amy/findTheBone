@@ -124,32 +124,17 @@ public class GameMenuView extends View{
                 case "L": // What is in Backpack
                     this.inBackpack();
                     break;
-                case "C": {
-            try {
-                // volume of cylinder
-                this.volumeOfCylinder();
-            } catch (CalculationsControlException ex) {
-                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+                case "C": 
+                    // volume of cylinder
+                     this.volumeOfCylinder();
+                     break;
+                case "B": 
+                    // Volume of Box
+                    this.volumeOfBox();
                     break;
-                case "B": {
-            try {
-                // Volume of Box
-                this.volumeOfBox();
-            } catch (CalculationsControlException ex) {
-                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-                    break;
-                case "R": {
-            try {
-                // calcAreaOfBox
-                this.calcAreaOfBox();
-            } catch (CalculationsControlException ex) {
-                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+                case "R": 
+                    // calcAreaOfBox
+                    this.calcAreaOfBox();
                     break;
                 case "H": // Help
                     this.displayHelpMenu();
@@ -300,21 +285,33 @@ public class GameMenuView extends View{
     
     }
 
-    private void volumeOfCylinder()  throws CalculationsControlException{
-        
+    private void volumeOfCylinder() {
+         try {
         VolumeOfCylinderView cylinderView = new VolumeOfCylinderView();
         cylinderView.doAction();
+        } catch (CalculationsControlException me) {
+           System.out.println(me.getMessage());
+       }
         
         }
     
 
-    private void volumeOfBox() throws CalculationsControlException {
-       
+    private void volumeOfBox()  {
+       try {
         VolumeOfBoxView volumeView = new VolumeOfBoxView();
         volumeView.getVolume();
-        
+       } catch (CalculationsControlException me) {
+           System.out.println(me.getMessage());
+       }
     }
 
+    private void calcAreaOfBox() {
+        // try {
+         VolumeOfBoxView volumeofbox = new VolumeOfBoxView();
+       // } catch (CalculationsControlException me) {
+          // System.out.println(me.getMessage());
+       //}
+    }
     
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
@@ -370,10 +367,9 @@ public class GameMenuView extends View{
         //itemView.display();
     }
 
-    private void calcAreaOfBox() throws CalculationsControlException{
-        VolumeOfBoxView volumeofbox = new VolumeOfBoxView();
-        
-    }
+    
+
+    
       
     
     }
