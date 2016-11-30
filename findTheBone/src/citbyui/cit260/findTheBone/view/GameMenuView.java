@@ -124,11 +124,23 @@ public class GameMenuView extends View{
                 case "L": // What is in Backpack
                     this.inBackpack();
                     break;
-                case "C": // volume of cylinder
-                    this.volumeOfCylinder();
+                case "C": {
+            try {
+                // volume of cylinder
+                this.volumeOfCylinder();
+            } catch (CalculationsControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                     break;
-                case "B": // Volume of Box
-                    this.volumeOfBox();
+                case "B": {
+            try {
+                // Volume of Box
+                this.volumeOfBox();
+            } catch (CalculationsControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                     break;
                 case "R": {
             try {
@@ -288,16 +300,15 @@ public class GameMenuView extends View{
     
     }
 
-    private void volumeOfCylinder()  {
-        try {
+    private void volumeOfCylinder()  throws CalculationsControlException{
+        
         VolumeOfCylinderView cylinderView = new VolumeOfCylinderView();
         cylinderView.doAction();
-        } catch (CalculationsControlException me){
-            System.out.println(me.getMessage());
+        
         }
-    }
+    
 
-    private void volumeOfBox() {
+    private void volumeOfBox() throws CalculationsControlException {
        
         VolumeOfBoxView volumeView = new VolumeOfBoxView();
         volumeView.getVolume();

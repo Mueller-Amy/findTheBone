@@ -129,7 +129,7 @@ public class VolumeOfCylinderView {
     }
            
     
-   /** public void doAction() throws CalculationsControlException {
+    public void doAction() throws CalculationsControlException {
            double diameter = getDiameter();
            double height = getHeight();
            CalculationsControl calcControl = new CalculationsControl();
@@ -139,7 +139,7 @@ public class VolumeOfCylinderView {
         }
 
     
-**/
+
 
 
 

@@ -7,7 +7,7 @@ package citbyui.cit260.findTheBone.exceptions;
 
 /**
  *
- * @author Jean
+ * @author Jean Oliveira
  */
 public class LocationControlException extends Exception {
 
