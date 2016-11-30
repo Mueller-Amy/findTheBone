@@ -68,12 +68,14 @@ public class FindTheBone {
     public static void main(String[] args) {
         //create a StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-        
-           
-        
-             
-        
+        try {
+             startProgramView.display();
+        } catch (Throwable te) {
+                System.out.println(te.getMessage());
+                te.printStackTrace();
+                startProgramView.display();
+        }
+       
         
     }
 

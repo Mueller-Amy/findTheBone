@@ -56,10 +56,16 @@ public class VolumeOfCylinderView {
 
             if (value.length() < 1) { // value is blank
                 System.out.println("\nInvalid value: value can not be blank");
-                continue;
+   
+            continue;
             }
-
+            try {
             diameter = Double.parseDouble(value);
+            } catch (NumberFormatException nf) {
+                
+                System.out.println("\nYou must enter a valid number."
+                                    + " Try again or enter Q to quit.");
+            }
 
             if (diameter <= 0) {
                 response = "Invalid Entry";
