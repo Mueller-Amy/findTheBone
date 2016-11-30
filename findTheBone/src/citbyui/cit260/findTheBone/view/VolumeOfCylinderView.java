@@ -108,7 +108,7 @@ public class VolumeOfCylinderView {
                 System.out.println("\nYou must enter a valid number."
                         + "Try again or enter Q to quit.");
             }
-            }
+            
 
             if (height <= 0) {
                 response = "Invalid Entry";

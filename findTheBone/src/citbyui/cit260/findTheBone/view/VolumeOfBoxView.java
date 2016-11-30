@@ -7,6 +7,7 @@
 package citbyui.cit260.findTheBone.view;
 import java.util.Scanner;
 import byui.cit260.findTheBone.control.CalculationsControl;
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
 
 
 public class VolumeOfBoxView {
@@ -88,7 +89,7 @@ public class VolumeOfBoxView {
               return height;
             }
         
-        public void getVolume(){
+        public void getVolume() throws CalculationsControlException{
             boolean valid = false;
             
             while(!valid)
