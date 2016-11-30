@@ -7,11 +7,7 @@
 package citbyui.cit260.findTheBone.view;
 import java.util.Scanner;
 import byui.cit260.findTheBone.control.CalculationsControl;
-/**
- /**
- *
- * @author Amy Mueller
- */
+
 
 public class VolumeOfBoxView {
    String promptMessages = "\n"
@@ -30,31 +26,19 @@ public class VolumeOfBoxView {
            + "\n=============================";
     
     private double getWidth() {
-    
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        double width = 0;
-        String response;
         
-        //while a valid name has not been retrieved
-        while (!valid) {
+        Double width = null; //L11 assignment
+        while (width == null) {
+            String value = this.getInput();
+            value = value.trim().toUpperCase();
             
-            System.out.print("\n" + this.promptMessages);
-            
-            //get the value entered from the keyboard
-            width = keyboard.nextDouble();
-            if (width == -1)
-                return -1;
-            
-            else if (width <= 0) {
-                response = "Invalid Entry";
-            }
-            else {
-                valid = true;
-            }
+            if (value.equals("Q"))
+                break;
+            width = Double.parseDouble(value);
         }
-            return width;
+       
+    
+         return width;
         }
     
         
@@ -146,6 +130,27 @@ public class VolumeOfBoxView {
             }
             }
         }
+
+    private String getInput() {
+        String number = null;
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboar
+        boolean valid = false; // initialize to not valid
+        //String value = null; // value to be returned
+        
+        while (!valid) { // loop while an invalid value is enter
+            System.out.println("\n Enter the value :");// + this.displayMessage);
+            String value = keyboard.nextLine(); // get next line typed on keyboard
+                       
+            if (value.length() < 1) { // value is blank
+                System.out.println("\nInvalid value: value can not be blank");
+                continue;
+        }
+        break; // end the loop
+        
+        }
+             
+        return number; // return the value entered
+    }
 }
         
             

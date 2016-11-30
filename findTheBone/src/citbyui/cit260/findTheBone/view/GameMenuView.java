@@ -16,6 +16,8 @@
 package citbyui.cit260.findTheBone.view;
 
 import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -42,7 +44,8 @@ public class GameMenuView extends View{
                     + "\nT - Time Used"
                     + "\nL - What is in Backpack"
                     + "\nC - Volume of a cylinder"
-                    + "\nB - Area of a box"
+                    + "\nR - Àrea of a box"
+                    + "\nB - Volume of a box"
                     + "\nH - Help"
                     + "\nX - Exit"
                     + "\n==========================================");
@@ -126,6 +129,15 @@ public class GameMenuView extends View{
                     break;
                 case "B": // Volume of Box
                     this.volumeOfBox();
+                    break;
+                case "R": {
+            try {
+                // calcAreaOfBox
+                this.calcAreaOfBox();
+            } catch (CalculationsControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                     break;
                 case "H": // Help
                     this.displayHelpMenu();
@@ -345,6 +357,11 @@ public class GameMenuView extends View{
     private void displayItem() {
         ItemScreenView itemView = new ItemScreenView();
         //itemView.display();
+    }
+
+    private void calcAreaOfBox() throws CalculationsControlException{
+        VolumeOfBoxView volumeofbox = new VolumeOfBoxView();
+        
     }
       
     
