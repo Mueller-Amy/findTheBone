@@ -61,33 +61,50 @@ public class CalculationsControl {
            }
     
            // Jean Oliveira - Rectangle Diagonal Calculation
-        public double calcDiagonalRectangle(double length,double width) {
+        public double calcDiagonalRectangle(double length,double width)
+                    throws CalculationsControlException {
         if (length < 0 || width <0) { // if length or width is negative					
-           return -1;
-            }					
+           //return -1;
+           throw new CalculationsControlException("Length and width cannot be "
+               + "negative. Please reenter number. ");			
         if (length == width) {	//if lenght=width it's not a rectangle				
-           return -1;
+           //return -1;
+            throw new CalculationsControlException("Length and width cannot "
+               + "be the same number. Please reenter number. ");
             }
-        if (width < 3 || width >7) { // width out of range??					
-           return -1;
+        if (width < 3 || width > 7) { // width out of range??					
+           //return -1;
+           throw new CalculationsControlException("Width is out of range."
+               + " Please reenter number between 3 and 7. ");
             }
-        if (length <5 || length >12) { // length out of range??
-           return -1;	
+        if (length <5 || length > 12) { // length out of range??
+           //return -1;	
+           throw new CalculationsControlException("Length is out of range."
+               + " Please reenter number between 5 and 12. ");
             }					
-            double diagonal =Math.sqrt(Math.pow(length,2)+ Math.pow(width,2));					
+            double diagonal =Math.sqrt(Math.pow(length,2)+ Math.pow(width,2));
+            
             return diagonal;	
     }
             // Keith Downing - Volume of a Cylinder Calculation.
-        public double calcVolumeOfCylinder(double diameter, double height){
-            if (diameter < 0 || diameter > 3)
-                return -1;
-            if (height < 0 || height > 8)
-                return -1;
+        public double void calcVolumeOfCylinder (double diameter, double height)
+                    throws CalculationsControlException {
+            if (diameter < 0 || diameter > 3){
+                  throw new CalculationsControlException("Diameter is out of range."
+               + " Please reenter number between 0 and 3. ");
+            }
+                //return -1;
+                
+            if (height < 0 || height > 8){
+                //return -1;
+                     throw new CalculationsControlException("Diameter is out of range."
+               + " Please reenter number between 0 and 8. ");
+            }
             
             double volume =(diameter * Math.PI * height);
             return volume;
         }
-          				
+}			
 
-    }
+    
 
