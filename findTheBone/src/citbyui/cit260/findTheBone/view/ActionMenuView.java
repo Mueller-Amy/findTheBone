@@ -7,11 +7,16 @@ package citbyui.cit260.findTheBone.view;
 
 //import java.util.Scanner;
 
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /**
  *
  * @author Jean
  */
-public class ActionMenuView extends View{
+public class ActionMenuView extends View {
     //private String menu;
     //private String promptMessage = this.promptMessage = "\nPlease, enter your option:" ; //promptMessage ="Please, enter your name"
     
@@ -106,9 +111,15 @@ public class ActionMenuView extends View{
             case "M": // Map - Display the map.
                 this.actionDisplayMap();
                 break;  
-            case "C": // Complex Calculation - Diagonal Rectangle
+            case "C": {
+            try {
+                // Complex Calculation - Diagonal Rectangle
                 this.actionComplexCalculationDiagonal();
-                break;     
+            } catch (CalculationsControlException ex) {
+                Logger.getLogger(ActionMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+                break;          
 
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -146,7 +157,7 @@ public class ActionMenuView extends View{
          System.out.println("*** actionDisplayMap function called ***");
     }
 
-    private void actionComplexCalculationDiagonal() {
+    private void actionComplexCalculationDiagonal() throws CalculationsControlException {
                
        DiagonalCalculationView rectangleDiagonal = new DiagonalCalculationView();
                 rectangleDiagonal.displayRectangleDiagonal();

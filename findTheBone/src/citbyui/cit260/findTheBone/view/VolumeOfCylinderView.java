@@ -115,10 +115,7 @@ public class VolumeOfCylinderView {
         return height;
     }
            
-    /**
-     *
-     * @throws citbyui.cit260.findTheBone.exceptions.CalculationsControlException
-     */
+    
     public void doAction() throws CalculationsControlException {
            double diameter = getDiameter();
            double height = getHeight();

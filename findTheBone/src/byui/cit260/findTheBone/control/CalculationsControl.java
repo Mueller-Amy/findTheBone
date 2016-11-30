@@ -66,8 +66,9 @@ public class CalculationsControl {
         if (length < 0 || width <0) { // if length or width is negative					
            //return -1;
            throw new CalculationsControlException("Length and width cannot be "
-               + "negative. Please reenter number. ");			
-        if (length == width) {	//if lenght=width it's not a rectangle				
+               + "negative. Please reenter number. ");	
+        }
+        if (length == width) {   //if lenght=width it's not a rectangle				
            //return -1;
             throw new CalculationsControlException("Length and width cannot "
                + "be the same number. Please reenter number. ");
@@ -87,7 +88,9 @@ public class CalculationsControl {
             return diagonal;	
     }
             // Keith Downing - Volume of a Cylinder Calculation.
-        public double calcVolumeOfCylinder (double diameter, double height)
+
+    
+    public double calcVolumeOfCylinder (double diameter, double height)
                     throws CalculationsControlException {
             if (diameter < 0 || diameter > 3){
                   throw new CalculationsControlException("Diameter is out of range."

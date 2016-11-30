@@ -15,6 +15,8 @@
 
 package citbyui.cit260.findTheBone.view;
 
+import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+
 /**
  *
  * @author Amy Mueller
@@ -274,14 +276,20 @@ public class GameMenuView extends View{
     
     }
 
-    private void volumeOfCylinder() {
+    private void volumeOfCylinder()  {
+        try {
         VolumeOfCylinderView cylinderView = new VolumeOfCylinderView();
         cylinderView.doAction();
+        } catch (CalculationsControlException me){
+            System.out.println(me.getMessage());
+        }
     }
 
     private void volumeOfBox() {
+       
         VolumeOfBoxView volumeView = new VolumeOfBoxView();
         volumeView.getVolume();
+        
     }
 
     
