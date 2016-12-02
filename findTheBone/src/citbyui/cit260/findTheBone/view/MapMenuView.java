@@ -87,7 +87,8 @@ public class MapMenuView extends View{
                     this.saveGame();
                     break;
                 default:
-                    System.out.println("\n*** Invalid selection *** Try Again");
+                    // L12 System.out.println("\n*** Invalid selection *** Try Again");
+                    this.console.println("\n*** Invalid selection *** Try Again");
                     break;
                 
             }
@@ -109,15 +110,18 @@ public class MapMenuView extends View{
     }
 
     private void startRow() {
-        System.out.println("*** startRow function called ***");
+       // L12 System.out.println("*** startRow function called ***");
+       this.console.println("*** startRow function called ***");
     }
 
     private void startColumn() {
-        System.out.println("*** startColumn function called ***");
+        // L12 System.out.println("*** startColumn function called ***");
+        this.console.println("*** startColumn function called ***");
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+        // L12 System.out.println("*** saveGame function called ***");
+        this.console.println("*** saveGame function called ***");
     }
 
     

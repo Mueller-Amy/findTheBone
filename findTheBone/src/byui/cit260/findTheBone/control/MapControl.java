@@ -26,7 +26,9 @@ public class MapControl {
         //assign scenes to locations
         GameControl.assignScenesToLocations(map,scenes);
         
-        System.out.println("*** called createMap() called ***");
+        // L12 System.out.println("*** called createMap() called ***");
+        this.console.println("*** called createMap() called ***");
+                
         
         return map;
         
@@ -47,7 +49,8 @@ public class MapControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("*** New Game Function displayed. ***");
+        // L 12 System.out.println("*** New Game Function displayed. ***");
+        this.console.println("*** New Game Function displayed. ***");
     }
 
     static void moveCharacterToStartingLocation(Map map) {

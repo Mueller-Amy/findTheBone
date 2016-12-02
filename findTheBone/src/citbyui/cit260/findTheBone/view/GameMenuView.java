@@ -141,7 +141,9 @@ public class GameMenuView extends View{
                     break;
                               
                 default:
-                    System.out.println("\n*** Invalid selection *** Try Again");
+                   //L 12 System.out.println("\n*** Invalid selection *** Try Again");
+                    this.console.println("\n*** Invalid selection *** Try Again");
+                    
                     break;
                 
             }
@@ -165,12 +167,14 @@ public class GameMenuView extends View{
         //Game game = FindTheBone.getCurrentGame();
         //Item[] item = item.getInventory();
         
-        System.out.println("\n           LIST OF INVENTORY ITEMS");
+        //L12 System.out.println("\n           LIST OF INVENTORY ITEMS");
+        this.console.println("\n           LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                   ");
         line.insert(0, "DESCRIPTION");
         line.insert(20, "REQUIRED");
         line.insert(30, "IN STOCK");
-        System.out.println(line.toString());
+        // L12 System.out.println(line.toString());
+        this.console.println(line.toString());
         /*
         for (InventoryView item: inventory) {
             line = new StringBuilder("                                ");
@@ -277,11 +281,13 @@ public class GameMenuView extends View{
     }
 
     private void timeUsed() {
-        System.out.println("*** timeUsed function called ***"); 
+        // L12 System.out.println("*** timeUsed function called ***"); 
+        this.console.println("*** timeUsed function called ***"); 
     }
 
     private void inBackpack() {
-        System.out.println("*** inBackpack function called ***"); 
+        // L12 System.out.println("*** inBackpack function called ***"); 
+        this.console.println("*** inBackpack function called ***");
     
     }
 
@@ -290,7 +296,9 @@ public class GameMenuView extends View{
         VolumeOfCylinderView cylinderView = new VolumeOfCylinderView();
         cylinderView.doAction();
         } catch (CalculationsControlException me) {
-           System.out.println(me.getMessage());
+           //L12 System.out.println(me.getMessage());
+           ErrorView.display(this.getClass().getName(), "Error reading input:" +
+                    me.getMessage());
        }
         
         }
@@ -301,7 +309,9 @@ public class GameMenuView extends View{
         VolumeOfBoxView volumeView = new VolumeOfBoxView();
         volumeView.getVolume();
        } catch (CalculationsControlException me) {
-           System.out.println(me.getMessage());
+           // L12 System.out.println(me.getMessage());
+           ErrorView.display(this.getClass().getName(), "Error reading input:" +
+                    me.getMessage());
        }
     }
 

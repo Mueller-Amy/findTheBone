@@ -116,13 +116,16 @@ public class ActionMenuView extends View {
                 // Complex Calculation - Diagonal Rectangle
                 this.actionComplexCalculationDiagonal();
             } catch (CalculationsControlException me) {
-                System.out.println(me.getMessage());
+                // L 12 System.out.println(me.getMessage());
+                ErrorView.display(this.getClass().getName(),
+                            "Invalid selection. Try again." + me.getMessage());
             }
         }
                 break;          
 
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+               // L12 System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "Invalid slection. Try again.");
                 break;
         }
         return false;
@@ -130,31 +133,38 @@ public class ActionMenuView extends View {
     }
 
     private void actionLookAround() {
-         System.out.println("*** actionLookAround function called ***");
+       //  L12 System.out.println("*** actionLookAround function called ***");
+       this.console.println("***actionLookAround function called ***");
     }
 
     private void actionSearchAround() {
-         System.out.println("*** actionSearchAround function called ***");
+        // L12 System.out.println("*** actionSearchAround function called ***");
+        this.console.println("*** actionSearchAround function called ***");
     }
 
     private void actionDigAround() {
-         System.out.println("*** actionDigAround function called ***");
+        //L12 System.out.println("*** actionDigAround function called ***");
+        this.console.println("***actionDigAround function called ***");
     }
 
     private void actionDoQuestion() {
-         System.out.println("*** actionDoQuestion function called ***");
+        // L12 System.out.println("*** actionDoQuestion function called ***");
+        this.console.println("*** actionDoQuestion function called ***");
     }
 
     private void actionDisplayInventory() {
-         System.out.println("*** actionDisplayInventory function called ***");
+         //L12 System.out.println("*** actionDisplayInventory function called ***");
+         this.console.println("*** actionDisplayInventory function called ***");
     }
 
     private void actionGiveItem() {
-         System.out.println("*** actionGiveItem function called ***");
+        //L12 System.out.println("*** actionGiveItem function called ***");
+        this.console.println("*** actionGiveItem function called ***");
     }
 
     private void actionDisplayMap() {
-         System.out.println("*** actionDisplayMap function called ***");
+        //L12 System.out.println("*** actionDisplayMap function called ***");
+         this.console.println("*** actionDisplayMap function called ***");
     }
 
     private void actionComplexCalculationDiagonal() throws CalculationsControlException {

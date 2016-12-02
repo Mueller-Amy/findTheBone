@@ -14,13 +14,15 @@ import java.util.Scanner;
  */
 public final class ItemScreenView {
        public void promptEnterKey(){
-            System.out.println("Press \"ENTER\" to continue...");
+            // L12 System.out.println("Press \"ENTER\" to continue...");
+            this.console.println("Press \"ENTER\" to continue...");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
        }
           
     void display() {
-         System.out.println("\n"
+         // L12 System.out.println("\n"
+         this.console.println("\n"
                     + "\n=========================================="
                     + "\n|                                        |"
                     + "\n|        L10 Individual Assignment       |"
@@ -39,16 +41,20 @@ public final class ItemScreenView {
 
     public ItemScreenView() {
         this.display(); //display screen
-        System.out.print("Numbers Order : ");
+        //L12 System.out.print("Numbers Order : ");
+        this.console.print("Numbers Order : ");
         ItemControl sorter = new ItemControl();
         int[] input = {32,7,56,20,12,98,2,36,64,22,77};
         sorter.sort(input);
         for(int i:input){
-            System.out.print(i);
-            System.out.print(" ");
+            // L12 System.out.print(i);
+            this.console.print(i);
+            // L12 System.out.print(" ");
+            this.console.print(" ");
           
         }
-        System.out.println ("");
+        // L12 System.out.println ("");
+        this.console.println ("");
          promptEnterKey();
          
 

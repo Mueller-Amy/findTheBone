@@ -24,11 +24,13 @@ public class Scene implements Serializable{
     }
 
     public void setMapSymbol(String _st_) {
-       System.out.println("\n setMapSymbol function called. ");
+      // L12 System.out.println("\n setMapSymbol function called. ");
+      this.console.println("\n setMapSymbol function called.");
     }
 
     public void setBlocked(boolean b) {
-        System.out.println("\n setBlocked function called. ");
+       // L 12 System.out.println("\n setBlocked function called. ");
+       this.console.println("\n setBlocked function called.");
     }
 
     

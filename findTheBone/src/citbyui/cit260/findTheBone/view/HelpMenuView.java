@@ -114,44 +114,56 @@ public class HelpMenuView extends View {
                     this.howToMap();
                     break; 
                 default:
-                    System.out.println("\n*** Invalid selection *** Try Again");
+                    // L12 System.out.println("\n*** Invalid selection *** Try Again");
+                    this.console.println("\n*** Invalid selection *** Try Again");
                     break;
                 
             }
             return false;
     }
     private void startNewGameOne(){
-        System.out.println("*** New Game ***");
+        // L12 System.out.println("*** New Game ***");
+        this.console.println("*** New Game ***");
     }
     private void startExistingGameOne() {
-        System.out.println("*** Load Existing game ***");
+        // L12 System.out.println("*** Load Existing game ***");
+        this.console.println("*** Load Existing game ***");
     }
     private void saveGameOne() {
-        System.out.println("*** Saved Game Loads ***");
+        // L12 System.out.println("*** Saved Game Loads ***");
+        this.console.println("*** Saved Game Loads ***");
     }
     private void howToMove() {
-        System.out.println("*** User Must enter a Alpha+Numeric to move to a new location. (Example A5)***");
+        // L12 System.out.println("*** User Must enter a Alpha+Numeric to move to a new location. (Example A5)***");
+        this.console.println("*** User Must enter a Alpha+Numeric to move to a new location. (Example A5)***");
     }
     private void howToLook() {
-        System.out.println("*** Provides details about the surrounding area. ***");
+        // L12 System.out.println("*** Provides details about the surrounding area. ***");
+        this.console.println("*** Provides details about the surrounding area. ***");
     }
     private void howToSearch() {
-        System.out.println("*** Prompts the user to search around the area. ***");
+        // L12 System.out.println("*** Prompts the user to search around the area. ***");
+        this.console.println("*** Prompts the user to search around the area. ***");
     }
     private void howToDig() {
-        System.out.println("*** Dig around. Search is above ground items. ***");
+        // L12 System.out.println("*** Dig around. Search is above ground items. ***");
+        this.console.println("*** Dig around. Search is above ground items. ***");
     }
     private void howToQuestion() {
-        System.out.println("*** Allows the users to question a person in the area. ***");
+        // L12 System.out.println("*** Allows the users to question a person in the area. ***");
+        this.console.println("*** Allows the users to question a person in the area. ***");
     }
     private void howToInventory() {
-        System.out.println("*** Display Inventory of Items. ***");
+        // L12 System.out.println("*** Display Inventory of Items. ***");
+        this.console.println("*** Display Inventory of Items. ***");
     }
     private void howToGive() {
-        System.out.println("*** Give an item from your backpack to the character in the area. ***");
+        // L12 System.out.println("*** Give an item from your backpack to the character in the area. ***");
+        this.console.println("*** Give an item from your backpack to the character in the area. ***");
     }
     private void howToMap() {
-        System.out.println("*** Display the map. ***");
+        // L12 System.out.println("*** Display the map. ***");
+        this.console.println("*** Display the map. ***");
     }
 
 

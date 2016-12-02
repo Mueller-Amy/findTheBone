@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.findTheBone.control;
+import citbyui.cit260.findTheBone.view.ErrorView;
 import java.util.Scanner;
 /**
  *
@@ -14,11 +15,13 @@ public class ItemsWithinControl {
         int n;
         String temp;
          //L12 TA deleted line -->>  Scanner s = new Scanner(System.in);
-        System.out.print("Number of names");
+      //  System.out.print("Number of names");
+        this.console.print("Number of names");
         n=s.nextInt();
         String names[] =  new String[n];
         Scanner s1 = new Scanner(System.in);
-        System.out.println("Enter all names");
+       // L12 System.out.println("Enter all names");
+         this.console.println("Enter all names");
         for(int i =0; i <n; i++){
             names[i]= s1.nextLine();
         }
@@ -31,7 +34,8 @@ public class ItemsWithinControl {
                 }
                 }
             }
-        System.out.print("Names Alphabetical Order");
+        // L 12 System.out.print("Names Alphabetical Order");
+        this.console.print("Names Alphabetical Order");
         for(int i=0; i<n-1; i++){
             System.out.print(names[i]+ ",");
         }

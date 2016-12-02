@@ -54,13 +54,15 @@ public  abstract class View implements ViewInterface{
         
         
         while (!valid) { // loop while an invalid value is enter
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             
             value = this.keyboard.readLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading adn trailing blanks
             
             if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+               // System.out.println("\nInvalid value: value can not be blank");
+               ErrorView.display(this.getClass().getName(), 
+                       "Value cannot be blank.");
                 continue;
         }
         break; // end the loop

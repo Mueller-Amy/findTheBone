@@ -24,7 +24,8 @@ public class StartProgramView extends View {
     }
 
     private void displayBanner() {
-        System.out.println(
+       // L12  System.out.println(
+       this.console.println(
               "\n*************************************************************************************"
             + "\n*               Where's My Bone?   Is a text based role playing game.               *"
             + "\n*     You will assume the role of a dog.  Cat DeVil, the mean cat from  next door,  *"
