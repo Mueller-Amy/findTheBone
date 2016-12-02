@@ -93,8 +93,9 @@ public class MainMenuView extends View {
                     this.displayActionMenu();
                     break;
                 default:
-                   // L12  System.out.println("\n*** Invalid selection *** Try Again");
-                    this.console.println("\n*** Invalid selection *** Try Again");
+                     ErrorView.display(this.getClass().getName(),//L12 TA
+                        "\n*** Invalid selection *** Try Again");//L12 TA
+                    //this.console.println("\n*** Invalid selection *** Try Again");
                     break;
                 
             }
@@ -119,22 +120,11 @@ public class MainMenuView extends View {
      *
      */
     private void startExistingGame() {
-        // L12 System.out.println("*** startExistingGame function called ***");
-        this.console.println("*** startExistingGame function called ***");
+        System.out.println("*** startExistingGame function called ***");
     }
 
     private void saveGame() {
-        // L12 System.out.println("*** saveGame function called ***");
-        this.console.println("\n\n Enter the file path for file where the game "
-                    + "is to be saved.");
-        String filePath = this.getInput();
-        
-        try {
-            //save the game to the specified file
-            GameControl.saveGame(FindTheBone.getCurrentGame(), filePath);
-        } catch (Exception ex) {
-            ErrorView.display("MainMenuView", ex.getMessage());
-        }
+        System.out.println("*** saveGame function called ***");
     }
 
     private void displayHelpMenu() {

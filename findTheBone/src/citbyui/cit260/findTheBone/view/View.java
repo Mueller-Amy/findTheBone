@@ -6,8 +6,12 @@
 package citbyui.cit260.findTheBone.view;
 
 import findthebone.FindTheBone;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**********
  ******
@@ -15,12 +19,12 @@ import java.util.Scanner;
  */
 public  abstract class View implements ViewInterface{
     protected String displayMessage;
-    private String value=null;// L12 TA - set value to null
+    private String value;
   
     //L12 TA
     private String message;
-    private static final PrintWriter keyboard =FindTheBone.getOutFile();
-    private static final PrintWriter console =FindTheBone.getLogFile();
+    protected final BufferedReader keyboard =FindTheBone.getInFile();
+    protected final PrintWriter console =FindTheBone.getOutFile();
     
     
     
@@ -49,20 +53,24 @@ public  abstract class View implements ViewInterface{
     @Override 
     public String getInput() {
       
-        //L12 TA deleted line -->> Scanner keyboard = new Scanner(System.in); // get infile for keyboar
+        //L12 TA deleted line -->        Scanner keyboard = new Scanner(System.in); // get infile for keyboar
         boolean valid = false; // initialize to not valid
         
         
         while (!valid) { // loop while an invalid value is enter
             this.console.println("\n" + this.displayMessage);
             
-            value = this.keyboard.readLine(); // get next line typed on keyboard
+            try {
+                value = this.keyboard.readLine(); // get next line typed on keyboard ----- L12 TA changed
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(),
+                        "Error reading Input: " + ex.getMessage());
+            }
             value = value.trim(); // trim off leading adn trailing blanks
             
             if (value.length() < 1) { // value is blank
-               // System.out.println("\nInvalid value: value can not be blank");
-               ErrorView.display(this.getClass().getName(), 
-                       "Value cannot be blank.");
+                ErrorView.display(this.getClass().getName(),//L12 TA
+                        "\nInvalid value: value can not be blank");//L12 TA
                 continue;
         }
         break; // end the loop

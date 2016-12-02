@@ -6,22 +6,29 @@
 package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.ItemControl;
-import java.util.Scanner;
+import java.io.IOException;
 
 /**
  *
  * @author Jean
  */
-public final class ItemScreenView {
-       public void promptEnterKey(){
-            // L12 System.out.println("Press \"ENTER\" to continue...");
+public abstract class ItemScreenView extends View {
+       public final void promptEnterKey(){
             this.console.println("Press \"ENTER\" to continue...");
-            Scanner scanner = new Scanner(System.in);
-            scanner.nextLine();
+           try {
+               //Scanner scanner = new Scanner(System.in);
+               this.keyboard.readLine();
+           } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(),
+                        "Error reading Input: " + ex.getMessage());
+           }
        }
           
-    void display() {
-         // L12 System.out.println("\n"
+    /**
+     *
+     */
+    @Override
+    public final void display() {
          this.console.println("\n"
                     + "\n=========================================="
                     + "\n|                                        |"
@@ -41,20 +48,16 @@ public final class ItemScreenView {
 
     public ItemScreenView() {
         this.display(); //display screen
-        //L12 System.out.print("Numbers Order : ");
         this.console.print("Numbers Order : ");
         ItemControl sorter = new ItemControl();
         int[] input = {32,7,56,20,12,98,2,36,64,22,77};
         sorter.sort(input);
         for(int i:input){
-            // L12 System.out.print(i);
             this.console.print(i);
-            // L12 System.out.print(" ");
             this.console.print(" ");
           
         }
-        // L12 System.out.println ("");
-        this.console.println ("");
+       this.console.println ("");
          promptEnterKey();
          
 

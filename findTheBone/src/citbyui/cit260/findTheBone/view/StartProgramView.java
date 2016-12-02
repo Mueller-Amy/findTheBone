@@ -8,8 +8,6 @@ package citbyui.cit260.findTheBone.view;
 import byui.cit260.findTheBone.control.GameControl;
 import byui.cit260.findTheBone.model.Player;
 import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 //import java.util.Scanner;
 
 /**
@@ -24,8 +22,7 @@ public class StartProgramView extends View {
     }
 
     private void displayBanner() {
-       // L12  System.out.println(
-       this.console.println(
+        this.console.println(
               "\n*************************************************************************************"
             + "\n*               Where's My Bone?   Is a text based role playing game.               *"
             + "\n*     You will assume the role of a dog.  Cat DeVil, the mean cat from  next door,  *"
@@ -98,22 +95,26 @@ public class StartProgramView extends View {
     public boolean doAction(String playersName) {
                 
         if (playersName.length()<2 ) {
-            System.out.println("\ninvalid players name: "
-                       + "The name must be greater than one character in length");
+            
+            //System.out.println("\ninvalid players name: "
+            //           + "The name must be greater than one character in length");
+            ErrorView.display(this.getClass().getName(),"\ninvalid players name: "
+                                + "The name must be greater than one character in length");
             return false;
                     }
         // call createPlayer() control function
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) { // if unsuccessful
-            System.out.println("\nError creating he player.");
+            //System.out.println("\nError creating the player.");
+             ErrorView.display(this.getClass().getName(),"\nError creating the player.");
             return false;
         }
             try {
                 // display next view
                 this.displayNextView(player);
             } catch (CalculationsControlException me) {
-                System.out.println(me.getMessage());
+                ErrorView.display(this.getClass().getName(),"\nError displayingNextView in StartProgramView class.");
 //Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
             }
                 return true; // success !
@@ -132,7 +133,7 @@ public class StartProgramView extends View {
         
         // display a custom welcome message
         
-         System.out.println("\n=========================================="
+         this.console.println("\n=========================================="
                           + "\n Welcome to the game " + player.getName()
                           + "\n We hope you have a lot of fun !"
                           + "\n=========================================="
