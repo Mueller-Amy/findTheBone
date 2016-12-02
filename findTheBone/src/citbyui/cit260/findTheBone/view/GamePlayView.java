@@ -85,7 +85,9 @@ public class GamePlayView extends View {
                     this.displayMapMenu();
                     break;
                 default:
-                    System.out.println("\n*** Invalid selection *** Try Again");
+                    //System.out.println("\n*** Invalid selection *** Try Again");
+                     ErrorView.display(this.getClass().getName(),//L12 TA
+                        "\n*** Invalid selection *** Try Again");//L12 TA
                     break;
                 
             }

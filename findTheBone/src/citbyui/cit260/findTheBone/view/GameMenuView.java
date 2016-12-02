@@ -141,7 +141,9 @@ public class GameMenuView extends View{
                     break;
                               
                 default:
-                    System.out.println("\n*** Invalid selection *** Try Again");
+                    //System.out.println("\n*** Invalid selection *** Try Again");
+                    ErrorView.display(this.getClass().getName(),//L12 TA
+                        "\n*** Invalid selection *** Try Again");
                     break;
                 
             }
@@ -363,7 +365,12 @@ public class GameMenuView extends View{
 
    
     private void displayItem() {
-        ItemScreenView itemView = new ItemScreenView();
+        ItemScreenView itemView = new ItemScreenView() {
+            @Override
+            public boolean doAction(String value) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
         //itemView.display();
     }
 

@@ -93,7 +93,9 @@ public class MainMenuView extends View {
                     this.displayActionMenu();
                     break;
                 default:
-                    System.out.println("\n*** Invalid selection *** Try Again");
+                     ErrorView.display(this.getClass().getName(),//L12 TA
+                        "\n*** Invalid selection *** Try Again");//L12 TA
+                    //this.console.println("\n*** Invalid selection *** Try Again");
                     break;
                 
             }
