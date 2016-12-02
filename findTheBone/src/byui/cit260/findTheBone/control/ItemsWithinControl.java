@@ -13,7 +13,7 @@ public class ItemsWithinControl {
     public static void main(String[] args){
         int n;
         String temp;
-        Scanner s = new Scanner(System.in);
+         //L12 TA deleted line -->>  Scanner s = new Scanner(System.in);
         System.out.print("Number of names");
         n=s.nextInt();
         String names[] =  new String[n];

@@ -31,6 +31,15 @@ public class FindTheBone {
     //L12 team Assignment- TA
     private static PrintWriter outFile=null;
     private static BufferedReader inFile=null;
+    private static PrintWriter logFile=null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        FindTheBone.logFile = logFile;
+    }
 
     public static PrintWriter getOutFile() {
         return outFile;
@@ -92,7 +101,10 @@ public class FindTheBone {
                //L12 TA open character stream files for end user input and output
                FindTheBone.inFile=new BufferedReader(new InputStreamReader(System.in));
                FindTheBone.outFile=new PrintWriter(System.out, true);
-                
+               //open log file
+               String filePath="log.txt";
+                 FindTheBone.logFile=new PrintWriter(filePath);
+               
             
                
               //create start program view and start run program
@@ -111,8 +123,12 @@ public class FindTheBone {
        //L12 TA
        finally{ 
             try {
-                FindTheBone.inFile.close();
-                FindTheBone.outFile.close();
+                if (FindTheBone.inFile != null)
+                       FindTheBone.inFile.close();
+                if (FindTheBone.outFile != null)
+                       FindTheBone.outFile.close();
+                if (FindTheBone.logFile != null)
+                       FindTheBone.logFile.close();
             } catch (IOException ex) {
                System.out.println("Error closing the file");
             }

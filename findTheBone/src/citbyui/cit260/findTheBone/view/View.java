@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.findTheBone.view;
 
+import findthebone.FindTheBone;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**********
@@ -13,8 +15,14 @@ import java.util.Scanner;
  */
 public  abstract class View implements ViewInterface{
     protected String displayMessage;
-    private String value;
+    private String value=null;// L12 TA - set value to null
   
+    //L12 TA
+    private String message;
+    private static final PrintWriter keyboard =FindTheBone.getOutFile();
+    private static final PrintWriter console =FindTheBone.getLogFile();
+    
+    
     
     public View() {
     }
@@ -41,14 +49,14 @@ public  abstract class View implements ViewInterface{
     @Override 
     public String getInput() {
       
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboar
+        //L12 TA deleted line -->> Scanner keyboard = new Scanner(System.in); // get infile for keyboar
         boolean valid = false; // initialize to not valid
-        //String value = null; // value to be returned
+        
         
         while (!valid) { // loop while an invalid value is enter
             System.out.println("\n" + this.displayMessage);
             
-            value = keyboard.nextLine(); // get next line typed on keyboard
+            value = this.keyboard.readLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading adn trailing blanks
             
             if (value.length() < 1) { // value is blank

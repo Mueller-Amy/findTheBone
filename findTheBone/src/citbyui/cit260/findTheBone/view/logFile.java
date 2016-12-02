@@ -7,21 +7,8 @@ package citbyui.cit260.findTheBone.view;
 
 /**
  *
- * @author Amy Mueller
+ * @author Jean
  */
-public interface ViewInterface {
-    
-    public void display();
-    public String getInput();
-    
-    
-    
-
-    /**
-     *
-     * @param value
-     * @return
-     */
-    public boolean doAction(String value);
+class logFile {
     
 }
