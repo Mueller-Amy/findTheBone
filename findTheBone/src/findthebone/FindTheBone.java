@@ -6,18 +6,16 @@
 package findthebone;
 
 import byui.cit260.findTheBone.control.LocationControl.Locations;
-import byui.cit260.findTheBone.model.Backpack;
-import byui.cit260.findTheBone.model.Clue; // Jean Oliveira
 import byui.cit260.findTheBone.model.Game; // Keith Downing
-import byui.cit260.findTheBone.model.Item; // Jean Oliveira
-import byui.cit260.findTheBone.model.ItemsWithin; // Jean Oliveira
-import byui.cit260.findTheBone.model.Location; // Amy Mueller
 import byui.cit260.findTheBone.model.Map; // Amy Mueller
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
-import byui.cit260.findTheBone.model.Scene; // Keith Downing
-import byui.cit260.findTheBone.model.TownsPeople;
-import byui.cit260.findTheBone.model.Character; 
 import citbyui.cit260.findTheBone.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -30,6 +28,28 @@ public class FindTheBone {
     private static Map currentMap= null;
     private static Locations currentLocations = null;
 
+    //L12 team Assignment- TA
+    private static PrintWriter outFile=null;
+    private static BufferedReader inFile=null;
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        FindTheBone.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        FindTheBone.inFile = inFile;
+    }
+    //end L12 TA block
+    
+    
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -67,15 +87,38 @@ public class FindTheBone {
      */
     public static void main(String[] args) {
         //create a StartProgramViewOrig and display the start program view
-        StartProgramView startProgramView = new StartProgramView();
+        
         try {
-             startProgramView.display();
-        } catch (Throwable te) {
-                System.out.println(te.getMessage());
-                te.printStackTrace();
-                startProgramView.display();
+               //L12 TA open character stream files for end user input and output
+               FindTheBone.inFile=new BufferedReader(new InputStreamReader(System.in));
+               FindTheBone.outFile=new PrintWriter(System.out, true);
+                
+            
+               
+              //create start program view and start run program
+              StartProgramView startProgramView = new StartProgramView();
+              startProgramView.display();
+              return;
+              
+        } catch (Throwable e) {
+                System.out.println("Exception: " + e.toString()+
+                                   "\nCause: " + e.getCause()+
+                                   "\nMessage: " + e.getMessage() );
+                e.printStackTrace();
+                
         }
-       
+        
+       //L12 TA
+       finally{ 
+            try {
+                FindTheBone.inFile.close();
+                FindTheBone.outFile.close();
+            } catch (IOException ex) {
+               System.out.println("Error closing the file");
+            }
+            
+            
+        }
         
     }
 
