@@ -30,6 +30,8 @@ public class CalculationsControl {
                 
            if (length <= 0 || length > 6 ){//length out of range??
                //return -1;
+               
+               //Amy Individual lesson 11
                throw new CalculationsControlException ("Length out of range"
                        + "Please enter a number between 0 and 6.");
            }
