@@ -6,7 +6,13 @@
 package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.GameControl;
+import byui.cit260.findTheBone.model.Game;
+import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import findthebone.FindTheBone;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import java.util.Scanner;
 
 /**
@@ -14,18 +20,20 @@ import findthebone.FindTheBone;
  * @author Keith Downing
  */
 public class MainMenuView extends View {
+
+    private String filepath;
     
   //private String menu;
-  //  private String promptMessage;
+  //private String promptMessage;
 
-  //  public MainMenuView() {
-  //      this.promptMessage = "\n"
+  //public MainMenuView() {
+  //this.promptMessage = "\n"
     public MainMenuView(){
              super(   "\n=========================================="
                     + "\n|                 Main Menu              |"
                     + "\n=========================================="
                     + "\nN - Start New Game"
-                    + "\nL - Load Saved Game"
+                    + "\nG - Get and Start Saved Game"
                     + "\nS - Save Game"
                     + "\nH - Help"
                     + "\nA - Action Menu - (it's a temporary place)"
@@ -74,14 +82,15 @@ public class MainMenuView extends View {
     
     @Override
     public boolean doAction(String choice)  {
-        choice = choice.toUpperCase(); // convert choice to uppercase
+        try {
+            choice = choice.toUpperCase(); // convert choice to uppercase
             
             switch (choice) {
                 case "N": //Creates a new game
                     this.startNewGame();
                     break;
-                case "L": //Loads existing game
-                    this.startExistingGame();
+                case "G": //get saved game and start
+                    this.getSavedGame();
                     break;
                 case "S": // Saves game
                     this.saveGame();
@@ -93,13 +102,17 @@ public class MainMenuView extends View {
                     this.displayActionMenu();
                     break;
                 default:
-                     ErrorView.display(this.getClass().getName(),//L12 TA
-                        "\n*** Invalid selection *** Try Again");//L12 TA
+                    ErrorView.display(this.getClass().getName(),//L12 TA
+                            "\n*** Invalid selection *** Try Again");//L12 TA
                     //this.console.println("\n*** Invalid selection *** Try Again");
                     break;
                 
             }
-            return false;
+           
+        } catch (GameControlException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         return false;
     }
 
     private void startNewGame(){
@@ -113,20 +126,29 @@ public class MainMenuView extends View {
         
     }
     
-       
-    
-
     /**
      *
      */
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
-    }
-
+    
+    //L12 TA
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
-    }
-
+        //prompt for and get the name of the file to save game in
+        this.console.println("\n\nEnter the file path for file where the game"
+                              + "is to be saved");
+        String filePath=this.getInput();
+        
+        try {
+                //save the game to the specified file
+                GameControl.saveGame(FindTheBone.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+            }
+   
+   
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
@@ -135,6 +157,23 @@ public class MainMenuView extends View {
         ActionMenuView actionMenu = new ActionMenuView();
         actionMenu.display();
     }
+
+    private void getSavedGame() throws GameControlException {
+        Game game = null;
+        //String filepath = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)) {
+              ObjectInputStream input = new ObjectInputStream(fips);
+              
+              game = (Game) input.readObject();//read the game object from fileCurrent
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        //close the output file
+        FindTheBone.setCurrentGame(game);//save in FindTheBone
+    }
+      
 
     
 }
