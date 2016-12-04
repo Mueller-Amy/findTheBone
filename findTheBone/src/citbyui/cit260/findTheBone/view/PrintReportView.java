@@ -24,6 +24,7 @@ public class PrintReportView extends View {
                     + "\nV - Inventory Report"
                     + "\nT - TownsPeople Report"
                     + "\nB - Backpack Report"
+                    + "\nM - Map Report"
                     + "\nO - Other Report"
                     + "\nX - Exit"
                     + "\n==========================================");
@@ -36,28 +37,31 @@ public class PrintReportView extends View {
             
             
         switch (choice) {
-                case "C": //view map
+                case "C":  
                     this.cluesReport();
                     break;
-                case "S": //view map
+                case "S": 
                     this.sceneReport();
                     break;
-                case "I": // call to Jean individual L10 Assignment
+                case "I": //  
                     this.itemReport();
                     break;
-                case "L": //clues view temporary
+                case "L": // 
                     this.locationReport();
                     break;
-                case "V": //view List of items
+                case "V": // 
                     this.inventoryReport();
                     break;
-                case "T": //Time Used
+                case "T": // 
                     this.townsPeopleReport();
                     break;
-                case "B": // What is in Backpack
+                case "B": //  
                     this.backpackReport();
                     break;
-                case "O": // What is in Backpack
+                case "M": //  
+                    this.mapReport();
+                    break;
+                case "O": //  
                     this.otherReport();
                     break;
                          
@@ -102,6 +106,10 @@ public class PrintReportView extends View {
 
     private void otherReport() {
         System.out.println("otherReport Called"); 
+    }
+
+    private void mapReport() {
+        System.out.println("otherReport Called");
     }
     
 }
