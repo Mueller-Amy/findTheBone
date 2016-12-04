@@ -111,8 +111,10 @@ public class PrintReportView extends View {
         System.out.println("otherReport Called"); 
     }
 
-    private void mapReport() {//function written by Jean Oliveira
+    private void mapReport(String inputLocation) {//function written by Jean Oliveira
+        
         System.out.println("otherReport Called");
+        try (Scanner in=new Scanner FileReader(inputLocation))
     }
     
 }
