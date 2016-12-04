@@ -59,7 +59,7 @@ public class PrintReportView extends View {
                     this.backpackReport();
                     break;
                 case "M": //  
-                    this.mapReport();
+                    this.mapReport();// Jean wrote the selected code function
                     break;
                 case "O": //  
                     this.otherReport();
@@ -111,7 +111,7 @@ public class PrintReportView extends View {
         System.out.println("otherReport Called"); 
     }
 
-    private void mapReport() {
+    private void mapReport() {//function worte by Jean Oliveira
         System.out.println("otherReport Called");
     }
     
