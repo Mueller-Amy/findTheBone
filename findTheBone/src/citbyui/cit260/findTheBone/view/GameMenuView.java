@@ -379,7 +379,8 @@ public class GameMenuView extends View{
     }
 
     private void printReport() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PrintReportView printReport = new PrintReportView();
+        printReport.display();
     }
 
     
