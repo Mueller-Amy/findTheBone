@@ -68,7 +68,7 @@ public class GameMenuView extends View{
 */
 
    /* private String getMenuOption() {
-       Scanner keyboard = new Scanner(System.in); 
+       Scanner keyboard = new Scanner(System.iX); 
        String value = "";
        boolean valid = false; 
        String selection = null; 

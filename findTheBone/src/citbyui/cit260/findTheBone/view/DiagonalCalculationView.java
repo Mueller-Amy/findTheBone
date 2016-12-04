@@ -7,13 +7,14 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.CalculationsControl;
 import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  *
  * @author Jean
  */
-public class DiagonalCalculationView   {
+public class DiagonalCalculationView  {
 
     
     
@@ -157,26 +158,26 @@ public class DiagonalCalculationView   {
         }
     return length;	
     }
-    private double getWidth() {
-        //create an input file for the console
+    private double getWidth()  {
+            
+            Double width=null;
+        while (width == null){
+		//create an input file for the console
 		Scanner inFile;
 		inFile = new Scanner(System.in);
 			
-		System.out.println("\nPlease, enter the Triangle Width value:"); // prompt user to enter length
+		System.out.println("\nPlease, enter the Triangle Length value:"); // prompt user to enter length
 		
-		double width = inFile.nextDouble(); // get weight entered from console
-		return width;
+        width = inFile.nextDouble(); // get weight entered from console
+		
                 
+    }
 
-
-
+return width;
     }
 
 
-
-
-
-}
+    }
 
    
 
