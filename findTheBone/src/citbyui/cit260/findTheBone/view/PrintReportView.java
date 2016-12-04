@@ -111,7 +111,7 @@ public class PrintReportView extends View {
         System.out.println("otherReport Called"); 
     }
 
-    private void mapReport() {//function worte by Jean Oliveira
+    private void mapReport() {//function wrote by Jean Oliveira
         System.out.println("otherReport Called");
     }
     
