@@ -76,11 +76,14 @@ public class PrintReportView extends View {
        
 }
 
+     //for l12 individual assigment choose one report and write your code inside it
     private void cluesReport() {
+       
         System.out.println(" cluesReport Called");
     }
 
     private void sceneReport() {
+        
         System.out.println("sceneReport Called");
     }
 
