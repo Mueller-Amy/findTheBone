@@ -5,6 +5,9 @@
  */
 package citbyui.cit260.findTheBone.view;
 
+import byui.cit260.findTheBone.enums.SceneType;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Jean
@@ -111,10 +114,40 @@ public class PrintReportView extends View {
         System.out.println("otherReport Called"); 
     }
 
-    private void mapReport(String inputLocation) {//function written by Jean Oliveira
-        
-        System.out.println("otherReport Called");
-        try (Scanner in=new Scanner FileReader(inputLocation))
+    private void mapReport() {//function written by Jean Oliveira
+          boolean done=false;
+          String fileReportName="mapReport.txt";
+          String filePath=null;
+          
+          
+          do {
+              this.console.println("Please, enter the file path where to be save the Map report file: ");
+              filePath = this.getInput(); //get the user file path to save file report
+              
+          } while (!done);
+          
+           PrintWriter fileLocation = null;
+          
+          //print to file a Map report
+          
+          //create Bufferred object for input file Map report
+          try (PrintWriter out=new PrintWriter(fileLocation)) {
+              //print title and column headings
+              out.println("\n\n           Map Report         ");
+              out.printf("%n%-20s%10s%10s%", "Map Name", "Map Code");
+              out.printf("%n%-20s%10s%10s%", "--------", "--------");
+             
+              SceneType[] scene=SceneType.values();
+              for (SceneType item:scene) {
+                  out.printf("%n%-20s%7d%13.2f", item
+                                            //   ,Map Code()
+                                                       );
+              }
+          
+    
     }
+
     
 }
+}
+    

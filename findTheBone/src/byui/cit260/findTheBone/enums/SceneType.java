@@ -9,7 +9,7 @@ package byui.cit260.findTheBone.enums;
  *
  * @author Jean
  */
-public enum SceneListTypes {
+public enum SceneType {
     Parkland,
     VacantHouse,
     Police,

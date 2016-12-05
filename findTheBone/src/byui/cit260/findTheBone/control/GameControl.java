@@ -11,7 +11,7 @@ import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
-import byui.cit260.findTheBone.model.Scene.SceneType;
+import byui.cit260.findTheBone.enums.SceneType;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import findthebone.FindTheBone;
 import java.io.FileOutputStream;
@@ -178,18 +178,7 @@ public class GameControl {
         return inventory;
     }
 
-    static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] location=map.getLocations();
-        
-        //start point
-        location[0][0].setScene(scenes[SceneType.start.ordinal()]);
-        location[0][1].setScene(scenes[SceneType.finish.ordinal()]);
-        location[0][2].setScene(scenes[SceneType.zoo.ordinal()]);
-        location[0][3].setScene(scenes[SceneType.house.ordinal()]);
-        //.....
-        
-        
-    }
+     
 
     
     
