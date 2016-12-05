@@ -10,6 +10,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -124,7 +125,7 @@ public class PrintReportView extends View {
           String outputLocation=null;
           //String fileReportName="mapReport.txt";
           String filePath = null;
-          FileWriter outFile=null;
+          //FileWriter outFile=null;
           String reportname = "mapReport.txt";
           
             boolean valid = false; // initialize to not valid
@@ -156,20 +157,20 @@ public class PrintReportView extends View {
           
           //print to file a Map report
           
-          try  (FileWriter out=new FileWriter(outputLocation))
+          try  (FileWriter outFile=new FileWriter(reportname))
           {
-              outFile=new FileWriter(reportname);
+              //outFile=new FileWriter(reportname);
               //print title and column headings
               
-              out.write("\n\n           Map Report         ");
-              out.write("%n%-20s%10s%10s%"+"Map Name"+ "Map Code");
-              out.write("%n%-20s%10s%10s%"+ "--------"+ "--------");
+              outFile.write("\n\n           Map Report         ");
+              outFile.write("%n%-20s%10s%10s%"+"Map Name"+ "Map Code");
+              outFile.write("%n%-20s%10s%10s%"+ "--------"+ "--------");
              
               SceneType[] scene=SceneType.values();
               for (SceneType item:scene) {
-                  out.write("%n%-20s%7d%13.2f"+ item
+                  outFile.write("%n%-20s%7d%13.2f" + item);
                                             //   ,Map Code()
-                                                       );
+                                                       
               }        
     
     }   catch (IOException ex) {
