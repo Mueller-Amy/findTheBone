@@ -7,11 +7,8 @@ package byui.cit260.findTheBone.control;
 
 import byui.cit260.findTheBone.model.Game;
 import byui.cit260.findTheBone.model.Item;
-import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
-import byui.cit260.findTheBone.model.Scene;
-import byui.cit260.findTheBone.enums.SceneType;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import findthebone.FindTheBone;
 import java.io.FileOutputStream;

@@ -122,11 +122,12 @@ public class PrintReportView extends View {
     }
 
     private void mapReport() {//function written by Jean Oliveira
-          String outputLocation=null;
+          
           //String fileReportName="mapReport.txt";
           String filePath = null;
-          //FileWriter outFile=null;
-          String reportname = "mapReport.txt";
+          FileWriter outFile=null;//variable for a file stream
+          String fileLocation="mapreport.txt";//Specify the file location of the file
+          //String reportname = "mapReport.txt";
           
             boolean valid = false; // initialize to not valid
         
@@ -157,8 +158,10 @@ public class PrintReportView extends View {
           
           //print to file a Map report
           
-          try  (FileWriter outFile=new FileWriter("mapReport.txt"))
-          {
+          try  {
+              
+              outFile = new FileWriter(fileLocation);//create and open a new file atream for the output file
+              
               //outFile=new FileWriter(reportname);
               //print title and column headings
               
@@ -167,6 +170,8 @@ public class PrintReportView extends View {
               outFile.write("%n%-20s%10s%10s%"+ "--------"+ "--------");
              
               SceneType[] scene=SceneType.values();
+              
+              //for statement to go through the list of items to be displayed
               for (SceneType item:scene) {
                   outFile.write("%n%-20s%7d%13.2f" + item);
                                             //   ,Map Code()
@@ -176,9 +181,19 @@ public class PrintReportView extends View {
     }   catch (IOException ex) {
              this.console.println("Error saving map names to file !!!");
             Logger.getLogger(PrintReportView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    this.console.println("Report Sucessfuly saved !!!");
+        } finally {
+              if (outFile != null) {try {
+                  //if the file was sucessfuly created
+                  outFile.close();//close the stream file
+                  } catch (IOException ex) {
+                      Logger.getLogger(PrintReportView.class.getName()).log(Level.SEVERE, null, ex);
+                  }
+                  this.console.println("Report Sucessfuly saved !!!");
+              }
+          }
+              
+    
+    
 }
 }
     
