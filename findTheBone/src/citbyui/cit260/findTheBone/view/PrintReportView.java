@@ -125,7 +125,7 @@ public class PrintReportView extends View {
           
           //String fileReportName="mapReport.txt";
           String filePath = null;
-          FileWriter outFile=null;//variable for a file stream
+          //FileWriter outFile=null;//variable for a file stream
           String fileLocation="mapreport.txt";//Specify the file location of the file
           //String reportname = "mapReport.txt";
           
@@ -158,42 +158,30 @@ public class PrintReportView extends View {
           
           //print to file a Map report
           
-          try  {
+          try  (FileWriter outFile=new FileWriter(fileLocation)){
               
-              outFile = new FileWriter(fileLocation);//create and open a new file atream for the output file
+              //outFile = new FileWriter(fileLocation);//create and open a new file atream for the output file
               
               //outFile=new FileWriter(reportname);
               //print title and column headings
               
               outFile.write("\n\n           Map Report         ");
-              outFile.write("%n%-20s%10s%10s%"+"Map Name"+ "Map Code");
-              outFile.write("%n%-20s%10s%10s%"+ "--------"+ "--------");
-             
+              outFile.write("Map Name"+ "Map Code");
+              outFile.write("--------"+ "--------");
+             //"%n%-20s%10s%10s%"+   "%n%-20s%10s%10s%"+ 
               SceneType[] scene=SceneType.values();
               
               //for statement to go through the list of items to be displayed
               for (SceneType item:scene) {
-                  outFile.write("%n%-20s%7d%13.2f" + item);
-                                            //   ,Map Code()
-                                                       
+                  outFile.write("\n " + item +"\n");
+                                            //   ,Map Code() 
+                     //"%n%-20s%7d%13.2f" +                                  
               }        
     
     }   catch (IOException ex) {
-             this.console.println("Error saving map names to file !!!");
-            Logger.getLogger(PrintReportView.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-              if (outFile != null) {try {
-                  //if the file was sucessfuly created
-                  outFile.close();//close the stream file
-                  } catch (IOException ex) {
-                      Logger.getLogger(PrintReportView.class.getName()).log(Level.SEVERE, null, ex);
-                  }
+               ErrorView.display(this.getClass().getName(),"Error saving or writing data to map file report !!!");    
+        
+        } 
                   this.console.println("Report Sucessfuly saved !!!");
               }
           }
-              
-    
-    
-}
-}
-    
