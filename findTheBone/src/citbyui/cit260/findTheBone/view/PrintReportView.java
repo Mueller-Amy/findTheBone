@@ -6,7 +6,12 @@
 package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.enums.SceneType;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,6 +19,7 @@ import java.io.PrintWriter;
  */
 public class PrintReportView extends View {
 
+    
     public PrintReportView() {
     
     super( "\n"
@@ -115,39 +121,63 @@ public class PrintReportView extends View {
     }
 
     private void mapReport() {//function written by Jean Oliveira
-          boolean done=false;
-          String fileReportName="mapReport.txt";
-          String filePath=null;
+          String outputLocation=null;
+          //String fileReportName="mapReport.txt";
+          String filePath = null;
+          FileWriter outFile=null;
+          String reportname = "mapReport.txt";
           
-          
-          do {
-              this.console.println("Please, enter the file path where to be save the Map report file: ");
-              filePath = this.getInput(); //get the user file path to save file report
-              
-          } while (!done);
-          
-           PrintWriter fileLocation = null;
+            boolean valid = false; // initialize to not valid
+        
+        while (!valid) { // loop while an invalid value is enter
+            this.console.println("Please, enter the file path where to be save the Map report file: ");
+            
+            try {
+                filePath = this.keyboard.readLine(); // get next line typed on keyboard ----- L12 TA changed
+                filePath = filePath.trim(); // trim off leading and trailing blanks
+            
+            if (filePath.length() < 1) { // value is blank
+                ErrorView.display(this.getClass().getName(),//L12 TA
+                        "\nInvalid value: value can not be blank");//L12 TA
+            continue;
+            }
+             
+               
+        }  catch (IOException ex) {
+                  ErrorView.display(this.getClass().getName(),
+                        "Error reading Input: " + ex.getMessage());
+                   
+              }
+
+        break; // end the loop
+        
+        }
+         
           
           //print to file a Map report
           
-          //create Bufferred object for input file Map report
-          try (PrintWriter out=new PrintWriter(fileLocation)) {
+          try  (FileWriter out=new FileWriter(outputLocation))
+          {
+              outFile=new FileWriter(reportname);
               //print title and column headings
-              out.println("\n\n           Map Report         ");
-              out.printf("%n%-20s%10s%10s%", "Map Name", "Map Code");
-              out.printf("%n%-20s%10s%10s%", "--------", "--------");
+              
+              out.write("\n\n           Map Report         ");
+              out.write("%n%-20s%10s%10s%"+"Map Name"+ "Map Code");
+              out.write("%n%-20s%10s%10s%"+ "--------"+ "--------");
              
               SceneType[] scene=SceneType.values();
               for (SceneType item:scene) {
-                  out.printf("%n%-20s%7d%13.2f", item
+                  out.write("%n%-20s%7d%13.2f"+ item
                                             //   ,Map Code()
                                                        );
-              }
-          
+              }        
     
-    }
+    }   catch (IOException ex) {
+             this.console.println("Error saving map names to file !!!");
+            Logger.getLogger(PrintReportView.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-    
+    this.console.println("Report Sucessfuly saved !!!");
 }
 }
     
