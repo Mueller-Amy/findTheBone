@@ -1,4 +1,2 @@
 citbyui.cit260.findTheBone.view.PrintReportView - 
 Invalid value: value can not be blank
-citbyui.cit260.findTheBone.view.PrintReportView - 
-Invalid value: value can not be blank

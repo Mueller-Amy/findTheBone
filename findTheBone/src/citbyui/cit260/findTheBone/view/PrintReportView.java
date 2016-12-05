@@ -157,7 +157,7 @@ public class PrintReportView extends View {
           
           //print to file a Map report
           
-          try  (FileWriter outFile=new FileWriter(reportname))
+          try  (FileWriter outFile=new FileWriter("mapReport.txt"))
           {
               //outFile=new FileWriter(reportname);
               //print title and column headings
