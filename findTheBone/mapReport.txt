@@ -1,3 +1,0 @@
-
-
-           Map Report         %n%-20s%10s%10s%Map NameMap Code%n%-20s%10s%10s%----------------%n%-20s%7d%13.2fParkland%n%-20s%7d%13.2fVacantHouse%n%-20s%7d%13.2fPolice%n%-20s%7d%13.2fAnimalHospital%n%-20s%7d%13.2fPound%n%-20s%7d%13.2fBakery%n%-20s%7d%13.2fRestaurant%n%-20s%7d%13.2fDriveInn%n%-20s%7d%13.2fLake%n%-20s%7d%13.2fCatAlley%n%-20s%7d%13.2fCareHome%n%-20s%7d%13.2fNeighborsHouse%n%-20s%7d%13.2fYourHouse%n%-20s%7d%13.2fCatDeVilHouse%n%-20s%7d%13.2fGroceryStore%n%-20s%7d%13.2fZoo%n%-20s%7d%13.2fFishmonger%n%-20s%7d%13.2fZooElephants%n%-20s%7d%13.2fZooKangaroos%n%-20s%7d%13.2fZooGiraffes%n%-20s%7d%13.2fSchoolEntrance%n%-20s%7d%13.2fSchoolCafeteria%n%-20s%7d%13.2fSchoolPlayGround%n%-20s%7d%13.2fSchoolParking%n%-20s%7d%13.2fZooTigers
