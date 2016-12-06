@@ -12,7 +12,10 @@ import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
 import byui.cit260.findTheBone.model.Scene.SceneType;
+import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import findthebone.FindTheBone;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -57,7 +60,21 @@ public class GameControl {
         MapControl.moveCharacterToStartingLocation(map);
         
     }
+    
+    //L12 TA
+    public static void saveGame(Game currentGame, String filePath) throws GameControlException {
+                
+        try(FileOutputStream fops=new FileOutputStream(filePath)) {
+            ObjectOutputStream output=new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame);//write the game object out to file
+        } catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
 
+    
     public static Item[] createItemList() {
         Item[] inventory = 
             new Item[17];
@@ -173,6 +190,8 @@ public class GameControl {
         
         
     }
+
+    
     
 }
     
