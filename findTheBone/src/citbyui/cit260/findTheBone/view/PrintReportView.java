@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 
 /**
  *
- * @author Jean
+ * @author Jean Oliveira
  */
 public class PrintReportView extends View {
 
@@ -172,9 +172,11 @@ public class PrintReportView extends View {
                ErrorView.display(this.getClass().getName(),"Error saving or writing data to map file report !!!");    
         
         } 
-                  this.console.println("Report Sucessfuly saved !!!");
+                  this.console.println("\n=========================================="
+                                     + "\n|       Report Sucessfuly saved !!!      |"
+                                     + "\n==========================================");
+
               }
 
     
-   
           }
