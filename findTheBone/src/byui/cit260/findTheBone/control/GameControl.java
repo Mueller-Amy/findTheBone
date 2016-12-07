@@ -9,6 +9,7 @@ import byui.cit260.findTheBone.model.Item;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
+import citbyui.cit260.findTheBone.exceptions.MapControlException;
 import findthebone.FindTheBone;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
@@ -34,7 +35,7 @@ public class GameControl {
         return player;
     }
 
-    public void createNewGame(Player player) {
+    public void createNewGame(Player player) throws MapControlException {
         
         Game game = new Game(); // create new game
         FindTheBone.setCurrentGame(game); // save in FindTheBone

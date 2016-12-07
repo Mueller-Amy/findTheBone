@@ -5,15 +5,14 @@
  */
 package byui.cit260.findTheBone.control;
 
+import byui.cit260.findTheBone.enums.SceneType;
+import byui.cit260.findTheBone.model.BackpackItem;
+import byui.cit260.findTheBone.model.Clue;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
-import citbyui.cit260.findTheBone.exceptions.GameControlException;
-import findthebone.FindTheBone;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import byui.cit260.findTheBone.model.TownsPeople;
+import citbyui.cit260.findTheBone.exceptions.MapControlException;
 
 /**
  *
@@ -22,7 +21,7 @@ import java.util.logging.Logger;
 public class MapControl {
     
      
-    public static Map createMap() {
+    public static Map createMap() throws MapControlException {
         //create the map
         Map map = new Map (5,5);
         
@@ -56,18 +55,23 @@ public class MapControl {
         */
     }
 
+    private static void movePlayer(Map map, int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void createNewGame(Player player) {
         System.out.println("*** New Game Function displayed. ***");
     }
 
-    static void moveCharacterToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void moveCharacterToStartingLocation(Map map) throws MapControlException {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        movePlayer(map, 3, 3);
     }
 
     static Map createMap(Map map) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-/*
+
     private static Scene[] createScenes() throws MapControlException{
         
         Scene[] scenes = new Scene[SceneType.values().length];
@@ -76,6 +80,7 @@ public class MapControl {
         try{
             
             Scene currentScene = null;
+            
             //location 0,0
             currentScene = new Scene();
             currentScene.setName("Parkland");
@@ -89,7 +94,7 @@ public class MapControl {
 
             scenes[SceneType.Parkland.ordinal()] = currentScene;
 
-            //location 0,1
+            //location 0,1;
             currentScene = new Scene();
             currentScene.setName("VacantHouse");
             currentScene.setMapSymbol("VH");      
@@ -171,7 +176,7 @@ public class MapControl {
             currentScene.setMapSymbol("DI");      
             currentScene.setDescription("A fast food establishment and a good source for snacks.");
             currentScene.setDialog("Yes, Cat DeVil and his gang was here and went that way.");
-            currentScene.setTownsPeople(TownsPeople.CoCo);
+            currentScene.setTownsPeople(TownsPeople.Coco);
             currentScene.setClue(Clue.Clue3);
             currentScene.setBackpack(BackpackItem.CatHairballs);
             currentScene.setMinute(5);
@@ -408,11 +413,8 @@ public class MapControl {
     
         return scenes;
     }
-*/
 
-    private static Scene[] createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+
+      
     
 }

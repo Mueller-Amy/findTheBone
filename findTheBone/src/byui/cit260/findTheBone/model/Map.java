@@ -69,8 +69,6 @@ public class Map implements Serializable{
     
 }
     
- 
-    
      //begin getter and setter functions
 
     public int getRowCount() {

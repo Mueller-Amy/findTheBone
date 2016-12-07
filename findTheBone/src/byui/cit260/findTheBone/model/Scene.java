@@ -25,12 +25,13 @@ public class Scene implements Serializable{
     private double displaySymbol;
     private double blockedLocation;
     private String name;
+    private Clue clue; 
     private String mapSymbol;
     private String dialog;
     private Character character;
     private TownsPeople townspeople;
-    private Item item;
-    private int minute;
+    private BackpackItem item;
+    public int minute;
 
     public  Scene() {
         this.description = "";
@@ -73,68 +74,95 @@ public class Scene implements Serializable{
                     "assigning scenes to lcoation");
         }
     }
-
-    public void setMapSymbol(String _st_) {
-       this.console.println("\n setMapSymbol function called. ");
+	
+    @Override
+    public String toString() {
+        return "Scene{" + "name=" + name + ", mapSymbol=" + mapSymbol + ", description=" + description + ", dialog=" + dialog + ", character=" + character + ", clue=" + clue + ", item=" + item + ", minute=" + minute + '}';
     }
 
-    public void setBlocked(boolean b) {
-        this.console.println("\n setBlocked function called. ");
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
-      
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
 
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public double getTravelTime() {
-        return travelTime;
+    public String getDialog() {
+        return dialog;
+    }
+    public void setDialog(String dialog) {
+        this.dialog = dialog;
     }
 
-    public void setTravelTime(double travelTime) {
-        this.travelTime = travelTime;
+    public Character getCharacter() {
+        return character;
+    }
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+    
+    public TownsPeople getTownsPeople() {
+        return townspeople;
+    }
+    
+     public void setTownsPeople(TownsPeople townspeople) {
+        this.townspeople = townspeople;
     }
 
-    public double getDisplaySymbol() {
-        return displaySymbol;
+    public Clue getClue() {
+        return clue;
+    }
+    public void setClue(Clue clue) {
+        this.clue = clue;
     }
 
-    public void setDisplaySymbol(double displaySymbol) {
-        this.displaySymbol = displaySymbol;
+    public BackpackItem getItem() {
+        return item;
     }
-
-    public double getBlockedLocation() {
-        return blockedLocation;
+    public void setItem(BackpackItem item) {
+        this.item = item;
     }
+    public void setBackpack(BackpackItem backpackItem) {
+        this.item = item;
+    }    
 
-    public void setBlockedLocation(double blockedLocation) {
-        this.blockedLocation = blockedLocation;
+    public int getMinute() {
+        return minute;
     }
-
+    public void setMinute(int minute) {
+        this.minute = minute;
+    }
+   
     @Override
-    public int hashCode() {
+     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.description);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.displaySymbol) ^ (Double.doubleToLongBits(this.displaySymbol) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.blockedLocation) ^ (Double.doubleToLongBits(this.blockedLocation) >>> 32));
+        hash = 19 * hash + Objects.hashCode(this.name);
+        hash = 19 * hash + Objects.hashCode(this.mapSymbol);
+        hash = 19 * hash + Objects.hashCode(this.description);
+        hash = 19 * hash + Objects.hashCode(this.dialog);
+        hash = 19 * hash + Objects.hashCode(this.character);
+        hash = 19 * hash + Objects.hashCode(this.clue);
+        hash = 19 * hash + Objects.hashCode(this.item);
+        hash = 19 * hash + Objects.hashCode(this.minute);
         return hash;
     }
 
     @Override
-    public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", displaySymbol=" + displaySymbol + ", blockedLocation=" + blockedLocation + '}';
-    }
-
-    
-    
-    @Override
-    public boolean equals(Object obj) {
+   public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
@@ -145,22 +173,33 @@ public class Scene implements Serializable{
             return false;
         }
         final Scene other = (Scene) obj;
-        if (Double.doubleToLongBits(this.travelTime) != Double.doubleToLongBits(other.travelTime)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.displaySymbol) != Double.doubleToLongBits(other.displaySymbol)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.blockedLocation) != Double.doubleToLongBits(other.blockedLocation)) {
+        if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
+        if (!Objects.equals(this.dialog, other.dialog)) {
+            return false;
+        }
+        if (this.character != other.character) {
+            return false;
+        }
+        if (this.clue != other.clue) {
+            return false;
+        }
+        if (this.item != other.item) {
+            return false;
+        }
+        if (!Objects.equals(this.minute, other.minute)) {
+            return false;
+        }
         return true;
-    }
+    } 
 
-        
     
     
 }
