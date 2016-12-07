@@ -5,6 +5,9 @@
  */
 package byui.cit260.findTheBone.model;
 
+import findthebone.FindTheBone;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -13,6 +16,9 @@ import java.util.ArrayList;
  * @author Amy Mueller
  */
 public class Location implements Serializable{
+    
+    protected final BufferedReader keyboard =FindTheBone.getInFile();
+    protected final PrintWriter console =FindTheBone.getOutFile();
     
     //class instance variables
     private int row;
@@ -102,7 +108,7 @@ public class Location implements Serializable{
     }
 
     public void setScene(Scene scene) {
-          System.out.println("*** setScene function called ***"); 
+          this.console.println("*** setScene function called ***"); 
     }
 
     public Object getScene() {

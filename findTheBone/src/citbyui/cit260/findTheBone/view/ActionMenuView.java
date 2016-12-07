@@ -39,7 +39,7 @@ public class ActionMenuView extends View {
     
     /*public void displayActionMenuView() {
         
-        System.out.println("\n" + this.menu);
+        System.ouX.println("\n" + this.menu);
         
         boolean done = false; // set flag to not done
         do {
@@ -51,7 +51,7 @@ public class ActionMenuView extends View {
              
              // do the requested action and display the next view
              done = this.doAction(menuOption);
-             System.out.println("\n" + this.menu);
+             System.ouX.println("\n" + this.menu);
         } while (!done);
         }
     */
@@ -65,15 +65,15 @@ public class ActionMenuView extends View {
         
         while (!valid) { // loop while an invalid value is enter
             
-            System.out.println("\n" + this.promptMessage);
+            System.ouX.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading adn trailing blanks
             
             if (value.length() < 1) { // value is blank
-                System.out.println("\n" + this.menu);
+                System.ouX.println("\n" + this.menu);
                 
-                System.out.println("\nInvalid value: value can not be blank");
+                System.ouX.println("\nInvalid value: value can not be blank");
                 continue;
         }
         break; // end the loop
@@ -124,7 +124,7 @@ public class ActionMenuView extends View {
             default:
                  ErrorView.display(this.getClass().getName(),//L12 TA
                             "\n*** Invalid selection *** Try Again");
-                 //System.out.println("\n*** Invalid selection *** Try again");
+                 //System.ouX.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;

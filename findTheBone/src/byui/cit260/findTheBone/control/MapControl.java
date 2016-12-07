@@ -9,6 +9,9 @@ import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
+import findthebone.FindTheBone;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,6 +20,8 @@ import java.util.logging.Logger;
  * @author Home
  */
 public class MapControl {
+    
+     
     public static Map createMap() {
         //create the map
         Map map = new Map (5,5);
@@ -51,7 +56,7 @@ public class MapControl {
         */
     }
 
-    public static void createNewGame(Player player) {
+    public void createNewGame(Player player) {
         System.out.println("*** New Game Function displayed. ***");
     }
 

@@ -57,18 +57,18 @@ public class MainMenuView extends View {
  */
 
  /*  private String getMenuOption() {
-       Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+       Scanner keyboard = new Scanner(System.iX); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
         
         while (!valid) { // loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
+            System.ouX.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading adn trailing blanks
 
             if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+                System.ouX.println("\nInvalid value: value can not be blank");
                 continue;
         }
         break; // end the loop
@@ -122,7 +122,7 @@ public class MainMenuView extends View {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         // create a new game
-    GameControl.createNewGame(FindTheBone.getPlayer());
+        //GameControl.createNewGame(FindTheBone.getPlayer());
         
     }
     

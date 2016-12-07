@@ -6,6 +6,9 @@
 package byui.cit260.findTheBone.model;
 
 import byui.cit260.findTheBone.control.LocationControl.Locations;
+import findthebone.FindTheBone;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.io.Serializable;
 
 /**
@@ -13,6 +16,9 @@ import java.io.Serializable;
  * @author Amy Mueller
  */
 public class Map implements Serializable{
+    
+    protected final BufferedReader keyboard =FindTheBone.getInFile();
+    protected final PrintWriter console =FindTheBone.getOutFile();
 /*
     public static void setName(String name) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -39,7 +45,7 @@ public class Map implements Serializable{
     public Map(int noOfRows, int noOfColumns) {
     
     if (noOfRows<1 || noOfColumns<1) {
-        System.out.println("The number of rows and columns must be > zero");
+        this.console.println("The number of rows and columns must be > zero");
         return;
     }
     this.noOfRows=noOfRows;

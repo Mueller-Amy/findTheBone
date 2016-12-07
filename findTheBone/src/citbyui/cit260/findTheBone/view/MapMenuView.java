@@ -47,7 +47,7 @@ public class MapMenuView extends View{
 */
     /*
     private String getMenuOption() {
-       Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+       Scanner keyboard = new Scanner(System.iX); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
         

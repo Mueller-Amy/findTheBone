@@ -6,14 +6,19 @@
 package byui.cit260.findTheBone.model;
 import byui.cit260.findTheBone.enums.SceneType;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
+import findthebone.FindTheBone;
+import java.io.BufferedReader;
 import java.io.Serializable;
 import java.util.Objects;
-
+import java.io.PrintWriter;
 /**
  *
  * @author Keith Downing
  */
 public class Scene implements Serializable{
+    
+    protected final BufferedReader keyboard =FindTheBone.getInFile();
+    protected final PrintWriter console =FindTheBone.getOutFile();
     
     private String description;
     private double travelTime;
@@ -70,11 +75,11 @@ public class Scene implements Serializable{
     }
 
     public void setMapSymbol(String _st_) {
-       System.out.println("\n setMapSymbol function called. ");
+       this.console.println("\n setMapSymbol function called. ");
     }
 
     public void setBlocked(boolean b) {
-        System.out.println("\n setBlocked function called. ");
+        this.console.println("\n setBlocked function called. ");
     }
 
       

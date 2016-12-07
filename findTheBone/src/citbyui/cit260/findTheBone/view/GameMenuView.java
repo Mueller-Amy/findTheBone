@@ -77,14 +77,14 @@ public class GameMenuView extends View{
         //while a valid entry has not been retrieved
         while (!valid) { 
 
-            System.out.println("\n" + this.promptMessage);
+            System.ouX.println("\n" + this.promptMessage);
             
             //get the value entered from the keyboard
             value  = keyboard.nextLine(); 
             value = value.trim(); 
             
             if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** Invalid Selection *** Try again");
+                System.ouX.println("\n*** Invalid Selection *** Try again");
                 continue;
         }
         break; 
@@ -145,7 +145,7 @@ public class GameMenuView extends View{
                     break;
                               
                 default:
-                    //System.out.println("\n*** Invalid selection *** Try Again");
+                    //System.ouX.println("\n*** Invalid selection *** Try Again");
                     ErrorView.display(this.getClass().getName(),//L12 TA
                         "\n*** Invalid selection *** Try Again");
                     break;
@@ -171,12 +171,12 @@ public class GameMenuView extends View{
         //Game game = FindTheBone.getCurrentGame();
         //Item[] item = item.getInventory();
         
-        System.out.println("\n           LIST OF INVENTORY ITEMS");
+        this.console.println("\n           LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                                   ");
         line.insert(0, "DESCRIPTION");
         line.insert(20, "REQUIRED");
         line.insert(30, "IN STOCK");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         /*
         for (InventoryView item: inventory) {
             line = new StringBuilder("                                ");
@@ -277,17 +277,17 @@ public class GameMenuView extends View{
         }
         
         //Display the line
-        System.out.println(line.toString());
+        this.console.println(line.toString());
         }
         */
     }
 
     private void timeUsed() {
-        System.out.println("*** timeUsed function called ***"); 
+        this.console.println("*** timeUsed function called ***"); 
     }
 
     private void inBackpack() {
-        System.out.println("*** inBackpack function called ***"); 
+        this.console.println("*** inBackpack function called ***"); 
     
     }
 
@@ -296,7 +296,7 @@ public class GameMenuView extends View{
         VolumeOfCylinderView cylinderView = new VolumeOfCylinderView();
         cylinderView.doAction();
         } catch (CalculationsControlException me) {
-           System.out.println(me.getMessage());
+           this.console.println(me.getMessage());
        }
         
         }
@@ -307,7 +307,7 @@ public class GameMenuView extends View{
         VolumeOfBoxView volumeView = new VolumeOfBoxView();
         volumeView.getVolume();
        } catch (CalculationsControlException me) {
-           System.out.println(me.getMessage());
+           this.console.println(me.getMessage());
        }
     }
 
@@ -315,7 +315,7 @@ public class GameMenuView extends View{
         // try {
          VolumeOfBoxView volumeofbox = new VolumeOfBoxView();
        // } catch (CalculationsControlException me) {
-          // System.out.println(me.getMessage());
+          // this.console.println(me.getMessage());
        //}
     }
     
@@ -336,33 +336,33 @@ public class GameMenuView extends View{
         /*Location[][] locations = LocationControl.currentLocation();
         
         //Display title
-        System.out.println(
+        System.ouX.println(
                  "\n--------------------"
                 +"\n FIND THE BONE MAP  "
                 +"\n--------------------");
         //Display row of column numbers
-        System.out.println(" 0  1  2 ");
+        System.ouX.println(" 0  1  2 ");
         //Display row divider
-        System.out.println(" -------");
+        System.ouX.println(" -------");
         
         //Display row numbers
         for (int i = 0; i < locations.length; i++) {
             //Display column divider
-            System.out.println(i + 1 + "|");
+            System.ouX.println(i + 1 + "|");
             
             for (Location location : locations[i]) {
                 
                 //If location has been visited, display map symbol
                 if (location.getVisited()) {
-                    System.out.println(location.getScene());
+                    System.ouX.println(location.getScene());
                 } else {
-                    System.out.println("??");
+                    System.ouX.println("??");
                 }
                 //Display ending column divider 
-                System.out.println("|");
+                System.ouX.println("|");
             }
             //Display ending row divider
-            System.out.println("\n -------");
+            System.ouX.println("\n -------");
         }
 */
     }

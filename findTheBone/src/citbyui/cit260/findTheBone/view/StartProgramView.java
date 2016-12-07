@@ -70,18 +70,18 @@ public class StartProgramView extends View {
  /*   private String getPlayersName() {
        
         
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        Scanner keyboard = new Scanner(System.iX); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
         
         while (!valid) { // loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
+            System.ouX.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading adn trailing blanks
             
             if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+                System.ouX.println("\nInvalid value: value can not be blank");
                 continue;
         }
         break; // end the loop
@@ -96,7 +96,7 @@ public class StartProgramView extends View {
                 
         if (playersName.length()<2 ) {
             
-            //System.out.println("\ninvalid players name: "
+            //System.ouX.println("\ninvalid players name: "
             //           + "The name must be greater than one character in length");
             ErrorView.display(this.getClass().getName(),"\ninvalid players name: "
                                 + "The name must be greater than one character in length");
@@ -106,7 +106,7 @@ public class StartProgramView extends View {
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) { // if unsuccessful
-            //System.out.println("\nError creating the player.");
+            //System.ouX.println("\nError creating the player.");
              ErrorView.display(this.getClass().getName(),"\nError creating the player.");
             return false;
         }

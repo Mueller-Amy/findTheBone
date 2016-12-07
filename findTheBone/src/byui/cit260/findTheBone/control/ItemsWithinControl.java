@@ -10,7 +10,13 @@ import java.util.Scanner;
  * @author Amy Mueller
  */
 public class ItemsWithinControl {
+    
+   
+    
     public static void main(String[] args){
+        
+        
+    
         int n;
         String temp;
         Scanner s = new Scanner(System.in);

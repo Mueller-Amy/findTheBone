@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.findTheBone.control;
-
 import byui.cit260.findTheBone.model.Game;
 import byui.cit260.findTheBone.model.Item;
 import byui.cit260.findTheBone.model.Map;
@@ -30,12 +29,12 @@ public class GameControl {
         Player player = new Player();
         player.setName(name);
         
-        FindTheBone.setPlayer(player); // save the player
+        //FindTheBone.setPlayer(player); // save the player
         
         return player;
     }
 
-    public static void createNewGame(Player player) {
+    public void createNewGame(Player player) {
         
         Game game = new Game(); // create new game
         FindTheBone.setCurrentGame(game); // save in FindTheBone

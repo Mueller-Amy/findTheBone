@@ -6,11 +6,10 @@
 package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.enums.SceneType;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -157,23 +156,24 @@ public class PrintReportView extends View {
          
           
           //print to file a Map report
-          
-          try  (FileWriter outFile=new FileWriter(filePath + fileLocation)){//file path + file name report
-              
+           //Bufferred object for input file
+          //try  (FileWriter outFile=new FileWriter(filePath + fileLocation)){//file path + file name report
+           try (PrintWriter outFile=new PrintWriter(fileLocation)) {  
               //outFile = new FileWriter(fileLocation);//create and open a new file atream for the output file
-              
               //outFile=new FileWriter(reportname);
               //print title and column headings
               
-              outFile.write("\n\n           Map Report         ");
-              outFile.write("Map Name"+ "Map Code");
-              outFile.write("--------"+ "--------");
+             
+              
+              outFile.println("\n\n           Map Report         ");
+              outFile.printf("%n%-20s%10s", "Map Name", "Map Code");
+              outFile.printf("%n%-20s%10s", "--------", "--------");
              //"%n%-20s%10s%10s%"+   "%n%-20s%10s%10s%"+ 
               SceneType[] scene=SceneType.values();
               
               //for statement to go through the list of items to be displayed
               for (SceneType item:scene) {
-                  outFile.write("\n " + item +"\n");
+                  outFile.printf("%n%-20s", item, "codes");
                                             //   ,Map Code() 
                      //"%n%-20s%7d%13.2f" +                                  
               }        
