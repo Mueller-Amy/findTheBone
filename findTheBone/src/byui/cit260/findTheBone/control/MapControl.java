@@ -94,7 +94,7 @@ public class MapControl {
 
             scenes[SceneType.Parkland.ordinal()] = currentScene;
 
-            //location 0,1;
+            //location 0,1
             currentScene = new Scene();
             currentScene.setName("VacantHouse");
             currentScene.setMapSymbol("VH");      

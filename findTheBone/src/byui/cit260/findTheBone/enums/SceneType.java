@@ -36,7 +36,7 @@ package byui.cit260.findTheBone.enums;
     SchoolCafeteria,
     SchoolPlayGround,
     SchoolParking,
-    ZooTigers
+    ZooTigers;
     
         
 }

@@ -5,7 +5,8 @@
  */
 package byui.cit260.findTheBone.model;
 
-import byui.cit260.findTheBone.control.LocationControl.Locations;
+import byui.cit260.findTheBone.enums.SceneType;
+import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import findthebone.FindTheBone;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -68,6 +69,8 @@ public class Map implements Serializable{
     }
     
 }
+    
+     
     
      //begin getter and setter functions
 

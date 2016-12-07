@@ -5,13 +5,10 @@
  */
 package citbyui.cit260.findTheBone.view;
 
+import byui.cit260.findTheBone.enums.MapCodeType;
 import byui.cit260.findTheBone.enums.SceneType;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -19,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class PrintReportView extends View {
 
-    
+        
     public PrintReportView() {
     
     super( "\n"
@@ -122,14 +119,11 @@ public class PrintReportView extends View {
 
     private void mapReport() {//function written by Jean Oliveira
           
-          //String fileReportName="mapReport.txt";
-          String filePath = null;
-          //FileWriter outFile=null;//variable for a file stream
-          String fileLocation="mapreport.txt";//Specify the file location of the file
-          //String reportname = "mapReport.txt";
-          
-            boolean valid = false; // initialize to not valid
+           String filePath = null;//Specify the file location of the file
+           String fileLocation="mapreport.txt";//variable for a file stream
+           boolean valid = false; // initialize to not valid
         
+           //getting file path 
         while (!valid) { // loop while an invalid value is enter
             this.console.println("Please, enter the file path where to be save the Map report file: ");
             
@@ -154,29 +148,25 @@ public class PrintReportView extends View {
         
         }
          
-          
-          //print to file a Map report
-           //Bufferred object for input file
-          //try  (FileWriter outFile=new FileWriter(filePath + fileLocation)){//file path + file name report
-           try (PrintWriter outFile=new PrintWriter(fileLocation)) {  
-              //outFile = new FileWriter(fileLocation);//create and open a new file atream for the output file
-              //outFile=new FileWriter(reportname);
-              //print title and column headings
-              
+            //print report
+           try (PrintWriter outFile=new PrintWriter(filePath + fileLocation)) {  
              
-              
               outFile.println("\n\n           Map Report         ");
               outFile.printf("%n%-20s%10s", "Map Name", "Map Code");
               outFile.printf("%n%-20s%10s", "--------", "--------");
-             //"%n%-20s%10s%10s%"+   "%n%-20s%10s%10s%"+ 
-              SceneType[] scene=SceneType.values();
-              
-              //for statement to go through the list of items to be displayed
-              for (SceneType item:scene) {
-                  outFile.printf("%n%-20s", item, "codes");
-                                            //   ,Map Code() 
-                     //"%n%-20s%7d%13.2f" +                                  
-              }        
+            
+              SceneType[] name=SceneType.values();
+              MapCodeType[] code=MapCodeType.values();
+             
+              //for statement to go through the list of enum items to be displayed
+                  for (int i=0;i < name.length;i++){
+                  String mapname = name[i].toString();
+                  String mapcode = code[i].toString();
+                  
+                  outFile.printf("%n%-20s%10s", mapname, mapcode );
+                  
+              }      
+                 
     
     }   catch (IOException ex) {
                ErrorView.display(this.getClass().getName(),"Error saving or writing data to map file report !!!");    
@@ -184,4 +174,7 @@ public class PrintReportView extends View {
         } 
                   this.console.println("Report Sucessfuly saved !!!");
               }
+
+    
+   
           }
