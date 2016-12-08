@@ -12,8 +12,12 @@ import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import citbyui.cit260.findTheBone.exceptions.MapControlException;
+import citbyui.cit260.findTheBone.view.GameMenuView;
+import citbyui.cit260.findTheBone.view.MainMenuView;
 import findthebone.FindTheBone;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,7 +77,30 @@ public class GameControl {
         }
     }
     
+public static void getSavedGame(String filePath) 
+        throws GameControlException {
+        
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filePath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();//read the game object from file
 
+            
+        }
+        catch(Exception ex){
+            
+            throw new GameControlException("Loading game fail...There is a error reading saved game");
+        }
+        
+        //close the output file
+        FindTheBone.setCurrentGame(game);
+        System.out.println("\n Game sucessfuly loaded.");
+         GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+        
+    }
     
    static void assignScenesToLocations(Map map, Scene[] scenes) throws GameControlException {
         Location[][] locations = map.getLocations();

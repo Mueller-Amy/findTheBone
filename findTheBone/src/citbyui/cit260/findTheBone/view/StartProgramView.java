@@ -54,8 +54,6 @@ public class StartProgramView extends View {
                 
         if (playersName.length()<2 ) {
             
-            //System.ouX.println("\ninvalid players name: "
-            //           + "The name must be greater than one character in length");
             ErrorView.display(this.getClass().getName(),"\ninvalid players name: "
                                 + "The name must be greater than one character in length");
             return false;
@@ -73,7 +71,7 @@ public class StartProgramView extends View {
                 this.displayNextView(player);
             } catch (CalculationsControlException me) {
                 ErrorView.display(this.getClass().getName(),"\nError displayingNextView in StartProgramView class.");
-//Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+
             }
                 return true; // success !
         

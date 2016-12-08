@@ -22,9 +22,7 @@ import java.util.logging.Logger;
  */
 public class MainMenuView extends View {
 
-    private String filepath;
-    
-  //private String menu;
+   //private String menu;
   //private String promptMessage;
 
   //public MainMenuView() {
@@ -43,7 +41,7 @@ public class MainMenuView extends View {
     
      
     @Override
-    public boolean doAction(String choice)  {
+    public boolean doAction(String choice){
         try {
             choice = choice.toUpperCase(); // convert choice to uppercase
             
@@ -113,10 +111,12 @@ public class MainMenuView extends View {
         helpMenu.display();
     }
     
-    private void getSavedGame() throws GameControlException {
-        Game game = null;
+    private boolean getSavedGame() throws GameControlException {
+        /*String filepath=null;        
+        //Game game = null;
         //String filepath = null;
-        
+        //prompt for and get the name of the file to save game in
+        this.console.println("\n\nEnter the file path where load the saved game :");
         try(FileInputStream fips = new FileInputStream(filepath)) {
               ObjectInputStream input = new ObjectInputStream(fips);
               
@@ -127,6 +127,27 @@ public class MainMenuView extends View {
         }
         //close the output file
         FindTheBone.setCurrentGame(game);//save in FindTheBone
+*/      
+        //prompt for and get the name of the file to save game in
+        System.out.println("\n\nEnter the file path where load the saved game :");
+        String filePath=this.getInput();
+       
+        boolean result = false;
+                
+        try{
+            
+            GameControl.getSavedGame(filePath);
+            
+            result = true;
+            
+        }
+        catch(Exception ex){
+            ErrorView.display(this.getClass().getName(),
+                    "Load Game Error: " + ex.getMessage());
+        }
+        return result;  
+        //
+        
     }
       
 
