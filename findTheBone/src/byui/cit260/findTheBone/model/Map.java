@@ -16,9 +16,6 @@ import java.io.Serializable;
  */
 public class Map implements Serializable{
     
-    protected final BufferedReader keyboard =FindTheBone.getInFile();
-    protected final PrintWriter console =FindTheBone.getOutFile();
-
     //class instance variables
     private int noOfRows;
     private int noOfColumns;
@@ -35,7 +32,7 @@ public class Map implements Serializable{
     public Map(int noOfRows, int noOfColumns) {
     
     if (noOfRows<1 || noOfColumns<1) {
-        this.console.println("The number of rows and columns must be > zero");
+        System.out.println("The number of rows and columns must be > zero");
         return;
     }
     this.noOfRows=noOfRows;

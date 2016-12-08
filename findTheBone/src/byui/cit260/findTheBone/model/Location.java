@@ -17,9 +17,6 @@ import java.util.ArrayList;
  */
 public class Location implements Serializable{
     
-    protected final BufferedReader keyboard =FindTheBone.getInFile();
-    protected final PrintWriter console =FindTheBone.getOutFile();
-    
     //class instance variables
     private int row;
     private int column;

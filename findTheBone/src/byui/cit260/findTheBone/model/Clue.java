@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public enum Clue implements Serializable {
     
-    Clue1("Dog at C2 says he saw DeVil in your yard, then DeVil went north"),
+    Clue1("Dog at Restaurant says he saw DeVil in your yard, then DeVil went north"),
     Clue2("Officer Pete says he thought he saw DeVil come from the vacant house, but didn’t see a bone. "),
     Clue3("Miss Ellie says he thought he saw DeVil heading for the zoo"),
     Clue4("Mr. Jones (bakery) didn’t see DeVil, but gives you a treat."),

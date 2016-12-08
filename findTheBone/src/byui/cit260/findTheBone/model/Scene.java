@@ -17,9 +17,7 @@ import java.io.PrintWriter;
  */
 public class Scene implements Serializable{
     
-    protected final BufferedReader keyboard =FindTheBone.getInFile();
-    protected final PrintWriter console =FindTheBone.getOutFile();
-    
+   
     private String description;
     private double travelTime;
     private double displaySymbol;

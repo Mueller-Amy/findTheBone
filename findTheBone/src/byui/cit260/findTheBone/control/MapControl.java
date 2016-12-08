@@ -35,7 +35,7 @@ public class MapControl {
        
         public static void movePlayerToStartingLocation(Map map) throws MapControlException {
                       
-        movePlayer(map, 3, 3);
+        movePlayer(map, 2, 2);
     }
        
     public static void movePlayer(Map map, int row, int column) throws MapControlException {
