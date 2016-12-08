@@ -48,49 +48,7 @@ public class StartProgramView extends View {
         
         );
     }
-    /**
-     * display the start menu view
-     * @param playersName
-     * @return 
-     */
-    /*public void displayStartProgramView() {
-        boolean done = false;
-            //         do
-            do {  
-            //  prompt for and get playersName
-               String playersName = this.getPlayersName();
-               if (playersName.toUpperCase().equals("Q")) // user wants to Quit
-               return;  //exit the game
-               //do the requested action and display next view 
-               done = this.doAction(playersName);
-    }       
-            while (!done);
-    }
-*/
- /*   private String getPlayersName() {
-       
-        
-        Scanner keyboard = new Scanner(System.iX); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is enter
-            System.ouX.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading adn trailing blanks
-            
-            if (value.length() < 1) { // value is blank
-                System.ouX.println("\nInvalid value: value can not be blank");
-                continue;
-        }
-        break; // end the loop
-        
-        }
-        return value; // return the value entered
-               
-    }
-    */
+      
     @Override
     public boolean doAction(String playersName) {
                 

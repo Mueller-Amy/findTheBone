@@ -6,71 +6,54 @@
 package byui.cit260.findTheBone.control;
 
 import byui.cit260.findTheBone.enums.SceneType;
+import byui.cit260.findTheBone.model.Map;
+import byui.cit260.findTheBone.model.Scene;
 import byui.cit260.findTheBone.model.BackpackItem;
 import byui.cit260.findTheBone.model.Clue;
-import byui.cit260.findTheBone.model.Map;
-import byui.cit260.findTheBone.model.Player;
-import byui.cit260.findTheBone.model.Scene;
 import byui.cit260.findTheBone.model.TownsPeople;
+import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import citbyui.cit260.findTheBone.exceptions.MapControlException;
 
-/**
+/*
  *
- * @author Home
+ * @author Jean Oliveira
  */
+
 public class MapControl {
     
      
-    public static Map createMap() throws MapControlException {
+    public static Map createMap() throws MapControlException, GameControlException {
         //create the map
         Map map = new Map (5,5);
         
         //create the scenes for the game
-        Scene[] scenes= createScenes();
-        /*
-        try {
-            //assign scenes to locations
-            GameControl.assignScenesToLocations(map,scenes);
-        } catch (GameControlException ex) {
-            Logger.getLogger(MapControl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        */
-        System.out.println("*** called createMap() called ***");
+        Scene[] scenes = createScenes();
         
+        GameControl.assignScenesToLocations(map,scenes);
         return map;
-        
-        /*
-        
-        if (name == null){
-            return null;
-        }
-    
-        Map map = new Map();
-        map.setName(name);
-        
-        FindTheBone.setMap(map); // save the map
-        
-        return map;
-
-        */
     }
-
-    private static void movePlayer(Map map, int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void createNewGame(Player player) {
-        System.out.println("*** New Game Function displayed. ***");
-    }
-
-    public static void moveCharacterToStartingLocation(Map map) throws MapControlException {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+        public static void movePlayerToStartingLocation(Map map) throws MapControlException {
+                      
         movePlayer(map, 3, 3);
     }
+       
+    public static void movePlayer(Map map, int row, int column) throws MapControlException {
+        if (row < 0 || row >= map.getNoOfRows() || 
+            column < 0 || column >= map.getNoOfColumns()) {
+            throw new MapControlException("You can't move to this location");
+        }
 
-    static Map createMap(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        try {
+            map.setCurrentLocation(map.getLocations()[row][column]);
+            map.getCurrentLocation().setVisited(true);
+            map.setCurrentRow(row);
+            map.setCurrentColumn(column);
+        }
+        catch(Exception ex) {
+            throw new MapControlException(ex.getMessage());
+        }
+        }
 
     private static Scene[] createScenes() throws MapControlException{
         
@@ -114,6 +97,7 @@ public class MapControl {
             currentScene.setDescription("Police Headquarters and Training Center.");
             currentScene.setDialog("Hi Buddy how you doing? On the hunt for Cat DeVil?");
             currentScene.setTownsPeople(TownsPeople.Pete);
+            currentScene.setClue(Clue.Clue10);
             currentScene.setBackpack(BackpackItem.Badge);
             currentScene.setMinute(5);
 
@@ -407,7 +391,7 @@ public class MapControl {
         catch(Exception ex){
                         
             
-            throw new MapControlException("ERROR: THere was a problem with "
+            throw new MapControlException("ERROR: There was a problem with "
                     + "creating scenes.");
         }
     

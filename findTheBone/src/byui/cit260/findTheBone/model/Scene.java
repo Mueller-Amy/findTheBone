@@ -33,7 +33,7 @@ public class Scene implements Serializable{
     private BackpackItem item;
     public int minute;
 
-    public  Scene() {
+    public Scene() {
         this.description = "";
     }
     
@@ -80,6 +80,38 @@ public class Scene implements Serializable{
         return "Scene{" + "name=" + name + ", mapSymbol=" + mapSymbol + ", description=" + description + ", dialog=" + dialog + ", character=" + character + ", clue=" + clue + ", item=" + item + ", minute=" + minute + '}';
     }
 
+    public double getTravelTime() {
+        return travelTime;
+    }
+
+    public void setTravelTime(double travelTime) {
+        this.travelTime = travelTime;
+    }
+
+    public double getDisplaySymbol() {
+        return displaySymbol;
+    }
+
+    public void setDisplaySymbol(double displaySymbol) {
+        this.displaySymbol = displaySymbol;
+    }
+
+    public double getBlockedLocation() {
+        return blockedLocation;
+    }
+
+    public void setBlockedLocation(double blockedLocation) {
+        this.blockedLocation = blockedLocation;
+    }
+
+    public TownsPeople getTownspeople() {
+        return townspeople;
+    }
+
+    public void setTownspeople(TownsPeople townspeople) {
+        this.townspeople = townspeople;
+    }
+   
     public String getName() {
         return name;
     }

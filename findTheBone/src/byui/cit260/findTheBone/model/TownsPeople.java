@@ -6,7 +6,6 @@
 package byui.cit260.findTheBone.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 /**
  *
  * @author Keith Downing
@@ -40,75 +39,14 @@ public enum TownsPeople implements Serializable{
     
     //class instance variables.
     private final String description;
-    private final Point coordinates;
     //private double script;
     TownsPeople(String description){
         this.description = description;
-        coordinates = new Point(1,1);
+//        coordinates = new Point(1,1);
     }
-    /*public TownsPeople() {
-    }
-    */
     
     public String getDescription() {
         return description;
-    }
-    public Point getCoordinates() {
-        return coordinates;
-    }
-
-    private static class Point {
-
-        public Point() {
-        }
-
-        private Point(int i, int i0) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
+    
 }
-    //public double getScript() {
-      //  return script;
-    //}
-
-    //public void setScript(double script) {
-      //  this.script = script;
-    //}
-
-   /* @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.townsPersonName);
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.script) ^ (Double.doubleToLongBits(this.script) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "TownsPeople{" + "townsPersonName=" + townsPersonName + ", script=" + script + '}';
-    }
-
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final TownsPeople other = (TownsPeople) obj;
-        if (Double.doubleToLongBits(this.script) != Double.doubleToLongBits(other.script)) {
-            return false;
-        }
-        if (!Objects.equals(this.townsPersonName, other.townsPersonName)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-  */  
+}   

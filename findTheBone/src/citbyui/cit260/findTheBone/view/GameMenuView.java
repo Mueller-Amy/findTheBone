@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/*package citbyui.cit260.findTheBone.view;
+
 
 /**
  *
@@ -15,9 +15,12 @@
 
 package citbyui.cit260.findTheBone.view;
 
+import byui.cit260.findTheBone.model.Game;
+import byui.cit260.findTheBone.model.Location;
+import byui.cit260.findTheBone.model.Map;
+import byui.cit260.findTheBone.model.Scene;
 import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import findthebone.FindTheBone;
 
 /**
  *
@@ -25,8 +28,7 @@ import java.util.logging.Logger;
  */
 public class GameMenuView extends View{
 
-    private Object game;
-    private Object findTheBone;
+   
     //private String menu;
     //private String promptMessage;
       public GameMenuView() {
@@ -36,11 +38,8 @@ public class GameMenuView extends View{
                     + "\n=========================================="
                     + "\n|           Game Menu                    |"
                     + "\n=========================================="
-                    + "\nG - Game Play Menu"
                     + "\nV - View Map"
-                    + "\nA - Item - Jean Oliveira L10 Assignment"
-                    + "\nE - Clues List - Temporary Location"
-                    + "\nI - Inventory"
+                    + "\nM - Move to new Location"
                     + "\nT - Time Used"
                     + "\nL - What is in Backpack"
                     + "\nC - Volume of a cylinder"
@@ -51,50 +50,7 @@ public class GameMenuView extends View{
                     + "\nX - Exit"
                     + "\n==========================================");
     }
-    
-   /* public void displayGameMenuView(){
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get players name
 
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("X")) // user wants to quit
-                return; // exit the game
-                
-            // Do the requested action and display the next view
-            done = this.doAction(menuOption);
-                
-        }while (!done);
-    }
-*/
-
-   /* private String getMenuOption() {
-       Scanner keyboard = new Scanner(System.iX); 
-       String value = "";
-       boolean valid = false; 
-       String selection = null; 
-       
-        //while a valid entry has not been retrieved
-        while (!valid) { 
-
-            System.ouX.println("\n" + this.promptMessage);
-            
-            //get the value entered from the keyboard
-            value  = keyboard.nextLine(); 
-            value = value.trim(); 
-            
-            if (value.length() < 1) { // blank value entered
-                System.ouX.println("\n*** Invalid Selection *** Try again");
-                continue;
-        }
-        break; 
-        
-        }
-        return value; // return the selection 
-               
-    }
-    
-*/
       @Override
     public boolean doAction(String choice) {
 
@@ -102,26 +58,17 @@ public class GameMenuView extends View{
             
             
         switch (choice) {
-                case "G": //view map
-                    this.viewGamePlayMenu();
-                    break;
+                
                 case "V": //view map
                     this.displayMap();
                     break;
-                case "A": // call to Jean individual L10 Assignment
-                    this.displayItem();
+                case "M": 
+                    this.moveToLocation();
                     break;
-                case "E": //clues view temporary
-                    this.viewClue();
-                    break;
-                case "I": //view List of items
-                    this.inventory();
-                    break;
-
                 case "T": //Time Used
                     this.timeUsed();
                     break;
-
+               
                 case "L": // What is in Backpack
                     this.inBackpack();
                     break;
@@ -153,133 +100,8 @@ public class GameMenuView extends View{
             }
             return false;
        
-}
 
-    
-    private void viewClue() {
-        CluesView clue = new CluesView();
-        clue.display();
-    }
 
-    private void inventory() {
-        
-        InventoryView inventory = new InventoryView();
-        inventory.display();
-        
-        StringBuilder line;
-        
-        //Game game = FindTheBone.getCurrentGame();
-        //Item[] item = item.getInventory();
-        
-        this.console.println("\n           LIST OF INVENTORY ITEMS");
-        line = new StringBuilder("                                   ");
-        line.insert(0, "DESCRIPTION");
-        line.insert(20, "REQUIRED");
-        line.insert(30, "IN STOCK");
-        this.console.println(line.toString());
-        /*
-        for (InventoryView item: inventory) {
-            line = new StringBuilder("                                ");
-            line.insert(0, item;
-            line.insert(23, item.getDescription());
-            line.insert(33, "0.0");
-            
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Pebble");
-            line.insert(23, "1");
-            line.insert(33, "0.0");
-        }
-            
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Box");
-            line.insert(23, "1");
-            line.insert(33, "0.0");
-        }
-        
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Cylinder");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Paper");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Ball");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Fish");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Cat Hair");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Lost Cat Bell");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Cat Collar");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Cat Name Tag");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Business Card");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Treat");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Duck Feather");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        for (InventoryItem item: inventory){
-            line = new StringBuilder("                                 ");
-            line.insert(1, "Peanuts");
-            line.insert(22, "1");
-            line.insert(33, "0.0");
-        }
-        
-        //Display the line
-        this.console.println(line.toString());
-        }
-        */
     }
 
     private void timeUsed() {
@@ -324,58 +146,50 @@ public class GameMenuView extends View{
         helpMenu.display();
     }
 
-    
-
-    private void viewGamePlayMenu() {
-        GamePlayView gamePlay = new GamePlayView();
-        gamePlay.display();
-    }
-
     private void displayMap() {
-  //get locations from the current game
-        /*Location[][] locations = LocationControl.currentLocation();
-        
-        //Display title
-        System.ouX.println(
-                 "\n--------------------"
-                +"\n FIND THE BONE MAP  "
-                +"\n--------------------");
-        //Display row of column numbers
-        System.ouX.println(" 0  1  2 ");
-        //Display row divider
-        System.ouX.println(" -------");
-        
-        //Display row numbers
-        for (int i = 0; i < locations.length; i++) {
-            //Display column divider
-            System.ouX.println(i + 1 + "|");
-            
-            for (Location location : locations[i]) {
-                
-                //If location has been visited, display map symbol
-                if (location.getVisited()) {
-                    System.ouX.println(location.getScene());
-                } else {
-                    System.ouX.println("??");
-                }
-                //Display ending column divider 
-                System.ouX.println("|");
-            }
-            //Display ending row divider
-            System.ouX.println("\n -------");
-        }
-*/
-    }
+                  String leftIndicator;
+                  String rightIndicator;
 
-   
-    private void displayItem() {
-        ItemScreenView itemView = new ItemScreenView() {
-            @Override
-            public boolean doAction(String value) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Game game = FindTheBone.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        Location[][] locations = map.getLocations(); // retreive the locations from map
+        try {
+            System.out.print("  |");
+            for (int column = 0; column < locations[0].length; column++) {
+                System.out.print("  " + column + " |"); // print col numbers to side of map
             }
-        };
-        //itemView.display();
+            System.out.println();
+            for (int row = 0; row < locations.length; row++) {
+                System.out.print(row + " "); // print row numbers to side of map
+                for (int column = 0; column < locations[row].length; column++) {
+                    leftIndicator = " ";
+                    rightIndicator = " ";
+                    if (locations[row][column] == map.getCurrentLocation()) {
+                        leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
+                        rightIndicator = "*"; // same as above
+                    } else if (locations[row][column].getVisited()) {
+                        leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
+                        rightIndicator = "<"; // same as above
+                    }
+                    System.out.print("|"); // start map with a |
+                    if (locations[row][column].getScene() == null) {
+                        System.out.print(leftIndicator + "??" + rightIndicator);
+                    } else {
+                        System.out.print(leftIndicator + locations[row][column].getScene().getMapSymbol() + rightIndicator);
+                    }
+                }
+                System.out.println("|");
+            }
+            Scene currentScene = (Scene) map.getCurrentLocation().getScene();
+            if (currentScene != null) {
+                System.out.println("Your current location is " + currentScene.getName());    
+                System.out.println(currentScene.getDescription());
+                System.out.println(currentScene.getClue());
+            }
+            
+        } catch (Exception e) {
+            this.console.println("Error");
+        }
     }
 
     private void printReport() {
@@ -383,10 +197,14 @@ public class GameMenuView extends View{
         printReport.display();
     }
 
+    private void moveToLocation() {
+        MapView mapView = new MapView();
+        mapView.display();
+        displayMap();
     
+    }
 
-    
-      
+          
     
     }
 
