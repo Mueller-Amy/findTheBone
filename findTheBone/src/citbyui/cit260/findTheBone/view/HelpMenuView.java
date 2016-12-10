@@ -53,7 +53,7 @@ public class HelpMenuView extends View {
     
 
     /*private String getMenuOption() {
-       Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+       Scanner keyboard = new Scanner(System.iX); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
         
@@ -114,56 +114,44 @@ public class HelpMenuView extends View {
                     this.howToMap();
                     break; 
                 default:
-                    // L12 System.out.println("\n*** Invalid selection *** Try Again");
-                    this.console.println("\n*** Invalid selection *** Try Again");
+                    System.out.println("\n*** Invalid selection *** Try Again");
                     break;
                 
             }
             return false;
     }
     private void startNewGameOne(){
-        // L12 System.out.println("*** New Game ***");
-        this.console.println("*** New Game ***");
+        System.out.println("*** New Game ***");
     }
     private void startExistingGameOne() {
-        // L12 System.out.println("*** Load Existing game ***");
-        this.console.println("*** Load Existing game ***");
+        System.out.println("*** Load Existing game ***");
     }
     private void saveGameOne() {
-        // L12 System.out.println("*** Saved Game Loads ***");
-        this.console.println("*** Saved Game Loads ***");
+        System.out.println("*** Saved Game Loads ***");
     }
     private void howToMove() {
-        // L12 System.out.println("*** User Must enter a Alpha+Numeric to move to a new location. (Example A5)***");
-        this.console.println("*** User Must enter a Alpha+Numeric to move to a new location. (Example A5)***");
+        System.out.println("*** User Must enter a Alpha+Numeric to move to a new location. (Example A5)***");
     }
     private void howToLook() {
-        // L12 System.out.println("*** Provides details about the surrounding area. ***");
-        this.console.println("*** Provides details about the surrounding area. ***");
+        System.out.println("*** Provides details about the surrounding area. ***");
     }
     private void howToSearch() {
-        // L12 System.out.println("*** Prompts the user to search around the area. ***");
-        this.console.println("*** Prompts the user to search around the area. ***");
+        System.out.println("*** Prompts the user to search around the area. ***");
     }
     private void howToDig() {
-        // L12 System.out.println("*** Dig around. Search is above ground items. ***");
-        this.console.println("*** Dig around. Search is above ground items. ***");
+        System.out.println("*** Dig around. Search is above ground items. ***");
     }
     private void howToQuestion() {
-        // L12 System.out.println("*** Allows the users to question a person in the area. ***");
-        this.console.println("*** Allows the users to question a person in the area. ***");
+        System.out.println("*** Allows the users to question a person in the area. ***");
     }
     private void howToInventory() {
-        // L12 System.out.println("*** Display Inventory of Items. ***");
-        this.console.println("*** Display Inventory of Items. ***");
+        System.out.println("*** Display Inventory of Items. ***");
     }
     private void howToGive() {
-        // L12 System.out.println("*** Give an item from your backpack to the character in the area. ***");
-        this.console.println("*** Give an item from your backpack to the character in the area. ***");
+        System.out.println("*** Give an item from your backpack to the character in the area. ***");
     }
     private void howToMap() {
-        // L12 System.out.println("*** Display the map. ***");
-        this.console.println("*** Display the map. ***");
+        System.out.println("*** Display the map. ***");
     }
 
 

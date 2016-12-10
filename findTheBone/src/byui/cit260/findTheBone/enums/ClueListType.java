@@ -9,7 +9,7 @@ package byui.cit260.findTheBone.enums;
  *
  * @author Jean
  */
-public enum ClueListTypes {
+public enum ClueListType {
     Clue1,
     Clue2,
     Clue3,

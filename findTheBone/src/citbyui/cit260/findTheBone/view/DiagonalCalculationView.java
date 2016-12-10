@@ -7,7 +7,9 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.CalculationsControl;
 import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
-import java.io.IOException;
+import findthebone.FindTheBone;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -15,11 +17,13 @@ import java.util.Scanner;
  * @author Jean
  */
 public class DiagonalCalculationView  {
+    
+    protected final BufferedReader keyboard =FindTheBone.getInFile();
+    protected final PrintWriter console =FindTheBone.getOutFile();
 
     
     
         public void promptEnterKey(){
-            //L12 System.out.println("Press \"ENTER\" to continue...");
             this.console.println("Press \"ENTER\" to continue...");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
@@ -29,8 +33,7 @@ public class DiagonalCalculationView  {
     }
 
     private void displayBanner() {
-       // System.out.println(
-       this.console.println(
+        this.console.println(
               "\n*********************************************************************"
             + "\n*                Diagonal Rectangle Calculation                     *"
             + "\n*********************************************************************"          
@@ -92,7 +95,6 @@ public class DiagonalCalculationView  {
                counter = counter + 1; 
               
                if (counter == 4) {
-          // L12 System.out.println("\n**********************************************"
           this.console.println("\n**********************************************"
                            + "\n*      oh oh !!! You used all atempts!       *"  
                            + "\n       You lost the BONE and the GAME        *"
@@ -131,15 +133,12 @@ public class DiagonalCalculationView  {
                          
                if (diagonal == -1.0) {
                    //Call control function to calculate the triangle diagonal
-                  // L12 System.out.println("\n Invalid values for length or width. Try again.");
-                  this.console.println("\n Invalid values for length or width. Try again.");
+                   this.console.println("\n Invalid values for length or width. Try again.");
                    return false;
                }
                else {
                    
-                  //L12 System.out.println("The Rectangle Diagonal = " + diagonal );
-                  this.console.println("The Rectangle Diagonal = " + diagonal );
-                   //L12 System.out.println("\n***************************************************"
+                   this.console.println("The Rectangle Diagonal = " + diagonal );
                    this.console.println("\n***************************************************"
                            + "\n*      Congratulations !!! You found the bone.    *"  
                            + "\n                    GAME OVER                     *"
@@ -157,8 +156,8 @@ public class DiagonalCalculationView  {
 		Scanner inFile;
 		inFile = new Scanner(System.in);
 			
-		//L12 System.out.println("\nPlease, enter the Triangle Length value:"); // prompt user to enter length
 		this.console.println("\nPlease, enter the Triangle Length value:"); // prompt user to enter length
+		
         length = inFile.nextDouble(); // get weight entered from console
 	
         }
@@ -172,17 +171,10 @@ public class DiagonalCalculationView  {
 		Scanner inFile;
 		inFile = new Scanner(System.in);
 			
-		//L12 System.out.println("\nPlease, enter the Triangle Width value:"); // prompt user to enter length
-		this.console.println("\nPlease, enter the Triangle Width value:"); // prompt user to enter length
-		double width = inFile.nextDouble(); // get weight entered from console
-		return width;
                 
     }
 
 return width;
-    }
-
-
     }
 
    

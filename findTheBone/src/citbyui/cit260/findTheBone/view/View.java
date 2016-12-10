@@ -53,8 +53,7 @@ public  abstract class View implements ViewInterface{
     @Override 
     public String getInput() {
       
-        //L12 TA deleted line -->        Scanner keyboard = new Scanner(System.inX); // get infile for keyboar
-        //L12 TA deleted line -->        Scanner keyboard = new Scanner(System.in); // get infile for keyboar
+        //L12 TA deleted line -->        Scanner keyboard = new Scanner(System.iX); // get infile for keyboar
         boolean valid = false; // initialize to not valid
         
         

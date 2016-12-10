@@ -14,8 +14,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -32,7 +30,7 @@ public class FindTheBone {
     private static PrintWriter outFile=null;
     private static BufferedReader inFile=null;
     private static PrintWriter logFile=null;
-
+  
     public static PrintWriter getLogFile() {
         return logFile;
     }
@@ -86,6 +84,10 @@ public class FindTheBone {
     }
 
     public static void setPlayer(Player player) {
+         FindTheBone.player = player;
+    }
+
+    public FindTheBone(Player player) {
         FindTheBone.player = player;
     }
     

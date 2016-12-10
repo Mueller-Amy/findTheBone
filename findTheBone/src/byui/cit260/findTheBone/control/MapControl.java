@@ -5,63 +5,56 @@
  */
 package byui.cit260.findTheBone.control;
 
+import byui.cit260.findTheBone.enums.SceneType;
 import byui.cit260.findTheBone.model.Map;
-import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.Scene;
+import byui.cit260.findTheBone.model.BackpackItem;
+import byui.cit260.findTheBone.model.Clue;
+import byui.cit260.findTheBone.model.TownsPeople;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import citbyui.cit260.findTheBone.exceptions.MapControlException;
 
-/**
+/*
  *
- * @author Home
+ * @author Jean Oliveira
  */
+
 public class MapControl {
-    public static Map createMap() {
+    
+     
+    public static Map createMap() throws MapControlException, GameControlException {
         //create the map
         Map map = new Map (5,5);
         
         //create the scenes for the game
-        Scene[] scenes= createScenes();
+        Scene[] scenes = createScenes();
         
-        //assign scenes to locations
         GameControl.assignScenesToLocations(map,scenes);
-        
-        // L12 System.out.println("*** called createMap() called ***");
-        this.console.println("*** called createMap() called ***");
-                
-        
         return map;
-        
-        /*
-        
-        if (name == null){
-            return null;
+    }
+       
+        public static void movePlayerToStartingLocation(Map map) throws MapControlException {
+                      
+        movePlayer(map, 2, 2);
+    }
+       
+    public static void movePlayer(Map map, int row, int column) throws MapControlException {
+        if (row < 0 || row >= map.getNoOfRows() || 
+            column < 0 || column >= map.getNoOfColumns()) {
+            throw new MapControlException("You can't move to this location");
         }
-    
-        Map map = new Map();
-        map.setName(name);
-        
-        FindTheBone.setMap(map); // save the map
-        
-        return map;
 
-        */
-    }
+        try {
+            map.setCurrentLocation(map.getLocations()[row][column]);
+            map.getCurrentLocation().setVisited(true);
+            map.setCurrentRow(row);
+            map.setCurrentColumn(column);
+        }
+        catch(Exception ex) {
+            throw new MapControlException(ex.getMessage());
+        }
+        }
 
-    public static void createNewGame(Player player) {
-        // L 12 System.out.println("*** New Game Function displayed. ***");
-        this.console.println("*** New Game Function displayed. ***");
-    }
-
-    static void moveCharacterToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    static Map createMap(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-/* 
     private static Scene[] createScenes() throws MapControlException{
         
         Scene[] scenes = new Scene[SceneType.values().length];
@@ -70,6 +63,7 @@ public class MapControl {
         try{
             
             Scene currentScene = null;
+            
             //location 0,0
             currentScene = new Scene();
             currentScene.setName("Parkland");
@@ -103,6 +97,7 @@ public class MapControl {
             currentScene.setDescription("Police Headquarters and Training Center.");
             currentScene.setDialog("Hi Buddy how you doing? On the hunt for Cat DeVil?");
             currentScene.setTownsPeople(TownsPeople.Pete);
+            currentScene.setClue(Clue.Clue10);
             currentScene.setBackpack(BackpackItem.Badge);
             currentScene.setMinute(5);
 
@@ -165,7 +160,7 @@ public class MapControl {
             currentScene.setMapSymbol("DI");      
             currentScene.setDescription("A fast food establishment and a good source for snacks.");
             currentScene.setDialog("Yes, Cat DeVil and his gang was here and went that way.");
-            currentScene.setTownsPeople(TownsPeople.CoCo);
+            currentScene.setTownsPeople(TownsPeople.Coco);
             currentScene.setClue(Clue.Clue3);
             currentScene.setBackpack(BackpackItem.CatHairballs);
             currentScene.setMinute(5);
@@ -396,17 +391,14 @@ public class MapControl {
         catch(Exception ex){
                         
             
-            throw new MapControlException("ERROR: THere was a problem with "
+            throw new MapControlException("ERROR: There was a problem with "
                     + "creating scenes.");
         }
     
         return scenes;
     }
-*/
 
-    private static Scene[] createScenes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+
+      
     
 }

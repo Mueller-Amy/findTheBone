@@ -18,7 +18,6 @@ public class Game implements Serializable{
     
     private Player player;
     private Backpack backpack;
-    private Item[] inventory;
     private Map map;
     
 
@@ -50,14 +49,6 @@ public class Game implements Serializable{
 
     public void setBackpack(Backpack backpack) {
         this.backpack = backpack;
-    }
-
-    public Item[] getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(Item[] inventory) {
-        this.inventory = inventory;
     }
 
     public Map getMap() {

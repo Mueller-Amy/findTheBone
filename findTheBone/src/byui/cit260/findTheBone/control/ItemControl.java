@@ -63,13 +63,13 @@ public class ItemControl {
     }
    /*  
     public static void main(String a[]){
-        System.out.print("Numbers Order : ");
+        System.ouX.print("Numbers Order : ");
         ItemControl sorter = new ItemControl();
         int[] input = {32,7,56,20,12,98,2,36,64,22,77};
         sorter.sort(input);
         for(int i:input){
-            System.out.print(i);
-            System.out.print(" ");
+            System.ouX.print(i);
+            System.ouX.print(" ");
         }
 
     }

@@ -9,7 +9,9 @@ package byui.cit260.findTheBone.enums;
  *
  * @author Jean
  */
-public enum SceneType {
+
+ public enum SceneType {
+
     Parkland,
     VacantHouse,
     Police,
@@ -34,5 +36,7 @@ public enum SceneType {
     SchoolCafeteria,
     SchoolPlayGround,
     SchoolParking,
-    ZooTigers
+    ZooTigers;
+    
+        
 }

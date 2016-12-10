@@ -5,22 +5,18 @@
  */
 package citbyui.cit260.findTheBone.view;
 
+import byui.cit260.findTheBone.enums.MapCodeType;
 import byui.cit260.findTheBone.enums.SceneType;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
- * @author Jean
+ * @author Jean Oliveira
  */
 public class PrintReportView extends View {
 
-    
+        
     public PrintReportView() {
     
     super( "\n"
@@ -61,7 +57,6 @@ public class PrintReportView extends View {
                     break;
                 case "V": // 
                     this.inventoryReport();
-                       //Amy Mueller Lesson 12
                     break;
                 case "T": // 
                     this.townsPeopleReport();
@@ -108,60 +103,6 @@ public class PrintReportView extends View {
 
     private void inventoryReport() {
         System.out.println("inventoryReport Called"); 
-        String filePath=null;
-        String fileLocation="inventoryReport.txt";
-        
-            boolean valid = false;
-         while (!valid){
-             this.console.println("Enter where you want to save the Inventory Report: ");
-             
-             try{
-                 filePath = this.keyboard.readLine(); 
-               
-                 filePath = filePath.trim(); 
-            
-            if (filePath.length() < 1) { // value is blank
-                ErrorView.display(this.getClass().getName(),//L12 TA
-                        "\nMust enter a number");
-            continue;
-            }
-             
-               
-        }  catch (IOException ex) {
-                  ErrorView.display(this.getClass().getName(),
-                        "Could not read " + ex.getMessage());
-                   
-              }
-
-        break; 
-        
-        }
-
-          
-          try  (FileWriter outFile=new FileWriter(filePath + fileLocation)){
-             
-              outFile.write("\n\nInventory");
-              outFile.write("Inventory List");
-              outFile.write("--------"+ "--------");
-            
-              SceneType[] scene=SceneType.values();
-              
-            
-              for (SceneType item:scene) {
-                  outFile.write("\n " + item +"\n");
-                                                                           
-              }        
-    
-    }   catch (IOException ex) {
-               ErrorView.display(this.getClass().getName(),"Did not save");    
-        
-        } 
-                  this.console.println("Report Saved");
-              }
-          }
-             
-         
-            
     }
 
     private void townsPeopleReport() {
@@ -178,14 +119,11 @@ public class PrintReportView extends View {
 
     private void mapReport() {//function written by Jean Oliveira
           
-          //String fileReportName="mapReport.txt";
-          String filePath = null;
-          //FileWriter outFile=null;//variable for a file stream
-          String fileLocation="mapreport.txt";//Specify the file location of the file
-          //String reportname = "mapReport.txt";
-          
-            boolean valid = false; // initialize to not valid
+           String filePath = null;//Specify the file location of the file
+           String fileLocation="mapreport.txt";//variable for a file stream
+           boolean valid = false; // initialize to not valid
         
+           //getting file path 
         while (!valid) { // loop while an invalid value is enter
             this.console.println("Please, enter the file path where to be save the Map report file: ");
             
@@ -210,33 +148,35 @@ public class PrintReportView extends View {
         
         }
          
-          
-          //print to file a Map report
-          
-          try  (FileWriter outFile=new FileWriter(filePath + fileLocation)){//file path + file name report
-              
-              //outFile = new FileWriter(fileLocation);//create and open a new file atream for the output file
-              
-              //outFile=new FileWriter(reportname);
-              //print title and column headings
-              
-              outFile.write("\n\n           Map Report         ");
-              outFile.write("Map Name"+ "Map Code");
-              outFile.write("--------"+ "--------");
-             //"%n%-20s%10s%10s%"+   "%n%-20s%10s%10s%"+ 
-              SceneType[] scene=SceneType.values();
-              
-              //for statement to go through the list of items to be displayed
-              for (SceneType item:scene) {
-                  outFile.write("\n " + item +"\n");
-                                            //   ,Map Code() 
-                     //"%n%-20s%7d%13.2f" +                                  
-              }        
+            //print report
+           try (PrintWriter outFile=new PrintWriter(filePath + fileLocation)) {  
+             
+              outFile.println("\n\n           Map Report         ");
+              outFile.printf("%n%-20s%10s", "Map Name", "Map Code");
+              outFile.printf("%n%-20s%10s", "--------", "--------");
+            
+              SceneType[] name=SceneType.values();
+              MapCodeType[] code=MapCodeType.values();
+             
+              //for statement to go through the list of enum items to be displayed
+                  for (int i=0;i < name.length;i++){
+                  String mapname = name[i].toString();
+                  String mapcode = code[i].toString();
+                  
+                  outFile.printf("%n%-20s%10s", mapname, mapcode );
+                  
+              }      
+                 
     
     }   catch (IOException ex) {
                ErrorView.display(this.getClass().getName(),"Error saving or writing data to map file report !!!");    
         
         } 
-                  this.console.println("Report Sucessfuly saved !!!");
+                  this.console.println("\n=========================================="
+                                     + "\n|       Report Sucessfuly saved !!!      |"
+                                     + "\n==========================================");
+
               }
+
+    
           }

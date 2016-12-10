@@ -4,20 +4,18 @@
  * and open the template in the editor.
  */
 package byui.cit260.findTheBone.control;
-
+import byui.cit260.findTheBone.enums.SceneType;
 import byui.cit260.findTheBone.model.Game;
-import byui.cit260.findTheBone.model.Item;
+import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
 
 import byui.cit260.findTheBone.model.Scene;
-import byui.cit260.findTheBone.model.Scene.SceneType;
-
-
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
+import citbyui.cit260.findTheBone.exceptions.MapControlException;
+import citbyui.cit260.findTheBone.view.GameMenuView;
+import citbyui.cit260.findTheBone.view.MainMenuView;
 import findthebone.FindTheBone;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
 
 /**
  *
@@ -40,26 +38,25 @@ public class GameControl {
         return player;
     }
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException, GameControlException {
         
         Game game = new Game(); // create new game
         FindTheBone.setCurrentGame(game); // save in FindTheBone
         
         game.setPlayer(player); // save player in game
         
-        
-        /*
-        //create the inventory list and save in the game
-        Item[] item = GameControl.createItemList();
-        game.setInventory(itemList);
-        */
-
-
+         
         Map map = MapControl.createMap(); //create and initialize new map
         game.setMap(map); // Save map in game
         
+        try {
         // Move character to starting position in the map
-        MapControl.moveCharacterToStartingLocation(map);
+        MapControl.movePlayerToStartingLocation(map);
+        
+        } catch (MapControlException ex) {
+             Logger.getLogger(GameControl.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
+        }
         
     }
     
@@ -75,130 +72,94 @@ public class GameControl {
         }
     }
     
+public static void getSavedGame(String filePath) 
+        throws GameControlException {
+        
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filePath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();//read the game object from file
 
+            
+        }
+        catch(Exception ex){
+            
+            throw new GameControlException("Loading game fail...There is a error reading saved game");
+        }
+        
+        //close the output file
+        FindTheBone.setCurrentGame(game);
+        System.out.println("\n Game sucessfuly loaded.");
+         GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+        
+    }
     
-    public static Item[] createItemList() {
-        Item[] inventory = 
-            new Item[17];
-        Item twig = new Item();
-        twig.setDescription("Twig");
-        twig.setQuantityInStock(0);
-        twig.setRequiredAmount(0);
-        inventory[twig.ordinal()] = twig;
+   static void assignScenesToLocations(Map map, Scene[] scenes) throws GameControlException {
+        Location[][] locations = map.getLocations();
         
-        Item pebble = new Item();
-        pebble.setDescription("Pebble");
-        pebble.setQuantityInStock(0);
-        pebble.setRequiredAmount(0);
-        inventory[pebble.ordinal()] = pebble;
-        
-        Item box = new Item();
-        box.setDescription("Box");
-        box.setQuantityInStock(0);
-        box.setRequiredAmount(0);
-        inventory[box.ordinal()] = box;
-        
-        Item cylinder = new Item();
-        cylinder.setDescription("Cylinder");
-        cylinder.setQuantityInStock(0);
-        cylinder.setRequiredAmount(0);
-        inventory[cylinder.ordinal()] = cylinder;
-        
-        Item paper = new Item();
-        paper.setDescription("Paper");
-        paper.setQuantityInStock(0);
-        paper.setRequiredAmount(0);
-        inventory[paper.ordinal()] = paper;
-        
-        Item ball = new Item();
-        ball.setDescription("Ball");
-        ball.setQuantityInStock(0);
-        ball.setRequiredAmount(0);
-        inventory[ball.ordinal()] = ball;
-        
-        Item fish = new Item();
-        fish.setDescription("Fish");
-        fish.setQuantityInStock(0);
-        fish.setRequiredAmount(0);
-        inventory[fish.ordinal()] = fish;
-        
-        Item cathair = new Item();
-        cathair.setDescription("Cat Hair");
-        cathair.setQuantityInStock(0);
-        cathair.setRequiredAmount(0);
-        inventory[cathair.ordinal()] = cathair;
-        
-        Item catbell = new Item();
-        catbell.setDescription("Cat Bell");
-        catbell.setQuantityInStock(0);
-        catbell.setRequiredAmount(0);
-        inventory[catbell.ordinal()] = catbell;
-        
-        Item lostcatbell = new Item();
-        lostcatbell.setDescription("Lost Cat Bell");
-        lostcatbell.setQuantityInStock(0);
-        lostcatbell.setRequiredAmount(0);
-        inventory[lostcatbell.ordinal()] = lostcatbell;
-        
-        Item catcollar = new Item();
-        catcollar.setDescription("Cat Collar");
-        catcollar.setQuantityInStock(0);
-        catcollar.setRequiredAmount(0);
-        inventory[catcollar.ordinal()] = catcollar;
-        
-        Item nametag = new Item();
-        nametag.setDescription("Cat Name Tag");
-        nametag.setQuantityInStock(0);
-        nametag.setRequiredAmount(0);
-        inventory[nametag.ordinal()] = nametag;
-        
-        Item businesscard = new Item();
-        businesscard.setDescription("Business Card");
-        businesscard.setQuantityInStock(0);
-        businesscard.setRequiredAmount(0);
-        inventory[businesscard.ordinal()] = businesscard;
-        
-        Item treat = new Item();
-        treat.setDescription("Twig");
-        treat.setQuantityInStock(0);
-        treat.setRequiredAmount(0);
-        inventory[treat.ordinal()] = treat;
-        
-        Item duckfeather = new Item();
-        duckfeather.setDescription("Duck Feather");
-        duckfeather.setQuantityInStock(0);
-        duckfeather.setRequiredAmount(0);
-        inventory[duckfeather.ordinal()] = duckfeather;
-        
-        Item peanuts = new Item();
-        peanuts.setDescription("Peanuts");
-        peanuts.setQuantityInStock(0);
-        peanuts.setRequiredAmount(0);
-        inventory[peanuts.ordinal()] = peanuts;
-        
-        
-        return inventory;
+        try{
+
+            locations[0][0].setScene(scenes[SceneType.Parkland.ordinal()]);
+            locations[0][1].setScene(scenes[SceneType.VacantHouse.ordinal()]);
+            locations[0][2].setScene(scenes[SceneType.Police.ordinal()]);
+            locations[0][3].setScene(scenes[SceneType.AnimalHospital.ordinal()]);
+            locations[0][4].setScene(scenes[SceneType.Pound.ordinal()]);
+            
+            locations[1][0].setScene(scenes[SceneType.Bakery.ordinal()]);
+            locations[1][1].setScene(scenes[SceneType.Restaurant.ordinal()]);
+            locations[1][2].setScene(scenes[SceneType.DriveInn.ordinal()]);
+            locations[1][3].setScene(scenes[SceneType.Lake.ordinal()]);
+            locations[1][4].setScene(scenes[SceneType.CatAlley.ordinal()]);
+           
+            locations[2][0].setScene(scenes[SceneType.CareHome.ordinal()]);
+            locations[2][1].setScene(scenes[SceneType.NeighborsHouse.ordinal()]);
+            locations[2][2].setScene(scenes[SceneType.YourHouse.ordinal()]);
+            locations[2][3].setScene(scenes[SceneType.CatDeVilHouse.ordinal()]);
+            locations[2][4].setScene(scenes[SceneType.GroceryStore.ordinal()]);
+            
+            locations[3][0].setScene(scenes[SceneType.Zoo.ordinal()]);
+            locations[3][1].setScene(scenes[SceneType.Fishmonger.ordinal()]);
+            locations[3][2].setScene(scenes[SceneType.ZooElephants.ordinal()]);
+            locations[3][3].setScene(scenes[SceneType.ZooKangaroos.ordinal()]);
+            locations[3][4].setScene(scenes[SceneType.ZooGiraffes.ordinal()]);
+           
+            locations[4][0].setScene(scenes[SceneType.SchoolEntrance.ordinal()]);
+            locations[4][1].setScene(scenes[SceneType.SchoolCafeteria.ordinal()]);
+            locations[4][2].setScene(scenes[SceneType.SchoolPlayGround.ordinal()]);
+            locations[4][3].setScene(scenes[SceneType.SchoolParking.ordinal()]);
+            locations[4][4].setScene(scenes[SceneType.ZooTigers.ordinal()]);
+         }            
+        catch(Exception ex){
+            
+            throw new GameControlException("ERROR: THere was a problem with " + 
+                    "assigning scenes to lcoation");
+        }
     }
-
-
-    static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] location=map.getLocations();
-        
-        //start point
-        location[0][0].setScene(scenes[SceneType.start.ordinal()]);
-        location[0][1].setScene(scenes[SceneType.finish.ordinal()]);
-        location[0][2].setScene(scenes[SceneType.zoo.ordinal()]);
-        location[0][3].setScene(scenes[SceneType.house.ordinal()]);
-        //.....
-        
-        
+    
+    //L12 TA
+    public static void saveGame(Game currentGame, String filePath) throws GameControlException {
+                
+        try(FileOutputStream fops=new FileOutputStream(filePath)) {
+            ObjectOutputStream output=new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame);//write the game object out to file
+        } catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
+    
 
-     
-
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
     
     
 }
     
-

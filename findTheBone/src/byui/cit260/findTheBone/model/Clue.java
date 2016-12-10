@@ -6,62 +6,38 @@
 package byui.cit260.findTheBone.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author Jean Oliveira
  */
-public class Clue implements Serializable{
+public enum Clue implements Serializable {
     
-    //class instance variable
-    private String attribute;
-        
-    //default constructor
-    public Clue() {
-    }
-        
-    //Getter
-
-    public String getAttribute() {
-        return attribute;
-    }
+    Clue1("Dog at Restaurant says he saw DeVil in your yard, then DeVil went north"),
+    Clue2("Officer Pete says he thought he saw DeVil come from the vacant house, but didn’t see a bone. "),
+    Clue3("Miss Ellie says he thought he saw DeVil heading for the zoo"),
+    Clue4("Mr. Jones (bakery) didn’t see DeVil, but gives you a treat."),
+    Clue5("Mr. Nono suggests Fishmongers.  After all, every cat likes fish."),
+    Clue6("Fishmongers hasn’t seen DeVil. But gives you a fish."),
+    Clue7("Elephants say they thought they saw DeVil by the giraffes."),
+    Clue8("Giraffes suggest the tigers.  Cats stick together."),
+    Clue9("Tigers have seen him but wants something for the information." 
+	    + "You give the tigers the fish. They tell you DeVil is hiding in a box."
+		+ "You find the box and calculate Box Volume. If DeVil can fit in it. "),
+    Clue10("Mr. Sneed suggests the warehouse.  He saw Mr. Sam chasing him, but he didn’t catch him.."),
+    Clue11("DeVils Gang runs you out of the alley.  And you head to the restaurant."),
+    Clue12("Restaurant Owner, see you and gives you a new bone in your backpack."),
+    Clue13("Tommy suggests the pond."),
+    Clue14("Do you remember anything about the east side of the yard?.");
     
-    public void setAttribute(String attribute) {
-        this.attribute = attribute;
-    }
+    private final String description;
     
-    //equals(), and hashCode() codes
+    Clue(String description) {
+        this.description = description;
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.attribute);
-        return hash;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Clue other = (Clue) obj;
-        if (!Objects.equals(this.attribute, other.attribute)) {
-            return false;
-        }
-        return true;
-    }
-    //toString() code
-
-    @Override
-    public String toString() {
-        return "Clue{" + "attribute=" + attribute + '}';
-    }
-    
+    public String getDescription() {
+        return description;
+    }    
 }
+

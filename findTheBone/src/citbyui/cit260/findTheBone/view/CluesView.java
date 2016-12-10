@@ -87,8 +87,7 @@ public class CluesView extends View{
                     this.exit();
                     break;
                 default:
-                  //L 12  System.out.println("\n*** Invalid selection *** Try Again");
-                    ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
+                    this.console.println("\n*** Invalid selection *** Try Again");
                     break;
                 
             }
@@ -97,76 +96,59 @@ public class CluesView extends View{
 }
 
     private void clue1() {
-       //L 12 System.out.println("*** viewclue1 function called ***"); 
-       this.console.println("*** viewclue1 function called ***");
+        this.console.println("*** viewclue1 function called ***"); 
     }
 
     private void clue2() {
-        // L12 System.out.println("*** viewclue2 function called ***"); 
         this.console.println("*** viewclue2 function called ***"); 
     }
 
     private void clue3() {
-        // L12 System.out.println("*** viewclue3 function called ***"); 
-        this.console.println("*** viewclue3 function called ***");
+        this.console.println("*** viewclue3 function called ***"); 
     }
 
     private void clue4() {
-        // L12 System.out.println("*** viewclue4 function called ***"); 
-        this.console.println("*** viewclue4 function called ***");
+        this.console.println("*** viewclue4 function called ***"); 
     }
 
     private void clue5() {
-        // L12 System.out.println("*** viewclue5 function called ***"); 
-        this.console.println("*** viewclue5 function called ***");
-        
+        this.console.println("*** viewclue5 function called ***"); 
     }
 
     private void clue6() {
-        // L12 System.out.println("*** viewclue6 function called ***"); 
-        this.console.println("*** viewclue6 function called ***");
+        this.console.println("*** viewclue6 function called ***"); 
     }
 
     private void clue7() {
-        // L12 System.out.println("*** viewclue7 function called ***"); 
         this.console.println("*** viewclue7 function called ***"); 
-        
     }
 
     private void clue8() {
-       //L12  System.out.println("*** viewclue8 function called ***"); 
-       this.console.println("*** viewclue8 function called ***"); 
+        this.console.println("*** viewclue8 function called ***"); 
     }
 
     private void clue9() {
-        // L12 System.out.println("*** viewclue9 function called ***"); 
         this.console.println("*** viewclue9 function called ***"); 
     }
     private void clue10() {
-        // L12 System.out.println("*** viewclue10 function called ***"); 
-        this.console.println("*** viewclue10 function called ***");
+        this.console.println("*** viewclue10 function called ***"); 
     }
     private void clue11() {
-        //L12 System.out.println("*** viewclue11 function called ***"); 
         this.console.println("*** viewclue11 function called ***"); 
     }
 
     private void clue12() {
-        //L12 System.out.println("*** viewclue12 function called ***"); 
         this.console.println("*** viewclue12 function called ***"); 
     }
 
     private void clue13() {
-        // L12 System.out.println("*** viewclue13 function called ***"); 
         this.console.println("*** viewclue13 function called ***"); 
     }
 
     private void clue14() {
-        //L12 System.out.println("*** viewclue14 function called ***"); 
-        this.console.println("*** viewclue14 function called ***");
+        this.console.println("*** viewclue14 function called ***"); 
     }
     private void exit() {
-        //L12 System.out.println("*** Exit function called ***"); 
         this.console.println("*** Exit function called ***"); 
     }
     
