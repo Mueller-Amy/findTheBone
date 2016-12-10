@@ -46,6 +46,7 @@ public class GameMenuView extends View{
                     + "\nC - Volume of a cylinder"
                     + "\nR - Àrea of a box"
                     + "\nB - Volume of a box"
+                    + "\nP - Print Report"
                     + "\nH - Help"
                     + "\nX - Exit"
                     + "\n==========================================");
@@ -68,7 +69,7 @@ public class GameMenuView extends View{
 */
 
    /* private String getMenuOption() {
-       Scanner keyboard = new Scanner(System.in); 
+       Scanner keyboard = new Scanner(System.iX); 
        String value = "";
        boolean valid = false; 
        String selection = null; 
@@ -135,6 +136,9 @@ public class GameMenuView extends View{
                 case "R": 
                     // calcAreaOfBox
                     this.calcAreaOfBox();
+                    break;
+                case "P": // Print Report
+                    this.printReport();
                     break;
                 case "H": // Help
                     this.displayHelpMenu();
@@ -372,6 +376,11 @@ public class GameMenuView extends View{
             }
         };
         //itemView.display();
+    }
+
+    private void printReport() {
+        PrintReportView printReport = new PrintReportView();
+        printReport.display();
     }
 
     

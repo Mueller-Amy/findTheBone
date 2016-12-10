@@ -16,7 +16,7 @@ public abstract class ItemScreenView extends View {
        public final void promptEnterKey(){
             this.console.println("Press \"ENTER\" to continue...");
            try {
-               //Scanner scanner = new Scanner(System.in);
+               //Scanner scanner = new Scanner(System.iX);
                this.keyboard.readLine();
            } catch (IOException ex) {
                 ErrorView.display(this.getClass().getName(),

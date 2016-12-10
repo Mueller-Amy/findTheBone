@@ -59,7 +59,7 @@ public class ActionMenuView extends View {
    /* private String getMenuOption() {
         
         
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+        Scanner keyboard = new Scanner(System.iX); // get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
         
@@ -133,37 +133,31 @@ public class ActionMenuView extends View {
     }
 
     private void actionLookAround() {
+    }
+
+    private void actionSearchAround() {
        //  L12 System.out.println("*** actionLookAround function called ***");
        this.console.println("***actionLookAround function called ***");
     }
 
-    private void actionSearchAround() {
-        // L12 System.out.println("*** actionSearchAround function called ***");
-        this.console.println("*** actionSearchAround function called ***");
-    }
-
     private void actionDigAround() {
-        //L12 System.out.println("*** actionDigAround function called ***");
-        this.console.println("***actionDigAround function called ***");
+         this.console.println("*** actionSearchAround function called ***");
     }
 
     private void actionDoQuestion() {
-        // L12 System.out.println("*** actionDoQuestion function called ***");
-        this.console.println("*** actionDoQuestion function called ***");
+         this.console.println("*** actionDigAround function called ***");
     }
 
     private void actionDisplayInventory() {
-         //L12 System.out.println("*** actionDisplayInventory function called ***");
+         this.console.println("*** actionDoQuestion function called ***");
          this.console.println("*** actionDisplayInventory function called ***");
     }
 
     private void actionGiveItem() {
-        //L12 System.out.println("*** actionGiveItem function called ***");
-        this.console.println("*** actionGiveItem function called ***");
     }
 
     private void actionDisplayMap() {
-        //L12 System.out.println("*** actionDisplayMap function called ***");
+         this.console.println("*** actionGiveItem function called ***");
          this.console.println("*** actionDisplayMap function called ***");
     }
 
@@ -176,4 +170,5 @@ public class ActionMenuView extends View {
 
 
 }
+
 
