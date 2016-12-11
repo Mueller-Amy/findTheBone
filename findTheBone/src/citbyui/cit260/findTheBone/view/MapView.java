@@ -7,6 +7,7 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.MapControl;
 import byui.cit260.findTheBone.model.Game;
+import byui.cit260.findTheBone.model.GameTime;
 import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import citbyui.cit260.findTheBone.exceptions.MapControlException;
@@ -26,11 +27,13 @@ public MapView() {
      + "\n    Enter location you want to move to"
      + "\n------------------------------------------");
 }
-  @Override
-  public boolean doAction(String mapOption) {
+  public boolean doAction(String mapOption, double timeRemaining) {
      mapOption = mapOption.toUpperCase();
      Game game = FindTheBone.getCurrentGame(); // retreive the game
      Map map = game.getMap(); // retreive the map from game
+     GameTime gameTime = game.getGameTime();//retrieve current time remaining
+     //double time=game.getTimeRemaining();
+     //double timeRemaining=time.getTimeRemaining();
      Location[][] locations = map.getLocations(); // retreive the locations from map
      for (int row = 0; row < locations.length; row++) {
           for (int column = 0; column < locations[row].length; column++) {
@@ -38,9 +41,13 @@ public MapView() {
                    if (mapOption.equals(locations[row][column].getScene().getMapSymbol())) {
                      try {
                             MapControl.movePlayer(map, row, column);
+                            gameTime.setTimeRemaining(timeRemaining-0.05);
+                            
+                            
                         } catch (MapControlException ex) {
                             System.out.println(ex.getMessage());
                         }
+                       
                          return true;
                     }
                  }
@@ -50,5 +57,11 @@ public MapView() {
      return false;
 
 }
+
+    @Override
+    public boolean doAction(String value) {
+       //do nothing
+       return true;
+    } 
 }
 

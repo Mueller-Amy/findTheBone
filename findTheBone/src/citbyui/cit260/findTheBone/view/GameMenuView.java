@@ -16,6 +16,7 @@
 package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.model.Game;
+import byui.cit260.findTheBone.model.GameTime;
 import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Scene;
@@ -40,7 +41,7 @@ public class GameMenuView extends View{
                     + "\n=========================================="
                     + "\nV - View Map"
                     + "\nM - Move to new Location"
-                    + "\nT - Time Used"
+                    + "\nT - Time Remaining"
                     + "\nL - What is in Backpack"
                     + "\nC - Volume of a cylinder"
                     + "\nR - Àrea of a box"
@@ -66,7 +67,7 @@ public class GameMenuView extends View{
                     this.moveToLocation();
                     break;
                 case "T": //Time Used
-                    this.timeUsed();
+                    this.timeRemaining();
                     break;
                
                 case "L": // What is in Backpack
@@ -104,10 +105,7 @@ public class GameMenuView extends View{
 
     }
 
-    private void timeUsed() {
-        this.console.println("*** timeUsed function called ***"); 
-    }
-
+    
     private void inBackpack() {
         this.console.println("*** inBackpack function called ***"); 
     
@@ -145,13 +143,19 @@ public class GameMenuView extends View{
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-
+    private void timeRemaining() {
+        TimeLocationStatusView timeStatus = new TimeLocationStatusView();
+        timeStatus.display();
+        
+    }
+    
     private void displayMap() {
                   String leftIndicator;
                   String rightIndicator;
 
         Game game = FindTheBone.getCurrentGame(); // retreive the game
         Map map = game.getMap(); // retreive the map from game
+        GameTime gameTime = game.getGameTime(); //retrieve current time remaining
         Location[][] locations = map.getLocations(); // retreive the locations from map
         try {
             System.out.print("  |");
@@ -164,7 +168,7 @@ public class GameMenuView extends View{
                 for (int column = 0; column < locations[row].length; column++) {
                     leftIndicator = " ";
                     rightIndicator = " ";
-                    if (locations[row][column] == map.getCurrentLocation()) {
+                    if (locations[row][column] == game.getCurrentLocation()) {
                         leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
                         rightIndicator = "*"; // same as above
                     } else if (locations[row][column].getVisited()) {
@@ -180,10 +184,11 @@ public class GameMenuView extends View{
                 }
                 System.out.println("|");
             }
-            Scene currentScene = (Scene) map.getCurrentLocation().getScene();
+            Scene currentScene = (Scene) game.getCurrentLocation().getScene();
             if (currentScene != null) {
                 System.out.println("Your current location is " + currentScene.getName());    
                 System.out.println(currentScene.getDescription());
+                System.out.println("\n Your time remaining is " + gameTime.getTimeRemaining());
                 System.out.println(currentScene.getClue());
             }
             
@@ -204,7 +209,6 @@ public class GameMenuView extends View{
     
     }
 
-          
     
     }
 

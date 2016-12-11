@@ -5,7 +5,10 @@
  */
 package byui.cit260.findTheBone.control;
 import byui.cit260.findTheBone.enums.SceneType;
+import byui.cit260.findTheBone.model.BackpackItem;
+import byui.cit260.findTheBone.model.Clue;
 import byui.cit260.findTheBone.model.Game;
+import byui.cit260.findTheBone.model.GameTime;
 import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
@@ -13,7 +16,6 @@ import byui.cit260.findTheBone.model.Scene;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import citbyui.cit260.findTheBone.exceptions.MapControlException;
 import citbyui.cit260.findTheBone.view.GameMenuView;
-import citbyui.cit260.findTheBone.view.MainMenuView;
 import findthebone.FindTheBone;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -42,29 +44,36 @@ public class GameControl {
         
         return player;
     }
+    private static BackpackItem[] createItemList() {
+        return null;
+    }
+
+    private static Clue[] createClueList() {
+        return null;
+    }
 
     public static void createNewGame(Player player) throws MapControlException, GameControlException {
         
+        
         Game game = new Game(); // create new game
-        FindTheBone.setCurrentGame(game); // save in FindTheBone
-        
-        game.setPlayer(player); // save player in game
-        
-         
-        Map map = MapControl.createMap(); //create and initialize new map
-        game.setMap(map); // Save map in game
-        
-        try {
-        // Move character to starting position in the map
-        MapControl.movePlayerToStartingLocation(map);
-        
-        } catch (MapControlException ex) {
-             Logger.getLogger(GameControl.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex.getMessage());
-        }
-        
-    }
-    
+       
+            game.setPlayer(player); // save player in game
+            
+            Map map = MapControl.createMap(); //create and initialize new map
+            game.setMap(map); // Save map in game
+            
+            game.getPlayer().setLocation(map.getLocation());  
+            
+            GameTime gameTime = new GameTime();
+            gameTime.setTimeRemaining(24.0);
+              
+            // Move character to starting position in the map
+            MapControl.movePlayerToStartingLocation(map);
+            
+            FindTheBone.setCurrentGame(game); // save in FindTheBone
+             
+    }    
+      
     //L12 TA
     public static void saveGame(Game currentGame, String filePath) throws GameControlException {
                 
@@ -79,7 +88,8 @@ public class GameControl {
     
 public static void getSavedGame(String filePath) 
         throws GameControlException {
-        
+        //System.out.println("\n\nEnter the file path where load the saved game :");
+        //String filePath=this.getInput();
         Game game = null;
         
         try(FileInputStream fips = new FileInputStream(filePath)){
@@ -97,7 +107,7 @@ public static void getSavedGame(String filePath)
         //close the output file
         FindTheBone.setCurrentGame(game);
         System.out.println("\n Game sucessfuly loaded.");
-         GameMenuView gameMenu = new GameMenuView();
+        GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         
     }

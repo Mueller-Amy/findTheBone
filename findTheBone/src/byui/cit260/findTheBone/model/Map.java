@@ -5,10 +5,8 @@
  */
 package byui.cit260.findTheBone.model;
 
-import findthebone.FindTheBone;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  *
@@ -20,11 +18,12 @@ public class Map implements Serializable{
     private int noOfRows;
     private int noOfColumns;
     private Location[][] locations;
-    private Location currentLocation;
     private int rowCount;
     private int columnCount;
     private int currentRow;
     private int currentColumn;
+    private Location location;
+    private Boolean visited;  
     
     public Map() {
     }
@@ -47,7 +46,7 @@ public class Map implements Serializable{
             Location location=new Location();
             location.setColumn(column);
             location.setRow(row);
-            location.setVisited(false);
+            location.setVisited(true);
             
             //assign the Location object to the current position in  array
             locations[row][column]=location;
@@ -55,6 +54,31 @@ public class Map implements Serializable{
     }
     
 }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Boolean getVisited() {
+        return visited;
+    }
+
+    public void setVisited(Boolean visited) {
+        this.visited = visited;
+    }
+/*
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+*/
 
     public int getNoOfRows() {
         return noOfRows;
@@ -68,9 +92,16 @@ public class Map implements Serializable{
         return noOfColumns;
     }
 
-    //begin getter and setter functions
     public void setNoOfColumns(int noOfColumns) {
         this.noOfColumns = noOfColumns;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
     public int getRowCount() {
@@ -104,19 +135,54 @@ public class Map implements Serializable{
     public void setCurrentColumn(int currentColumn) {
         this.currentColumn = currentColumn;
     }
-    public Location getCurrentLocation() {
-        return currentLocation;
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.noOfRows;
+        hash = 97 * hash + this.noOfColumns;
+        hash = 97 * hash + Arrays.deepHashCode(this.locations);
+        hash = 97 * hash + this.rowCount;
+        hash = 97 * hash + this.columnCount;
+        hash = 97 * hash + this.currentRow;
+        hash = 97 * hash + this.currentColumn;
+        return hash;
     }
 
-    public void setCurrentLocation(Location currentLocation) {
-        this.currentLocation = currentLocation;
-    }
-    public Location[][] getLocations() {
-        return locations;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (this.noOfRows != other.noOfRows) {
+            return false;
+        }
+        if (this.noOfColumns != other.noOfColumns) {
+            return false;
+        }
+        if (this.rowCount != other.rowCount) {
+            return false;
+        }
+        if (this.columnCount != other.columnCount) {
+            return false;
+        }
+        if (this.currentRow != other.currentRow) {
+            return false;
+        }
+        if (this.currentColumn != other.currentColumn) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
+            return false;
+        }
+        return true;
     }
 
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
-    }
-   
 }

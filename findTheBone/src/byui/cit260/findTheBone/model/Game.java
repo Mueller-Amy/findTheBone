@@ -6,6 +6,7 @@
 package byui.cit260.findTheBone.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 
 /**
@@ -13,25 +14,33 @@ import java.io.Serializable;
  * @author Keith Downing
  */
 public class Game implements Serializable{
+
     
-    private double totalTime;
     
+    private GameTime GameTime;
+    private Location currentLocation;
     private Player player;
+    private Character character;
     private Backpack backpack;
     private Map map;
     
-
-    public Game() {
+public Game() {
     }
 
-   
-    
-    public double getTotalTime() {
-        return totalTime;
+    public GameTime getGameTime() {
+        return GameTime;
     }
 
-    public void setTotalTime(double totalTime) {
-        this.totalTime = totalTime;
+    public void setGameTime(GameTime GameTime) {
+        this.GameTime = GameTime;
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
     }
 
     public Player getPlayer() {
@@ -42,7 +51,14 @@ public class Game implements Serializable{
         this.player = player;
     }
 
-    
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
     public Backpack getBackpack() {
         return backpack;
     }
@@ -55,27 +71,22 @@ public class Game implements Serializable{
         return map;
     }
 
-    public  void setMap(Map map) {
+    public void setMap(Map map) {
         this.map = map;
-    }
-    
-    
-    
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 29 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-        return hash;
     }
 
     @Override
-    public String toString() {
-        return "Game{" + "totalTime=" + totalTime + '}';
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + Objects.hashCode(this.GameTime);
+       hash = 11 * hash + Objects.hashCode(this.currentLocation);
+        hash = 11 * hash + Objects.hashCode(this.player);
+        hash = 11 * hash + Objects.hashCode(this.character);
+        hash = 11 * hash + Objects.hashCode(this.backpack);
+        hash = 11 * hash + Objects.hashCode(this.map);
+        return hash;
     }
-    
-    
-    
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -88,12 +99,26 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
+        if (!Objects.equals(this.GameTime, other.GameTime)) {
+            return false;
+        }
+        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
+            return false;
+       }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (this.character != other.character) {
+            return false;
+        }
+        if (!Objects.equals(this.backpack, other.backpack)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
             return false;
         }
         return true;
     }
-    
-    
+
     
 }

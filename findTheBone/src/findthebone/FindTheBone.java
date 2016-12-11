@@ -7,6 +7,7 @@ package findthebone;
 
 import byui.cit260.findTheBone.control.LocationControl.Locations;
 import byui.cit260.findTheBone.model.Game; // Keith Downing
+import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map; // Amy Mueller
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
 import citbyui.cit260.findTheBone.view.StartProgramView;
@@ -24,19 +25,43 @@ public class FindTheBone {
     private static Game currentGame = null;
     private static Player player = null;
     private static Map currentMap= null;
-    private static Locations currentLocations = null;
+    private static Location currentLocation = null;
 
     //L12 team Assignment- TA
     private static PrintWriter outFile=null;
     private static BufferedReader inFile=null;
     private static PrintWriter logFile=null;
-  
-    public static PrintWriter getLogFile() {
-        return logFile;
+
+    public static Game getCurrentGame() {
+        return currentGame;
     }
 
-    public static void setLogFile(PrintWriter logFile) {
-        FindTheBone.logFile = logFile;
+    public static void setCurrentGame(Game currentGame) {
+        FindTheBone.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        FindTheBone.player = player;
+    }
+
+    public static Map getCurrentMap() {
+        return currentMap;
+    }
+
+    public static void setCurrentMap(Map currentMap) {
+        FindTheBone.currentMap = currentMap;
+    }
+
+    public static Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public static void setCurrentLocation(Location currentLocation) {
+        FindTheBone.currentLocation = currentLocation;
     }
 
     public static PrintWriter getOutFile() {
@@ -54,42 +79,15 @@ public class FindTheBone {
     public static void setInFile(BufferedReader inFile) {
         FindTheBone.inFile = inFile;
     }
-    //end L12 TA block
-    
-    
-    public static Game getCurrentGame() {
-        return currentGame;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
     }
 
-    public static void setCurrentGame(Game currentGame) {
-        FindTheBone.currentGame = currentGame;
+    public static void setLogFile(PrintWriter logFile) {
+        FindTheBone.logFile = logFile;
     }
-    public static Map getCurrentMap(Map currentMap) {
-        return currentMap;
-    }
-
-    public static void setCurrentMap(Map currentMap) {
-        FindTheBone.currentMap = currentMap;
-    }
-    public static Game getCurrentLocations() {
-        return currentGame;
-    }
-
-    public static void setCurrentLocations(Locations currentLocations) {
-        FindTheBone.currentLocations = currentLocations;
-    }
-
-    public static Player getPlayer() {
-        return player;
-    }
-
-    public static void setPlayer(Player player) {
-         FindTheBone.player = player;
-    }
-
-    public FindTheBone(Player player) {
-        FindTheBone.player = player;
-    }
+  
     
     
 

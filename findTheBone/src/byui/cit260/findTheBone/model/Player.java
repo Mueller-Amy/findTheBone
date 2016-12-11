@@ -10,15 +10,24 @@ import java.util.Objects;
 
 /**
  *
- * @author Home
+ * @author Jean
  */
 public class Player implements Serializable{
     
     //class instance variables
     private String name;
     private double bestTime;
+    private Location location;
 
     public Player() {
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
     
     

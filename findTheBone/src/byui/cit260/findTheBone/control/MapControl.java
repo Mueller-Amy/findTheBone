@@ -10,9 +10,12 @@ import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Scene;
 import byui.cit260.findTheBone.model.BackpackItem;
 import byui.cit260.findTheBone.model.Clue;
+import byui.cit260.findTheBone.model.Location;
+import byui.cit260.findTheBone.model.Player;
 import byui.cit260.findTheBone.model.TownsPeople;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import citbyui.cit260.findTheBone.exceptions.MapControlException;
+import findthebone.FindTheBone;
 
 /*
  *
@@ -20,6 +23,8 @@ import citbyui.cit260.findTheBone.exceptions.MapControlException;
  */
 
 public class MapControl {
+
+  
     
      
     public static Map createMap() throws MapControlException, GameControlException {
@@ -29,30 +34,52 @@ public class MapControl {
         //create the scenes for the game
         Scene[] scenes = createScenes();
         
+       // gameTime.getTimeRemaining();
+        
         GameControl.assignScenesToLocations(map,scenes);
-        return map;
+        map.setLocation(map.getLocations()[2][2]);
+  return map;
     }
+
        
         public static void movePlayerToStartingLocation(Map map) throws MapControlException {
                       
         movePlayer(map, 2, 2);
-    }
        
+    }
+        /*
+       public static void movePlayer(Map map, Location location) 
+        throws MapControlException {
+        
+        Player player = FindTheBone.getCurrentGame().getPlayer();
+        
+        try{
+            player.setLocation(location);
+        
+        }
+        catch(Exception ex){
+                                    
+            throw new MapControlException("ERROR: There was a problem with "
+                    + "moving the player.");
+        }
+        }
+        */
+        
+    
     public static void movePlayer(Map map, int row, int column) throws MapControlException {
         if (row < 0 || row >= map.getNoOfRows() || 
             column < 0 || column >= map.getNoOfColumns()) {
             throw new MapControlException("You can't move to this location");
         }
 
-        try {
-            map.setCurrentLocation(map.getLocations()[row][column]);
-            map.getCurrentLocation().setVisited(true);
+       
+            map.setLocation(map.getLocations()[row][column]);
+            map.getLocation().setVisited(true);
+            
             map.setCurrentRow(row);
             map.setCurrentColumn(column);
-        }
-        catch(Exception ex) {
-            throw new MapControlException(ex.getMessage());
-        }
+            //FindTheBone.getCurrentGame().getPlayer().setLocation(map.getLocation());
+            
         }
 
     private static Scene[] createScenes() throws MapControlException{

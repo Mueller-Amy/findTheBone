@@ -16,18 +16,19 @@ import java.util.Scanner;
  *
  * @author Jean
  */
-public class DiagonalCalculationView  {
+public abstract class DiagonalCalculationView extends  View{
     
     protected final BufferedReader keyboard =FindTheBone.getInFile();
     protected final PrintWriter console =FindTheBone.getOutFile();
 
     
-    
+   
         public void promptEnterKey(){
             this.console.println("Press \"ENTER\" to continue...");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
 }
+  
         public DiagonalCalculationView() {
                         this.displayBanner(); //display the banner when view is created
     }
