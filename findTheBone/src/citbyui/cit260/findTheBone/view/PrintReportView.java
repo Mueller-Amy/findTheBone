@@ -107,15 +107,15 @@ public class PrintReportView extends View {
            String fileLocation="inventoryreport.txt";
            boolean valid = false; 
         
-           //getting file path 
-        while (!valid) { // loop while an invalid value is enter
+          
+        while (!valid) { 
             this.console.println("Enter where you would like the Inventory Report saved: ");
             
             try {
                 filePath = this.keyboard.readLine(); 
                 filePath = filePath.trim(); 
             
-            if (filePath.length() < 1) { // value is blank
+            if (filePath.length() < 1) { 
                 ErrorView.display(this.getClass().getName(),
                         "\nInvalid value: value can not be blank");]
             continue;
@@ -128,33 +128,32 @@ public class PrintReportView extends View {
                    
               }
 
-        break; // end the loop
+        break; 
         
         }
          
-            //print report
+            
            try (PrintWriter outFile=new PrintWriter(filePath + fileLocation)) {  
              
               outFile.println("\n\n    Inventory List    ");
               outFile.printf("%n%-20s%8s", "Inventory List", "Inventory Item");
               outFile.printf("%n%-20s%10s", "-------------", "--------");
              
-              //for statement to go through the list of enum items to be displayed
                   for (int i=0;i < name.length;i++){
                   String inventoryname = name[i].toString();
                   String intventoryitem = code[i].toString();
                   
-                  outFile.printf("%n%-20s%10s", inventoryname, inventoryitem );
+                  outFile.printf("%n%-20s%10s", inventoryname, inventoryView );
                   
               }      
                 }   catch (IOException ex) {
                ErrorView.display(this.getClass().getName(),"Error with saving Inventory Report");    
         
         } 
-                  this.console.println("\n================================="
+                  this.console.println("\n=================="
                           
-                                     + "\n|  Report Sucessfuly saved !!!   |"
-                                     + "\n=================================");
+                                     + "\n|  Report Saved   |"
+                                     + "\n==================");
 
               }
     }
