@@ -151,7 +151,7 @@ public class PrintReportView extends View {
                   String backpackitemname = name[i].toString();
                  // String inventoryitem = code[i].toString();
                   
-                  outFile.printf("%n%-20s%10s", backpackitemname\sds );
+                  outFile.printf("%n%-20s%10s", backpackitemname, "        ");
                   
               }      
                 }   catch (IOException ex) {
