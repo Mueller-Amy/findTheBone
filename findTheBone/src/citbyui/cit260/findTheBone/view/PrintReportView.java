@@ -7,6 +7,8 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.enums.MapCodeType;
 import byui.cit260.findTheBone.enums.SceneType;
+import byui.cit260.findTheBone.enums.InventoryName;
+import byui.cit260.findTheBone.enums.InventoryView;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -115,7 +117,7 @@ public class PrintReportView extends View {
                 filePath = this.keyboard.readLine(); 
                 filePath = filePath.trim(); 
             
-            if (filePath.length() < 1) { // value is blank
+            if (filePath.length() < 1) { 
                 ErrorView.display(this.getClass().getName(),
                         "\nInvalid value: value can not be blank");
             continue;
@@ -128,7 +130,7 @@ public class PrintReportView extends View {
                    
               }
 
-        break; // end the loop
+        break; 
         
         }
          
@@ -148,7 +150,7 @@ public class PrintReportView extends View {
                   String inventoryname = name[i].toString();
                   String inventoryitem = code[i].toString();
                   
-                  outFile.printf("%n%-20s%10s", inventoryname, inventoryitem );
+                  outFile.printf("%n%-20s%10s", inventoryname, inventoryView );
                   
               }      
                 }   catch (IOException ex) {
