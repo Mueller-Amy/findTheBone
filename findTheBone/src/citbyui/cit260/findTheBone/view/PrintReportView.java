@@ -7,6 +7,8 @@ package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.enums.MapCodeType;
 import byui.cit260.findTheBone.enums.SceneType;
+import byui.cit260.findTheBone.enums.InventoryName;
+import byui.cit260.findTheBone.enums.InventoryView;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -105,10 +107,9 @@ public class PrintReportView extends View {
         System.out.println("inventoryReport Called"); 
            String filePath = null;
            String fileLocation="inventoryreport.txt";
-           boolean valid = false; 
-        
-          
-        while (!valid) { 
+           boolean vali
+                   
+                   { 
             this.console.println("Enter where you would like the Inventory Report saved: ");
             
             try {
