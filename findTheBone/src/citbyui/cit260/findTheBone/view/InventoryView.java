@@ -100,7 +100,8 @@ public class InventoryView extends View{
                     this.exit();
                     break;
                 default:
-                    System.out.println("\n*** Invalid selection *** Try Again");
+                    // L12 System.out.println("\n*** Invalid selection *** Try Again");
+                    this.console.println("\n*** Invalid selection *** Try Again");
                     break;
                 
             }
@@ -109,67 +110,83 @@ public class InventoryView extends View{
 }
 
     private void twig() {
-        System.out.println("*** viewTwig function called ***"); 
+        // L12 System.out.println("*** viewTwig function called ***"); 
+        this.console.println("*** viewTwig function called ***"); 
     }
 
     private void pebble() {
-        System.out.println("*** viewpebble function called ***"); 
+        // L12 System.out.println("*** viewpebble function called ***"); 
+        this.console.println("*** viewpebble function called ***"); 
     }
 
     private void box() {
-        System.out.println("*** viewBox function called ***"); 
+        // L12 System.out.println("*** viewBox function called ***"); 
+        this.console.println("*** viewBox function called ***"); 
     }
 
     private void cylinder() {
-        System.out.println("*** viewCylinder function called ***"); 
+        // L12 System.out.println("*** viewCylinder function called ***"); 
+        this.console.println("*** viewCylinder function called ***");
     }
 
     private void paper() {
-        System.out.println("*** viewPaper function called ***"); 
+        // L12 System.out.println("*** viewPaper function called ***"); 
+        this.console.println("*** viewPaper function called ***");
     }
 
     private void ball() {
-        System.out.println("*** viewBall function called ***"); 
+        // L12 System.out.println("*** viewBall function called ***"); 
+        this.console.println("*** viewBall function called ***");
     }
 
     private void fish() {
-        System.out.println("*** viewFish function called ***"); 
+        // L12 System.out.println("*** viewFish function called ***"); 
+        this.console.println("*** viewFish function called ***");
     }
 
     private void catHair() {
-        System.out.println("*** viewCatHair function called ***"); 
+        // L12 System.out.println("*** viewCatHair function called ***"); 
+        this.console.println("*** viewCatHair function called ***");
     }
 
     private void lostCatBell() {
-        System.out.println("*** viewlostCatBell function called ***"); 
+        // L12 System.out.println("*** viewlostCatBell function called ***"); 
+        this.console.println("*** viewlostCatBell function called ***"); 
     }
 
     private void catCollar() {
-        System.out.println("*** viewCatCollar function called ***"); 
+        // L12 System.out.println("*** viewCatCollar function called ***"); 
+        this.console.println("*** viewCatCollar function called ***");
     }
 
     private void catNameTag() {
-        System.out.println("*** viewCatNameTag function called ***"); 
+        // L12 System.out.println("*** viewCatNameTag function called ***"); 
+        this.console.println("*** viewCatNameTag function called ***"); 
     }
 
     private void businessCard() {
-        System.out.println("*** viewBusinessCard function called ***"); 
+        // L12 System.out.println("*** viewBusinessCard function called ***"); 
+        this.console.println("*** viewBusinessCard function called ***");
     }
 
     private void treat() {
-        System.out.println("*** viewTreat function called ***"); 
+        // 12 System.out.println("*** viewTreat function called ***"); 
+        this.console.println("*** viewTreat function called ***");
     }
 
     private void duckFeather() {
-        System.out.println("*** viewDuckFeather function called ***"); 
+        // L12 System.out.println("*** viewDuckFeather function called ***"); 
+        this.console.println("*** viewDuckFeather function called ***"); 
     }
 
     private void peanuts() {
-        System.out.println("*** viewPeanuts function called ***"); 
+        // L12 System.out.println("*** viewPeanuts function called ***"); 
+        this.console.println("*** viewPeanuts function called ***");
     }
 
     private void exit() {
-        System.out.println("*** Exit function called ***"); 
+        // L12 System.out.println("*** Exit function called ***"); 
+        this.console.println("*** Exit function called ***");
     }
 
     

@@ -131,6 +131,7 @@ public class FindTheBone {
                        FindTheBone.logFile.close();
             } catch (IOException ex) {
                System.out.println("Error closing the file");
+               //return;
             }
             
             

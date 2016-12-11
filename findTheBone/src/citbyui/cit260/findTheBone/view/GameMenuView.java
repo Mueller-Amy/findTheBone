@@ -202,10 +202,6 @@ public class GameMenuView extends View{
         printReport.display();
     }
 
-    private void moveToLocation() {
-        MapView mapView = new MapView();
-        mapView.display();
-        displayMap();
     
     }
 

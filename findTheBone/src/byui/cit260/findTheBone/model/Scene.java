@@ -31,7 +31,6 @@ public class Scene implements Serializable{
     private BackpackItem item;
     public int minute;
 
-    public Scene() {
         this.description = "";
     }
     
@@ -72,10 +71,7 @@ public class Scene implements Serializable{
                     "assigning scenes to lcoation");
         }
     }
-	
-    @Override
-    public String toString() {
-        return "Scene{" + "name=" + name + ", mapSymbol=" + mapSymbol + ", description=" + description + ", dialog=" + dialog + ", character=" + character + ", clue=" + clue + ", item=" + item + ", minute=" + minute + '}';
+    public Scene() {
     }
 
     public double getTravelTime() {
@@ -228,8 +224,10 @@ public class Scene implements Serializable{
             return false;
         }
         return true;
-    } 
-
+	
+    @Override
+    public String toString() {
+        return "Scene{" + "name=" + name + ", mapSymbol=" + mapSymbol + ", description=" + description + ", dialog=" + dialog + ", character=" + character + ", clue=" + clue + ", item=" + item + ", minute=" + minute + '}';
     
     
 }

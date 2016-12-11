@@ -103,6 +103,60 @@ public class PrintReportView extends View {
 
     private void inventoryReport() {
         System.out.println("inventoryReport Called"); 
+           String filePath = null;
+           String fileLocation="inventoryreport.txt";
+           boolean valid = false; 
+        
+           //getting file path 
+        while (!valid) { // loop while an invalid value is enter
+            this.console.println("Enter where you would like the Inventory Report saved: ");
+            
+            try {
+                filePath = this.keyboard.readLine(); 
+                filePath = filePath.trim(); 
+            
+            if (filePath.length() < 1) { // value is blank
+                ErrorView.display(this.getClass().getName(),
+                        "\nInvalid value: value can not be blank");]
+            continue;
+            }
+             
+               
+        }  catch (IOException ex) {
+                  ErrorView.display(this.getClass().getName(),
+                        "Error reading Input: " + ex.getMessage());
+                   
+              }
+
+        break; // end the loop
+        
+        }
+         
+            //print report
+           try (PrintWriter outFile=new PrintWriter(filePath + fileLocation)) {  
+             
+              outFile.println("\n\n    Inventory List    ");
+              outFile.printf("%n%-20s%8s", "Inventory List", "Inventory Item");
+              outFile.printf("%n%-20s%10s", "-------------", "--------");
+             
+              //for statement to go through the list of enum items to be displayed
+                  for (int i=0;i < name.length;i++){
+                  String inventoryname = name[i].toString();
+                  String intventoryitem = code[i].toString();
+                  
+                  outFile.printf("%n%-20s%10s", inventoryname, inventoryitem );
+                  
+              }      
+                }   catch (IOException ex) {
+               ErrorView.display(this.getClass().getName(),"Error with saving Inventory Report");    
+        
+        } 
+                  this.console.println("\n================================="
+                          
+                                     + "\n|  Report Sucessfuly saved !!!   |"
+                                     + "\n=================================");
+
+              }
     }
 
     private void townsPeopleReport() {

@@ -12,17 +12,12 @@ import byui.cit260.findTheBone.model.GameTime;
 import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Player;
+
 import byui.cit260.findTheBone.model.Scene;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import citbyui.cit260.findTheBone.exceptions.MapControlException;
 import citbyui.cit260.findTheBone.view.GameMenuView;
 import findthebone.FindTheBone;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -153,11 +148,28 @@ public static void getSavedGame(String filePath)
                     "assigning scenes to lcoation");
         }
     }
+    
+    //L12 TA
+    public static void saveGame(Game currentGame, String filePath) throws GameControlException {
+                
+        try(FileOutputStream fops=new FileOutputStream(filePath)) {
+            ObjectOutputStream output=new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame);//write the game object out to file
+        } catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
 
-     
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
     
     
 }
     
-

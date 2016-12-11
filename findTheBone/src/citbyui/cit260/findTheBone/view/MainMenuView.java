@@ -79,6 +79,7 @@ public class MainMenuView extends View {
         
     }
     
+
     //L12 TA
     private void saveGame() {
         //prompt for and get the name of the file to save game in
@@ -123,6 +124,22 @@ public class MainMenuView extends View {
         }
        // return result;  
 
+    private void getSavedGame() throws GameControlException {
+        Game game = null;
+        //String filepath = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)) {
+              ObjectInputStream input = new ObjectInputStream(fips);
+              
+              game = (Game) input.readObject();//read the game object from fileCurrent
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        //close the output file
+        FindTheBone.setCurrentGame(game);//save in FindTheBone
     }
+      
+
     
 }

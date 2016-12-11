@@ -172,17 +172,10 @@ public abstract class DiagonalCalculationView extends  View{
 		Scanner inFile;
 		inFile = new Scanner(System.in);
 			
-		this.console.println("\nPlease, enter the Triangle Length value:"); // prompt user to enter length
-		
-        width = inFile.nextDouble(); // get weight entered from console
-		
                 
     }
 
 return width;
-    }
-
-
     }
 
    
