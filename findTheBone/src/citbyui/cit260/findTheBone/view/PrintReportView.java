@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.findTheBone.view;
 
+import byui.cit260.findTheBone.enums.BackpackItemType;
 import byui.cit260.findTheBone.enums.MapCodeType;
 import byui.cit260.findTheBone.enums.SceneType;
 import byui.cit260.findTheBone.enums.InventoryName;
@@ -142,15 +143,15 @@ public class PrintReportView extends View {
               outFile.printf("%n%-20s%10s", "-------------", "--------");
              
               
-              SceneType[] name=SceneType.values();
+              BackpackItemType[] name= BackpackItemType.values();
               MapCodeType[] code=MapCodeType.values();
               
               //for statement to go through the list of enum items to be displayed
                   for (int i=0;i < name.length;i++){
-                  String inventoryname = name[i].toString();
-                  String inventoryitem = code[i].toString();
+                  String backpackitemname = name[i].toString();
+                 // String inventoryitem = code[i].toString();
                   
-                  outFile.printf("%n%-20s%10s", inventoryname, inventoryView );
+                  outFile.printf("%n%-20s%10s", backpackitemname\sds );
                   
               }      
                 }   catch (IOException ex) {
