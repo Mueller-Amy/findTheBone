@@ -5,8 +5,10 @@
  */
 package byui.cit260.findTheBone.model;
 
+import citbyui.cit260.findTheBone.view.ErrorView;
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -24,6 +26,7 @@ public class Map implements Serializable{
     private int currentColumn;
     private Location location;
     private Boolean visited;  
+    private Location currentLocation;
     
     public Map() {
     }
@@ -32,8 +35,7 @@ public class Map implements Serializable{
     
     if (noOfRows<1 || noOfColumns<1) {
        // L12 System.out.println("The number of rows and columns must be > zero");
-       ErrorView.display(this.getClass().getName),
-                "The number of rows and columns must be > zero");
+       ErrorView.display(this.getClass().getName(),"The number of rows and columns must be > zero");
         return;
     }
     this.noOfRows=noOfRows;
@@ -48,7 +50,7 @@ public class Map implements Serializable{
             Location location=new Location();
             location.setColumn(column);
             location.setRow(row);
-            location.setVisited(true);
+            location.setVisited(false);
             
             //assign the Location object to the current position in  array
             locations[row][column]=location;
@@ -72,7 +74,7 @@ public class Map implements Serializable{
     public void setVisited(Boolean visited) {
         this.visited = visited;
     }
-/*
+
     public Location getCurrentLocation() {
         return currentLocation;
     }
@@ -80,7 +82,7 @@ public class Map implements Serializable{
     public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
     }
-*/
+
 
     public int getNoOfRows() {
         return noOfRows;
@@ -141,13 +143,16 @@ public class Map implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + this.noOfRows;
-        hash = 97 * hash + this.noOfColumns;
-        hash = 97 * hash + Arrays.deepHashCode(this.locations);
-        hash = 97 * hash + this.rowCount;
-        hash = 97 * hash + this.columnCount;
-        hash = 97 * hash + this.currentRow;
-        hash = 97 * hash + this.currentColumn;
+        hash = 83 * hash + this.noOfRows;
+        hash = 83 * hash + this.noOfColumns;
+        hash = 83 * hash + Arrays.deepHashCode(this.locations);
+        hash = 83 * hash + this.rowCount;
+        hash = 83 * hash + this.columnCount;
+        hash = 83 * hash + this.currentRow;
+        hash = 83 * hash + this.currentColumn;
+        hash = 83 * hash + Objects.hashCode(this.location);
+        hash = 83 * hash + Objects.hashCode(this.visited);
+        hash = 83 * hash + Objects.hashCode(this.currentLocation);
         return hash;
     }
 
@@ -184,11 +189,21 @@ public class Map implements Serializable{
         if (!Arrays.deepEquals(this.locations, other.locations)) {
             return false;
         }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.visited, other.visited)) {
+            return false;
+        }
+        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
+            return false;
+        }
         return true;
     }
 
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
+    @Override
+    public String toString() {
+        return "Map{" + "noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", locations=" + locations + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", location=" + location + ", visited=" + visited + ", currentLocation=" + currentLocation + '}';
     }
-   
+
 }

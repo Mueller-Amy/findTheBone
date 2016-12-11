@@ -6,9 +6,12 @@
 package citbyui.cit260.findTheBone.view;
 
 import byui.cit260.findTheBone.control.GameControl;
+import byui.cit260.findTheBone.model.Game;
 import citbyui.cit260.findTheBone.exceptions.GameControlException;
 import citbyui.cit260.findTheBone.exceptions.MapControlException;
 import findthebone.FindTheBone;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 //import java.util.Scanner;
@@ -103,7 +106,7 @@ public class MainMenuView extends View {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-    
+    /*
     private void getSavedGame() throws GameControlException {
         //prompt for and get the name of the file to save game in
         
@@ -123,10 +126,12 @@ public class MainMenuView extends View {
             ErrorView.display(this.getClass().getName(),"Error loading the game :" + ex.getMessage());
         }
        // return result;  
-
+    }
+    */
     private void getSavedGame() throws GameControlException {
         Game game = null;
         //String filepath = null;
+        String filepath = null;
         
         try(FileInputStream fips = new FileInputStream(filepath)) {
               ObjectInputStream input = new ObjectInputStream(fips);
@@ -140,6 +145,4 @@ public class MainMenuView extends View {
         FindTheBone.setCurrentGame(game);//save in FindTheBone
     }
       
-
-    
 }

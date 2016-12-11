@@ -30,7 +30,7 @@ public class TimeLocationStatusView extends View{
 
 
     public void display(double timeRemaining, String currentLoc) {
-         this.currentLoc = FindTheBone.getCurrentGame().getCurrentLocation().toString();
+        // this.currentLoc = FindTheBone.getCurrentGame().getCurrentLocation().toString();
         this.timeRemaining = FindTheBone.getCurrentGame().getGameTime().getTimeRemaining();
         
         System.out.println( "\n"

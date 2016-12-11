@@ -17,7 +17,9 @@ import java.io.PrintWriter;
  */
 public class Scene implements Serializable{
     
-   
+     public Scene() {
+    }
+     
     private String description;
     private double travelTime;
     private double displaySymbol;
@@ -27,12 +29,12 @@ public class Scene implements Serializable{
     private String mapSymbol;
     private String dialog;
     private Character character;
-    private TownsPeople townspeople;
-    private BackpackItem item;
+    private TownsPeople townsPeople;
+    private BackpackItem backpackItem;
     public int minute;
 
-        this.description = "";
-    }
+       // this.description = "";
+    
     
     public static void assignScenesToLocations(Map map, Scene[] scenes) throws GameControlException {
         Location[][] locations = map.getLocations();
@@ -71,7 +73,13 @@ public class Scene implements Serializable{
                     "assigning scenes to lcoation");
         }
     }
-    public Scene() {
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getTravelTime() {
@@ -98,38 +106,34 @@ public class Scene implements Serializable{
         this.blockedLocation = blockedLocation;
     }
 
-    public TownsPeople getTownspeople() {
-        return townspeople;
-    }
-
-    public void setTownspeople(TownsPeople townspeople) {
-        this.townspeople = townspeople;
-    }
-   
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Clue getClue() {
+        return clue;
+    }
+
+    public void setClue(Clue clue) {
+        this.clue = clue;
     }
 
     public String getMapSymbol() {
         return mapSymbol;
     }
+
     public void setMapSymbol(String mapSymbol) {
         this.mapSymbol = mapSymbol;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getDialog() {
         return dialog;
     }
+
     public void setDialog(String dialog) {
         this.dialog = dialog;
     }
@@ -137,58 +141,55 @@ public class Scene implements Serializable{
     public Character getCharacter() {
         return character;
     }
+
     public void setCharacter(Character character) {
         this.character = character;
     }
-    
+
     public TownsPeople getTownsPeople() {
-        return townspeople;
-    }
-    
-     public void setTownsPeople(TownsPeople townspeople) {
-        this.townspeople = townspeople;
+        return townsPeople;
     }
 
-    public Clue getClue() {
-        return clue;
-    }
-    public void setClue(Clue clue) {
-        this.clue = clue;
+    public void setTownsPeople(TownsPeople townsPeople) {
+        this.townsPeople = townsPeople;
     }
 
-    public BackpackItem getItem() {
-        return item;
+    public BackpackItem getBackpackItem() {
+        return backpackItem;
     }
-    public void setItem(BackpackItem item) {
-        this.item = item;
+
+    public void setBackpackItem(BackpackItem backpackItem) {
+        this.backpackItem = backpackItem;
     }
-    public void setBackpack(BackpackItem backpackItem) {
-        this.item = item;
-    }    
 
     public int getMinute() {
         return minute;
     }
+
     public void setMinute(int minute) {
         this.minute = minute;
     }
-   
+
     @Override
-     public int hashCode() {
-        int hash = 7;
-        hash = 19 * hash + Objects.hashCode(this.name);
-        hash = 19 * hash + Objects.hashCode(this.mapSymbol);
-        hash = 19 * hash + Objects.hashCode(this.description);
-        hash = 19 * hash + Objects.hashCode(this.dialog);
-        hash = 19 * hash + Objects.hashCode(this.character);
-        hash = 19 * hash + Objects.hashCode(this.clue);
-        hash = 19 * hash + Objects.hashCode(this.item);
-        hash = 19 * hash + Objects.hashCode(this.minute);
+    public int hashCode() {
+        int hash = 5;
+        hash = 17 * hash + Objects.hashCode(this.description);
+        hash = 17 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
+        hash = 17 * hash + (int) (Double.doubleToLongBits(this.displaySymbol) ^ (Double.doubleToLongBits(this.displaySymbol) >>> 32));
+        hash = 17 * hash + (int) (Double.doubleToLongBits(this.blockedLocation) ^ (Double.doubleToLongBits(this.blockedLocation) >>> 32));
+        hash = 17 * hash + Objects.hashCode(this.name);
+        hash = 17 * hash + Objects.hashCode(this.clue);
+        hash = 17 * hash + Objects.hashCode(this.mapSymbol);
+        hash = 17 * hash + Objects.hashCode(this.dialog);
+        hash = 17 * hash + Objects.hashCode(this.character);
+        hash = 17 * hash + Objects.hashCode(this.townsPeople);
+        hash = 17 * hash + Objects.hashCode(this.backpackItem);
+        hash = 17 * hash + this.minute;
         return hash;
     }
 
     @Override
-   public boolean equals(Object obj) {
+    public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
@@ -199,35 +200,50 @@ public class Scene implements Serializable{
             return false;
         }
         final Scene other = (Scene) obj;
+        if (Double.doubleToLongBits(this.travelTime) != Double.doubleToLongBits(other.travelTime)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.displaySymbol) != Double.doubleToLongBits(other.displaySymbol)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.blockedLocation) != Double.doubleToLongBits(other.blockedLocation)) {
+            return false;
+        }
+        if (this.minute != other.minute) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
         if (!Objects.equals(this.dialog, other.dialog)) {
-            return false;
-        }
-        if (this.character != other.character) {
             return false;
         }
         if (this.clue != other.clue) {
             return false;
         }
-        if (this.item != other.item) {
+        if (this.character != other.character) {
             return false;
         }
-        if (!Objects.equals(this.minute, other.minute)) {
+        if (this.townsPeople != other.townsPeople) {
+            return false;
+        }
+        if (this.backpackItem != other.backpackItem) {
             return false;
         }
         return true;
-	
+    }
+
     @Override
     public String toString() {
-        return "Scene{" + "name=" + name + ", mapSymbol=" + mapSymbol + ", description=" + description + ", dialog=" + dialog + ", character=" + character + ", clue=" + clue + ", item=" + item + ", minute=" + minute + '}';
-    
-    
-}
+        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", displaySymbol=" + displaySymbol + ", blockedLocation=" + blockedLocation + ", name=" + name + ", clue=" + clue + ", mapSymbol=" + mapSymbol + ", dialog=" + dialog + ", character=" + character + ", townsPeople=" + townsPeople + ", backpackItem=" + backpackItem + ", minute=" + minute + '}';
+    }
+
+   
+   
+   }

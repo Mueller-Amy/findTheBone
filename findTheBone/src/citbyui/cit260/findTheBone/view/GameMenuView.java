@@ -34,8 +34,7 @@ public class GameMenuView extends View{
     //private String promptMessage;
       public GameMenuView() {
 
-   // public GameMenuView() {
-        super( "\n"
+           super( "\n"
                     + "\n=========================================="
                     + "\n|           Game Menu                    |"
                     + "\n=========================================="
@@ -93,7 +92,6 @@ public class GameMenuView extends View{
                     break;
                               
                 default:
-                    //System.ouX.println("\n*** Invalid selection *** Try Again");
                     ErrorView.display(this.getClass().getName(),//L12 TA
                         "\n*** Invalid selection *** Try Again");
                     break;
@@ -101,8 +99,6 @@ public class GameMenuView extends View{
             }
             return false;
        
-
-
     }
 
     
@@ -168,10 +164,10 @@ public class GameMenuView extends View{
                 for (int column = 0; column < locations[row].length; column++) {
                     leftIndicator = " ";
                     rightIndicator = " ";
-                    if (locations[row][column] == game.getCurrentLocation()) {
+                    if (locations[row][column] == map.getCurrentLocation()) {
                         leftIndicator = "*"; // can be stars or whatever these are indicators showing visited
                         rightIndicator = "*"; // same as above
-                    } else if (locations[row][column].getVisited()) {
+                    } else if (locations[row][column].isVisited()) {
                         leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
                         rightIndicator = "<"; // same as above
                     }
@@ -184,7 +180,7 @@ public class GameMenuView extends View{
                 }
                 System.out.println("|");
             }
-            Scene currentScene = (Scene) game.getCurrentLocation().getScene();
+            Scene currentScene = (Scene) map.getCurrentLocation().getScene();
             if (currentScene != null) {
                 System.out.println("Your current location is " + currentScene.getName());    
                 System.out.println(currentScene.getDescription());
@@ -193,7 +189,7 @@ public class GameMenuView extends View{
             }
             
         } catch (Exception e) {
-            this.console.println("Error");
+            System.out.println("Error");
         }
     }
 
@@ -202,12 +198,16 @@ public class GameMenuView extends View{
         printReport.display();
     }
 
+    private void moveToLocation() {
+         MapView mapView = new MapView();
+         mapView.display();
+         displayMap();
+    }
     
     }
 
     
-    }
-
+    
    
 
 

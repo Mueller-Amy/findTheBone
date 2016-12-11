@@ -5,7 +5,6 @@
  */
 package findthebone;
 
-import byui.cit260.findTheBone.control.LocationControl.Locations;
 import byui.cit260.findTheBone.model.Game; // Keith Downing
 import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map; // Amy Mueller

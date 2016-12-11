@@ -12,12 +12,8 @@ import java.util.Scanner;
  */
 public class ItemsWithinControl {
     
-   
-    
     public static void main(String[] args){
         
-        
-    
         int n;
         String temp;
         Scanner s = new Scanner(System.in);
@@ -25,8 +21,8 @@ public class ItemsWithinControl {
         n=s.nextInt();
         String names[] =  new String[n];
         Scanner s1 = new Scanner(System.in);
-       // L12 System.out.println("Enter all names");
-         this.console.println("Enter all names");
+       System.out.println("Enter all names");
+        // this.console.println("Enter all names");
         for(int i =0; i <n; i++){
             names[i]= s1.nextLine();
         }
@@ -39,8 +35,8 @@ public class ItemsWithinControl {
                 }
                 }
             }
-        // L 12 System.out.print("Names Alphabetical Order");
-        this.console.print("Names Alphabetical Order");
+        System.out.print("Names Alphabetical Order");
+        //this.console.print("Names Alphabetical Order");
         for(int i=0; i<n-1; i++){
             System.out.print(names[i]+ ",");
         }

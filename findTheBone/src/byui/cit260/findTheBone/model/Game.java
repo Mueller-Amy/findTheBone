@@ -18,7 +18,7 @@ public class Game implements Serializable{
     
     
     private GameTime GameTime;
-    private Location currentLocation;
+    //private Location currentLocation;
     private Player player;
     private Character character;
     private Backpack backpack;
@@ -34,7 +34,7 @@ public Game() {
     public void setGameTime(GameTime GameTime) {
         this.GameTime = GameTime;
     }
-
+/*
     public Location getCurrentLocation() {
         return currentLocation;
     }
@@ -42,7 +42,7 @@ public Game() {
     public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
     }
-
+*/
     public Player getPlayer() {
         return player;
     }
@@ -79,7 +79,7 @@ public Game() {
     public int hashCode() {
         int hash = 7;
         hash = 11 * hash + Objects.hashCode(this.GameTime);
-       hash = 11 * hash + Objects.hashCode(this.currentLocation);
+      // hash = 11 * hash + Objects.hashCode(this.currentLocation);
         hash = 11 * hash + Objects.hashCode(this.player);
         hash = 11 * hash + Objects.hashCode(this.character);
         hash = 11 * hash + Objects.hashCode(this.backpack);
@@ -102,9 +102,9 @@ public Game() {
         if (!Objects.equals(this.GameTime, other.GameTime)) {
             return false;
         }
-        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
-            return false;
-       }
+       // if (!Objects.equals(this.currentLocation, other.currentLocation)) {
+       //     return false;
+     //  }
         if (!Objects.equals(this.player, other.player)) {
             return false;
         }

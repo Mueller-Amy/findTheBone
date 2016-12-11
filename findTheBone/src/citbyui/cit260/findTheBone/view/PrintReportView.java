@@ -104,7 +104,7 @@ public class PrintReportView extends View {
     private void inventoryReport() {
         System.out.println("inventoryReport Called"); 
            String filePath = null;
-           String fileLocation="inventoryreport.txt";
+           //String fileLocation="inventoryreport.txt";
            boolean valid = false; 
         
            //getting file path 
@@ -117,7 +117,7 @@ public class PrintReportView extends View {
             
             if (filePath.length() < 1) { // value is blank
                 ErrorView.display(this.getClass().getName(),
-                        "\nInvalid value: value can not be blank");]
+                        "\nInvalid value: value can not be blank");
             continue;
             }
              
@@ -133,16 +133,20 @@ public class PrintReportView extends View {
         }
          
             //print report
-           try (PrintWriter outFile=new PrintWriter(filePath + fileLocation)) {  
+           try (PrintWriter outFile=new PrintWriter(filePath)) {  
              
               outFile.println("\n\n    Inventory List    ");
               outFile.printf("%n%-20s%8s", "Inventory List", "Inventory Item");
               outFile.printf("%n%-20s%10s", "-------------", "--------");
              
+              
+              SceneType[] name=SceneType.values();
+              MapCodeType[] code=MapCodeType.values();
+              
               //for statement to go through the list of enum items to be displayed
                   for (int i=0;i < name.length;i++){
                   String inventoryname = name[i].toString();
-                  String intventoryitem = code[i].toString();
+                  String inventoryitem = code[i].toString();
                   
                   outFile.printf("%n%-20s%10s", inventoryname, inventoryitem );
                   
@@ -152,12 +156,11 @@ public class PrintReportView extends View {
         
         } 
                   this.console.println("\n================================="
-                          
                                      + "\n|  Report Sucessfuly saved !!!   |"
                                      + "\n=================================");
 
               }
-    }
+    
 
     private void townsPeopleReport() {
         System.out.println("townsPeopleReport Called"); 
@@ -174,7 +177,7 @@ public class PrintReportView extends View {
     private void mapReport() {//function written by Jean Oliveira
           
            String filePath = null;//Specify the file location of the file
-           String fileLocation="mapreport.txt";//variable for a file stream
+          // String fileLocation="mapreport.txt";//variable for a file stream
            boolean valid = false; // initialize to not valid
         
            //getting file path 
@@ -203,7 +206,7 @@ public class PrintReportView extends View {
         }
          
             //print report
-           try (PrintWriter outFile=new PrintWriter(filePath + fileLocation)) {  
+           try (PrintWriter outFile=new PrintWriter(filePath)) {  
              
               outFile.println("\n\n           Map Report         ");
               outFile.printf("%n%-20s%10s", "Map Name", "Map Code");

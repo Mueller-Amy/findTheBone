@@ -177,6 +177,7 @@ public abstract class DiagonalCalculationView extends  View{
 
 return width;
     }
+}
 
    
 
