@@ -107,7 +107,7 @@ public class PrintReportView extends View {
         System.out.println("inventoryReport Called"); 
            String filePath = null;
            String fileLocation="inventoryreport.txt";
-           boolean vali
+           boolean valid = false;
                    
                    { 
             this.console.println("Enter where you would like the Inventory Report saved: ");
