@@ -12,34 +12,49 @@ package citbyui.cit260.findTheBone.view;
 import java.util.Scanner;
 import byui.cit260.findTheBone.control.CalculationsControl;
 import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+import findthebone.FindTheBone;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 
 public class VolumeOfCylinderView {
 
-    private String promptMessagesOne;
-    private String promptMessagesTwo;
-    private String winningBanner;
+    //private String promptMessagesOne;
+    //private String promptMessagesTwo;
+    //private String winningBanner;
+    protected final BufferedReader keyboard =FindTheBone.getInFile();
+    protected final PrintWriter console =FindTheBone.getOutFile();
 
-    public VolumeOfCylinderView() {
-        this.promptMessagesOne = "\n"
+   
+        String promptMessagesOne = "\n"
             + "\n=========================================="
             + "\n| Let's Continue our Search                              |"
             + "\n=========================================="
             + "\n| Please Enter a Diameter"
             + "\n==========================================";
-        this.promptMessagesTwo = "\n"
+        String promptMessagesTwo = "\n"
                 + "\n=========================================="
                 + "\n| Let's Continue our Search                              |"
                 + "\n=========================================="
                 + "\n| Please Enter a Height"
                 + "\n==========================================";
-        this.winningBanner = "\n"
+        String winningBanner = "\n"
                 + "\n======================================="
                 + "\n Congratulations!!!!!!!!!!!!!         |"
                 + "\n======================================="
                 + "\n You have solved the complex calculation"
                 + "\n to find your bone.                   |"
                 + "\n=======================================";
+    
+    public VolumeOfCylinderView() {
+         this.displayBanner(); //display the banner when view is created
+    }
+        void displayBanner() {
+   System.out.println("\n=========================================="
+                    + "\n|                                        |"
+                    + "\n|    Volume of Cylinder Calculation      |"
+                    + "\n                                         |"
+                    + "\n==========================================");
     }
 
     private double getDiameter() {
@@ -137,16 +152,6 @@ public class VolumeOfCylinderView {
            double volume = calcControl.calcVolumeOfCylinder(diameter, height);
            System.out.println(winningBanner + "\n\nThe Volume of the cylinder: " + volume);
         }
-
-    
-
-
-
-
-
-
-
-
 
 
 

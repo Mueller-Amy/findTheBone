@@ -20,6 +20,7 @@ import byui.cit260.findTheBone.model.Location;
 import byui.cit260.findTheBone.model.Map;
 import byui.cit260.findTheBone.model.Scene;
 import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+import citbyui.cit260.findTheBone.exceptions.ComplexCalculationsException;
 import findthebone.FindTheBone;
 
 /**
@@ -41,9 +42,7 @@ public class GameMenuView extends View{
                     + "\nM - Move to new Location"
                     + "\nT - Time Remaining"
                     + "\nL - What is in Backpack"
-                    + "\nC - Volume of a cylinder"
-                    + "\nR - Àrea of a box"
-                    + "\nB - Volume of a box"
+                    + "\nC - Complex Calculations"
                     + "\nP - Print Report"
                     + "\nH - Help"
                     + "\nX - Exit"
@@ -72,6 +71,10 @@ public class GameMenuView extends View{
                     this.inBackpack();
                     break;
                 case "C": 
+                    // Complex Calculations View
+                    this.complexCalculations();
+                    break;
+              /*  case "C": 
                     // volume of cylinder
                      this.volumeOfCylinder();
                      break;
@@ -83,6 +86,7 @@ public class GameMenuView extends View{
                     // calcAreaOfBox
                     this.calcAreaOfBox();
                     break;
+               */
                 case "P": // Print Report
                     this.printReport();
                     break;
@@ -202,6 +206,12 @@ public class GameMenuView extends View{
          mapView.display();
          displayMap();
     }
+
+    private void complexCalculations() {
+        ComplexCalculationsView complexCalculationsView = new ComplexCalculationsView();
+        complexCalculationsView.display();
+        
+        }
     
     }
 

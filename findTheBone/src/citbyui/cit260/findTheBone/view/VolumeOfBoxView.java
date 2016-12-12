@@ -8,9 +8,14 @@ package citbyui.cit260.findTheBone.view;
 import java.util.Scanner;
 import byui.cit260.findTheBone.control.CalculationsControl;
 import citbyui.cit260.findTheBone.exceptions.CalculationsControlException;
+import findthebone.FindTheBone;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 
 public class VolumeOfBoxView {
+    protected final BufferedReader keyboard =FindTheBone.getInFile();
+    protected final PrintWriter console =FindTheBone.getOutFile();
    String promptMessages = "\n"
            + "\n=================="
            + "\n| Let's Find the Volume of the box"
@@ -25,6 +30,20 @@ public class VolumeOfBoxView {
            + "\n=================="
            + "\n| Enter the height of the box:"
            + "\n=============================";
+    
+    public VolumeOfBoxView() {
+       this.displayBanner(); //display the banner when view is created
+    }
+    
+    void displayBanner() {
+    
+    System.out.println("\n=========================================="
+                    + "\n|                                        |"
+                    + "\n|      Volume of Box Calculation         |"
+                    + "\n                                         |"
+                    + "\n==========================================");
+    }
+    
     
     private double getWidth() {
         
@@ -132,7 +151,9 @@ public class VolumeOfBoxView {
             }
         }
 
-    private String getInput() {
+   
+    public String getInput() {
+        
         String number = null;
         Scanner keyboard = new Scanner(System.in); // get infile for keyboar
         boolean valid = false; // initialize to not valid
@@ -152,6 +173,8 @@ public class VolumeOfBoxView {
              
         return number; // return the value entered
     }
+
+   
 }
         
             

@@ -16,7 +16,7 @@ import java.util.Scanner;
  *
  * @author Jean
  */
-public abstract class DiagonalCalculationView extends  View{
+public class DiagonalCalculationView {
     
     protected final BufferedReader keyboard =FindTheBone.getInFile();
     protected final PrintWriter console =FindTheBone.getOutFile();
@@ -24,17 +24,17 @@ public abstract class DiagonalCalculationView extends  View{
     
    
         public void promptEnterKey(){
-            this.console.println("Press \"ENTER\" to continue...");
+            System.out.println("Press \"ENTER\" to continue...");
             Scanner scanner = new Scanner(System.in);
             scanner.nextLine();
 }
   
         public DiagonalCalculationView() {
-                        this.displayBanner(); //display the banner when view is created
-    }
-
-    private void displayBanner() {
-        this.console.println(
+                      //this.displayBanner(); //display the banner when view is created
+    
+        }
+    void displayBanner() {
+        System.out.println(
               "\n*********************************************************************"
             + "\n*                Diagonal Rectangle Calculation                     *"
             + "\n*********************************************************************"          
@@ -48,7 +48,7 @@ public abstract class DiagonalCalculationView extends  View{
             + "\n*********************************************************************" 
         );          
                    
-    }                
+        }              
      
     /**
      * display the banner
@@ -123,7 +123,7 @@ public abstract class DiagonalCalculationView extends  View{
      *     from the previous DO-WHILE.
      *        
     */
-    private boolean doAction(double length, double width) throws CalculationsControlException {
+    public boolean doAction(double length, double width) throws CalculationsControlException {
          // create a new instance of CalculationsControl classe.
          // call calcDiagonalRectangle function within CalculatonsControl class
          // to calculate the diagonal of a rectangle and set the result to diagonal variable
@@ -177,7 +177,9 @@ public abstract class DiagonalCalculationView extends  View{
 
 return width;
     }
+
 }
+
 
    
 
