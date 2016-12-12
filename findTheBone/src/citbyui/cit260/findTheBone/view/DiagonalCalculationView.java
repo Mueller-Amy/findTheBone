@@ -150,14 +150,14 @@ public class DiagonalCalculationView {
                    }
               
      // to get input values from the user
-    private Double getLength() {
+    private double getLength() {
         Double length=null;
         while (length == null){
 		//create an input file for the console
 		Scanner inFile;
 		inFile = new Scanner(System.in);
 			
-		this.console.println("\nPlease, enter the Triangle Length value:"); // prompt user to enter length
+		this.console.println("\nPlease, enter the rectangle length value:"); // prompt user to enter length
 		
         length = inFile.nextDouble(); // get weight entered from console
 	
@@ -171,8 +171,8 @@ public class DiagonalCalculationView {
 		//create an input file for the console
 		Scanner inFile;
 		inFile = new Scanner(System.in);
-			
-                
+                this.console.println("\nPlease, enter the rectangle width value:"); // prompt user to enter length
+                width = inFile.nextDouble(); // get weight entered from console
     }
 
 return width;

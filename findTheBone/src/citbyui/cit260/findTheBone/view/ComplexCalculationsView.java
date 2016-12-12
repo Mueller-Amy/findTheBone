@@ -36,8 +36,14 @@ public class ComplexCalculationsView extends View {
             case "C": //get saved game and start
                 this.volumeOfCylinder();
                 break;
-            case "R": // rectangleDiagonal
+            case "R": {
+            try {
+                // rectangleDiagonal
                 this.rectangleDiagonal();
+            } catch (CalculationsControlException ex) {
+                Logger.getLogger(ComplexCalculationsView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),//L12 TA
@@ -69,16 +75,10 @@ public class ComplexCalculationsView extends View {
         
         }
 
-    private void rectangleDiagonal() {
+    private void rectangleDiagonal() throws CalculationsControlException {
         DiagonalCalculationView diagonalCalculationView = new DiagonalCalculationView();
-       
-        try {
-            diagonalCalculationView.displayRectangleDiagonal();
-        } catch (CalculationsControlException ex) {
-            Logger.getLogger(ComplexCalculationsView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        diagonalCalculationView.displayRectangleDiagonal();
+               
         }
       
         
