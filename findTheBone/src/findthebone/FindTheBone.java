@@ -23,8 +23,8 @@ public class FindTheBone {
     
     private static Game currentGame = null;
     private static Player player = null;
-    private static Map currentMap= null;
-    private static Location currentLocation = null;
+    //private static Map currentMap= null;
+    //private static Location currentLocation = null;
 
     //L12 team Assignment- TA
     private static PrintWriter outFile=null;
@@ -47,21 +47,6 @@ public class FindTheBone {
         FindTheBone.player = player;
     }
 
-    public static Map getCurrentMap() {
-        return currentMap;
-    }
-
-    public static void setCurrentMap(Map currentMap) {
-        FindTheBone.currentMap = currentMap;
-    }
-
-    public static Location getCurrentLocation() {
-        return currentLocation;
-    }
-
-    public static void setCurrentLocation(Location currentLocation) {
-        FindTheBone.currentLocation = currentLocation;
-    }
 
     public static PrintWriter getOutFile() {
         return outFile;
@@ -109,7 +94,7 @@ public class FindTheBone {
               //create start program view and start run program
               StartProgramView startProgramView = new StartProgramView();
               startProgramView.display();
-              return;
+              
               
         } catch (Throwable e) {
                 System.out.println("Exception: " + e.toString()+

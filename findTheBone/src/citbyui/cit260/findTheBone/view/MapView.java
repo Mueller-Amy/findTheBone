@@ -27,7 +27,7 @@ public MapView() {
      + "\n    Enter location you want to move to"
      + "\n------------------------------------------");
 }
-  public boolean doAction(String mapOption, double timeRemaining) {
+  public boolean doAction(String mapOption) {
      mapOption = mapOption.toUpperCase();
      Game game = FindTheBone.getCurrentGame(); // retreive the game
      Map map = game.getMap(); // retreive the map from game
@@ -41,7 +41,7 @@ public MapView() {
                    if (mapOption.equals(locations[row][column].getScene().getMapSymbol())) {
                      try {
                             MapControl.movePlayer(map, row, column);
-                            gameTime.setTimeRemaining(timeRemaining-0.05);
+                           // gameTime.setTimeRemaining(timeRemaining-0.05);
                             
                             
                         } catch (MapControlException ex) {
@@ -58,10 +58,5 @@ public MapView() {
 
 }
 
-    @Override
-    public boolean doAction(String value) {
-       //do nothing
-       return true;
-    } 
 }
 

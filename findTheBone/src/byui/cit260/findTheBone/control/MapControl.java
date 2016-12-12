@@ -37,7 +37,7 @@ public class MapControl {
        // gameTime.getTimeRemaining();
         
         GameControl.assignScenesToLocations(map,scenes);
-        map.setLocation(map.getLocations()[2][2]);
+       // map.setLocation(map.getLocations()[2][2]);
   return map;
     }
 
@@ -47,7 +47,7 @@ public class MapControl {
         movePlayer(map, 2, 2);
        
     }
-        /*
+
        public static void movePlayer(Map map, Location location) 
         throws MapControlException {
         
@@ -63,7 +63,7 @@ public class MapControl {
                     + "moving the player.");
         }
         }
-        */
+     
         
     
     public static void movePlayer(Map map, int row, int column) throws MapControlException {
@@ -73,12 +73,11 @@ public class MapControl {
         }
 
        
-            map.setLocation(map.getLocations()[row][column]);
-            map.getLocation().setVisited(true);
-            
+            map.setCurrentLocation(map.getLocations()[row][column]);
+            map.getCurrentLocation().setVisited(true);
             map.setCurrentRow(row);
             map.setCurrentColumn(column);
-            //FindTheBone.getCurrentGame().getPlayer().setLocation(map.getLocation());
+        //   FindTheBone.getCurrentGame().getPlayer().setLocation(map.getLocation());
             
         }
 

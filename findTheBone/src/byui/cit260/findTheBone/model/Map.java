@@ -20,12 +20,12 @@ public class Map implements Serializable{
     private int noOfRows;
     private int noOfColumns;
     private Location[][] locations;
-    private int rowCount;
-    private int columnCount;
+   // private int rowCount;
+   // private int columnCount;
     private int currentRow;
     private int currentColumn;
-    private Location location;
-    private Boolean visited;  
+    //private Location location;
+   // private Boolean visited;  
     private Location currentLocation;
     
     public Map() {
@@ -34,8 +34,8 @@ public class Map implements Serializable{
     public Map(int noOfRows, int noOfColumns) {
     
     if (noOfRows<1 || noOfColumns<1) {
-       // L12 System.out.println("The number of rows and columns must be > zero");
-       ErrorView.display(this.getClass().getName(),"The number of rows and columns must be > zero");
+       System.out.println("The number of rows and columns must be > zero");
+      // ErrorView.display(this.getClass().getName(),"The number of rows and columns must be > zero");
         return;
     }
     this.noOfRows=noOfRows;
@@ -58,31 +58,6 @@ public class Map implements Serializable{
     }
     
 }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public Boolean getVisited() {
-        return visited;
-    }
-
-    public void setVisited(Boolean visited) {
-        this.visited = visited;
-    }
-
-    public Location getCurrentLocation() {
-        return currentLocation;
-    }
-
-    public void setCurrentLocation(Location currentLocation) {
-        this.currentLocation = currentLocation;
-    }
-
 
     public int getNoOfRows() {
         return noOfRows;
@@ -108,22 +83,6 @@ public class Map implements Serializable{
         this.locations = locations;
     }
 
-    public int getRowCount() {
-        return rowCount;
-    }
-
-    public void setRowCount(int rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public int getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(int columnCount) {
-        this.columnCount = columnCount;
-    }
-
     public int getCurrentRow() {
         return currentRow;
     }
@@ -140,19 +99,23 @@ public class Map implements Serializable{
         this.currentColumn = currentColumn;
     }
 
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + this.noOfRows;
-        hash = 83 * hash + this.noOfColumns;
-        hash = 83 * hash + Arrays.deepHashCode(this.locations);
-        hash = 83 * hash + this.rowCount;
-        hash = 83 * hash + this.columnCount;
-        hash = 83 * hash + this.currentRow;
-        hash = 83 * hash + this.currentColumn;
-        hash = 83 * hash + Objects.hashCode(this.location);
-        hash = 83 * hash + Objects.hashCode(this.visited);
-        hash = 83 * hash + Objects.hashCode(this.currentLocation);
+        int hash = 3;
+        hash = 67 * hash + this.noOfRows;
+        hash = 67 * hash + this.noOfColumns;
+        hash = 67 * hash + Arrays.deepHashCode(this.locations);
+        hash = 67 * hash + this.currentRow;
+        hash = 67 * hash + this.currentColumn;
+        hash = 67 * hash + Objects.hashCode(this.currentLocation);
         return hash;
     }
 
@@ -174,12 +137,6 @@ public class Map implements Serializable{
         if (this.noOfColumns != other.noOfColumns) {
             return false;
         }
-        if (this.rowCount != other.rowCount) {
-            return false;
-        }
-        if (this.columnCount != other.columnCount) {
-            return false;
-        }
         if (this.currentRow != other.currentRow) {
             return false;
         }
@@ -187,12 +144,6 @@ public class Map implements Serializable{
             return false;
         }
         if (!Arrays.deepEquals(this.locations, other.locations)) {
-            return false;
-        }
-        if (!Objects.equals(this.location, other.location)) {
-            return false;
-        }
-        if (!Objects.equals(this.visited, other.visited)) {
             return false;
         }
         if (!Objects.equals(this.currentLocation, other.currentLocation)) {
@@ -203,7 +154,7 @@ public class Map implements Serializable{
 
     @Override
     public String toString() {
-        return "Map{" + "noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", locations=" + locations + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", location=" + location + ", visited=" + visited + ", currentLocation=" + currentLocation + '}';
+        return "Map{" + "noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", locations=" + locations + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentLocation=" + currentLocation + '}';
     }
 
 }

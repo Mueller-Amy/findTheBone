@@ -14,7 +14,6 @@
 */
 
 package citbyui.cit260.findTheBone.view;
-
 import byui.cit260.findTheBone.model.Game;
 import byui.cit260.findTheBone.model.GameTime;
 import byui.cit260.findTheBone.model.Location;
@@ -184,8 +183,8 @@ public class GameMenuView extends View{
             if (currentScene != null) {
                 System.out.println("Your current location is " + currentScene.getName());    
                 System.out.println(currentScene.getDescription());
-                System.out.println("\n Your time remaining is " + gameTime.getTimeRemaining());
-                System.out.println(currentScene.getClue());
+                //System.out.println("\n Your time remaining is " + gameTime.getTimeRemaining());
+               // System.out.println(currentScene.getClue());
             }
             
         } catch (Exception e) {

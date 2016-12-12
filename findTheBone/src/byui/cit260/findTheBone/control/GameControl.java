@@ -61,7 +61,7 @@ public class GameControl {
             Map map = MapControl.createMap(); //create and initialize new map
             game.setMap(map); // Save map in game
             
-            game.getPlayer().setLocation(map.getLocation());  
+            //game.getPlayer().setLocation(map.getLocation());  
             
             GameTime gameTime = new GameTime();
             gameTime.setTimeRemaining(24.0);
