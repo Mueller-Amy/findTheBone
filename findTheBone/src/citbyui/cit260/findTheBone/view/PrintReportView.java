@@ -46,7 +46,7 @@ public class PrintReportView extends View {
             
             
         switch (choice) {
-                case "C":  
+                case "C":  //Amy Mueller
                     this.cluesReport();
                     break;
                 case "S": 
@@ -89,6 +89,65 @@ public class PrintReportView extends View {
     private void cluesReport() {
        
         System.out.println(" cluesReport Called");
+        
+           String filePath = null;
+           //String fileLocation="cluesReport.txt";
+           boolean valid = false; 
+        
+           //getting file path 
+        while (!valid) { // loop while an invalid value is enter
+            this.console.println("Enter where you would like the Clues Report saved: ");
+            
+            try {
+                filePath = this.keyboard.readLine(); 
+                filePath = filePath.trim(); 
+            
+            if (filePath.length() < 1) { 
+                ErrorView.display(this.getClass().getName(),
+                        "\nInvalid value: value can not be blank");
+            continue;
+            }
+             
+               
+        }  catch (IOException ex) {
+                  ErrorView.display(this.getClass().getName(),
+                        "Error reading Input: " + ex.getMessage());
+                   
+              }
+
+        break; 
+        
+        }
+         
+            //print report
+           try (PrintWriter outFile=new PrintWriter(filePath)) {  
+             
+              outFile.println("\n\n    Clues Report    ");
+              outFile.printf("%n%-20s%8s", "Clues Report", "Clue List");
+              outFile.printf("%n%-20s%10s", "-------------", "--------");
+             
+              
+              ClueItemType[] name= ClueItemType.values();
+          
+              
+              //for statement to go through the list of enum items to be displayed
+                  for (int i=0;i < name.length;i++){
+                  String clueItemName = name[i].toString();
+                 
+                  
+                  outFile.printf("%n%-20s%10s", clueitemname, "        ");
+                  
+              }      
+                }   catch (IOException ex) {
+               ErrorView.display(this.getClass().getName(),"Error with saving Clue Report");    
+        
+        } 
+                  this.console.println("\n================================="
+                                     + "\n|  Report Sucessfuly saved !!!   |"
+                                     + "\n=================================");
+
+              }
+    
     }
 
     private void sceneReport() {
