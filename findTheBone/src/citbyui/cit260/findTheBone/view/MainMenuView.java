@@ -108,20 +108,14 @@ public class MainMenuView extends View {
     }
    
     private void getSavedGame() throws GameControlException {
-        Game game = null;
-        //String filepath = null;
-        String filepath = null;
+         System.out.println("\n\nEnter the file path for file where the game " + "was saved last.");
+        String filePath = this.getInput();
         
-        try(FileInputStream fips = new FileInputStream(filepath)) {
-              ObjectInputStream input = new ObjectInputStream(fips);
-              
-              game = (Game) input.readObject();//read the game object from fileCurrent
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
         }
-        catch (Exception e) {
-            throw new GameControlException(e.getMessage());
-        }
-        //close the output file
-        FindTheBone.setCurrentGame(game);//save in FindTheBone
-    }
+       }
       
 }

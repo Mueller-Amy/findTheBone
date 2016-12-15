@@ -87,8 +87,8 @@ public class GameControl {
     
 public static void getSavedGame(String filePath) 
         throws GameControlException {
-        //System.out.println("\n\nEnter the file path where load the saved game :");
-        //String filePath=this.getInput();
+        System.out.println("\n\nEnter the file path where load the saved game :");
+        //filePath=this.getInput();
         Game game = null;
         
         try(FileInputStream fips = new FileInputStream(filePath)){
