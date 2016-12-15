@@ -50,36 +50,7 @@ public class DiagonalCalculationView {
                    
         }              
      
-    /**
-     * display the banner
-     * 
-     */
     
-    /** 
-     * start the logical variable
-     * start the counter - 3 times
-     *    DO - WHILE ( done = false)-- start of a condition block 
-     *      begin getting input values
-     *         prompt to get the length
-     *         prompt to get the width
-     *      
-     *   call doAction to do the calculate,check 
-     *         valid or invalids values , checking errors , return done value
-     *   add 1 to counter
-     *   if counter == 4(--- the user had doing the 3 chances, 
-     *              if YES the user lost the game 
-     *          pause the screen to until user press a key          
-     *          
-     * }
-     * end of WHILE --- (if done FALSE AND not used the three attempts repeat DO-WHILE)
-     *                   if done TRUE get out from DO-WHILE 
-     *                   or if attempts is >= 4 get out from DO-WHILE>
-     *                   
-     * return to start a game
-     *          
-     * @throws citbyui.cit260.findTheBone.exceptions.CalculationsControlException
-     */
-        
     public void displayRectangleDiagonal() throws CalculationsControlException {
         boolean done = false;
         double counter = 1;

@@ -5,7 +5,6 @@
  */
 package byui.cit260.findTheBone.model;
 
-import citbyui.cit260.findTheBone.view.ErrorView;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;

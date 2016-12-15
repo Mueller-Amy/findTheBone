@@ -36,45 +36,7 @@ public class HelpMenuView extends View {
                     + "\nX - Exit"
                     + "\n==========================================");
     }
-    /*public void displayHelpMenuView(){
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("X")) //user wants to quit
-                return; // Exit game
-                
-            // Do the requested action and display the next view
-            done = this.doAction(menuOption);
-                
-        }while (!done);
-    }
-*/
     
-
-    /*private String getMenuOption() {
-       Scanner keyboard = new Scanner(System.iX); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { // loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading adn trailing blanks
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-        }
-        break; // end the loop
-        
-        }
-        return value; // return the value entered
-               
-    }
-    */
-
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to uppercase

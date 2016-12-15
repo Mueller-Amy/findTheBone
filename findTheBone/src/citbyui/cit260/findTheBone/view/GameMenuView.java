@@ -9,9 +9,7 @@
 /**
  *
  * @author Keith Downing 
- 
- 
-*/
+ */
 
 package citbyui.cit260.findTheBone.view;
 import byui.cit260.findTheBone.model.Game;
@@ -74,19 +72,6 @@ public class GameMenuView extends View{
                     // Complex Calculations View
                     this.complexCalculations();
                     break;
-              /*  case "C": 
-                    // volume of cylinder
-                     this.volumeOfCylinder();
-                     break;
-                case "B": 
-                    // Volume of Box
-                    this.volumeOfBox();
-                    break;
-                case "R": 
-                    // calcAreaOfBox
-                    this.calcAreaOfBox();
-                    break;
-               */
                 case "P": // Print Report
                     this.printReport();
                     break;

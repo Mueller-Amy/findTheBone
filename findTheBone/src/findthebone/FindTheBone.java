@@ -6,8 +6,6 @@
 package findthebone;
 
 import byui.cit260.findTheBone.model.Game; // Keith Downing
-import byui.cit260.findTheBone.model.Location;
-import byui.cit260.findTheBone.model.Map; // Amy Mueller
 import byui.cit260.findTheBone.model.Player; // Amy Mueller
 import citbyui.cit260.findTheBone.view.StartProgramView;
 import java.io.BufferedReader;

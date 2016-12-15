@@ -106,28 +106,7 @@ public class MainMenuView extends View {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-    /*
-    private void getSavedGame() throws GameControlException {
-        //prompt for and get the name of the file to save game in
-        
-        System.out.println("\n\nEnter the file path where load the saved game :");
-        String filePath=this.getInput();
-       
-        //boolean result = false;
-                
-        try{
-            
-            GameControl.getSavedGame(filePath);
-            
-            //result = true;
-            
-        }
-        catch(Exception ex){
-            ErrorView.display(this.getClass().getName(),"Error loading the game :" + ex.getMessage());
-        }
-       // return result;  
-    }
-    */
+   
     private void getSavedGame() throws GameControlException {
         Game game = null;
         //String filepath = null;
