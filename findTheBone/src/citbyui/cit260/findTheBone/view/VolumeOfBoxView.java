@@ -46,17 +46,25 @@ public class VolumeOfBoxView {
     
     
     private double getWidth() {
-        
-        Double width = null; //L11 assignment
-        while (width == null) {
-            String value = this.getInput();
-            value = value.trim().toUpperCase();
+         Scanner keyboard = new Scanner(System.in);
+            String value ="";
+            boolean valid = false;
+            double width = 0;
+            String response;
+            while (!valid) {
+                System.out.println("\n" + this.promptMessages);
+                    
+               width = keyboard.nextDouble();
+               if (width == -1)
+                return -1;
             
-            if (value.equals("Q"))
-                break;
-            width = Double.parseDouble(value);
-        }
-       
+               else if (width<=0) {
+                response = "Invalid Entry";
+            }
+            else {
+                valid = true;
+            }
+            }
     
          return width;
         }
