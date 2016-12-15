@@ -19,15 +19,7 @@ public class CalculationsControl {
                 throws CalculationsControlException 
                         {
     
-           /*if (length<=0 OR length>6) THEN
-               RETURN -1
-           if (width<=0 OR width>6) THEN
-                   RETURN -1
-           if (height<=0 OR height>6) THEN
-                   RETURN -1
-           volume = legth*width*height
-           RETURN area; */
-                
+                         
            if (length <= 0 || length > 6 ){//length out of range??
                //return -1;
                
